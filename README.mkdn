@@ -1,0 +1,28 @@
+# Hyprland configurations rootfs structure
+
+'Tis a configuration structure for getting Hyprland to work as intended
+on pretty much any distro that has TTY as shell/have GUI disabled.
+
+Copy every single folder in this repo to the root filesystem for the
+most expected outcome.
+
+## Alright, now tell me what this structure exactly does.
+
+1. Logs in automatically as the user `beru`.
+2. Launches Hyprland as the user logged in on boot.
+3. If, in any case, Hyprland exits, it will prevent exposing your autologin shell and drop back to login prompt on TTY1.
+
+## Wait, but my system configuration doesn't match with yours!
+
+Check all files, inspect your system and replace everything that
+doesn't match with your system. Such as replacing all instances of
+`beru` with `andrew`.
+
+# Needed packages
+
+If you're using Arch, install the following packages using an AUR
+helper to avoid problems from missing packages;
+
+```
+paru-bin hyprland xdg-desktop-portal-hyprland nano neofetch kitty swaylock-effects swayidle ttf-fira-sans
+```

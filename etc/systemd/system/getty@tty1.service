@@ -1,0 +1,23 @@
+[Unit]
+Description=Start hyprland
+After=sysinit.target
+After=initrd-switch-root.service
+Wants=systemd-udev-trigger.service
+After=systemd-udev-trigger.service
+Wants=seatd.service
+After=seatd.service
+Wants=systemd-logind.service
+After=systemd-logind.service
+After=graphical.target
+ConditionPathExists=/home/csdvrx
+OnFailure=emergency.target
+
+[Service]
+Type=simple
+ExecStart=-/usr/sbin/agetty -o '-p -f -- \u' --noclear --autologin csdvrx %I $TERM
+StandardOutput=null
+StandardError=journal
+
+[Install]
+WantedBy=graphical.target
+WantedBy=initrd-switch-root.service
