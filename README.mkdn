@@ -11,6 +11,7 @@ most expected outcome.
 1. Logs in automatically as the user `beru`.
 2. Launches Hyprland as the user logged in on boot.
 3. If, in any case, Hyprland exits, it will prevent exposing your autologin shell and drop back to login prompt on TTY1.
+4. Configures SwayLock with the config from https://gitlab.com/stephan-raabe/dotfiles/-/blob/main/swaylock/config.
 
 ## Wait, but my system configuration doesn't match with yours!
 
@@ -26,3 +27,15 @@ helper to avoid problems from missing packages;
 ```
 paru-bin hyprland xdg-desktop-portal-hyprland nano neofetch kitty swaylock-effects swayidle ttf-fira-sans
 ```
+
+# Arch users, ahoy!
+
+On some installations, `.profile` might not be sourced on login!
+Append the following line in your `.bashrc` for the magic to happen!
+
+# Nvidia users, check this out!
+
+Hyprland has an official documentation prepared for you all! Check it
+out and follow the instructions there!
+
+https://wiki.hyprland.org/Nvidia/
