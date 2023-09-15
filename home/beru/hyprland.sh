@@ -23,6 +23,10 @@ export USER=beru
 export HYPRLAND_LOG_WLR=1
 export XCURSOR_SIZE=24
 
+# VM optimizations. Uncomment these if you're testing on a VM.
+# export WLR_NO_HARDWARE_CURSORS=1
+# export WLR_RENDERER_ALLOW_SOFTWARE=1
+
 # change the theme here
 export XCURSOR_THEME=Adwaita
 export GTK_THEME=Adwaita-dark
