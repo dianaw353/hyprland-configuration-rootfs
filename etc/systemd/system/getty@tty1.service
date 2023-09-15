@@ -9,12 +9,14 @@ After=seatd.service
 Wants=systemd-logind.service
 After=systemd-logind.service
 After=graphical.target
-ConditionPathExists=/home/csdvrx
+# Replace with your username here. It checks if your home directory exists.
+ConditionPathExists=/home/beru
 OnFailure=emergency.target
 
 [Service]
 Type=simple
-ExecStart=-/usr/sbin/agetty -o '-p -f -- \u' --noclear --autologin csdvrx %I $TERM
+# This is the autologin part, also replace with your username here.
+ExecStart=-/usr/sbin/agetty -o '-p -f -- \u' --noclear --autologin beru %I $TERM
 StandardOutput=null
 StandardError=journal
 
