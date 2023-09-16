@@ -19,23 +19,69 @@ Check all files, inspect your system and replace everything that
 doesn't match with your system. Such as replacing all instances of
 `beru` with `andrew`.
 
-# Needed packages
+## How about my existing SwayLock config?
 
-If you're using Arch, install the following packages using an AUR
-helper to avoid problems from missing packages;
+It will be overwritten! Make sure to back it up before applying this
+rootfs repo!
+
+## Needed packages
+
+If you're using Arch or its derivative, install the following packages
+using an AUR helper to avoid problems from missing packages;
 
 ```
 paru-bin hyprland xdg-desktop-portal-hyprland nano neofetch kitty swaylock-effects swayidle ttf-fira-sans
 ```
 
-# Arch users, ahoy!
+If you're not using Arch, you'll have to look for these packages
+individually.
 
-On some installations, `.profile` might not be sourced on login!
-Append the following line in your `.bashrc` for the magic to happen!
+### Recommended way to install on Arch
 
-# Nvidia users, check this out!
+```
+sudo pacman -S git 
+git clone https://aur.archlinux.org/paru-bin
+cd paru-bin
+makepkg -si
+paru -S hyprland xdg-desktop-portal-hyprland nano neofetch kitty swaylock-effects swayidle ttf-fira-sans
+```
+
+## Installation instructions
+
+Make sure you're logged in as the user who will use Hyprland.
+
+```
+git clone https://github.com/windowz414/hyprland-configuration-rootfs
+cd hyprland-configuration-rootfs
+cd home
+mv beru $(whoami)
+cd ..
+rm -rf .git
+rm README.mkdn
+for i in $(find -type d); do sudo mkdir -p /${i}; done
+for i in $(find -type f); do sudo cp $(i) /$(i); done
+echo -e "sh hyprland.sh \&\& echo \"goodbye, now logging out\" \&\& exit 0 \\\n \|\| echo \"\$? hyperland.sh failed\" \&\& tty \|grep tty1 \\\n  \&\& echo \"refusing autologin without hyprland on tty1\" \&\& exit 0 \\\n  \|\| echo \"not on tty1, letting in\"" >> ~/.profile
+echo "source ~/.profile" >> ~/.bashrc
+echo "exec-once = /usr/bin/swaylock" >> ~/.config/hypr/hyprland.conf
+```
+
+Then reboot and watch the magic happen!
+
+## Nvidia users, check this out!
 
 Hyprland has an official documentation prepared for you all! Check it
-out and follow the instructions there!
+out and follow the instructions there for the most stable experience
+possible!
 
 https://wiki.hyprland.org/Nvidia/
+
+# Resources
+
+Main configurations and scripts: https://www.reddit.com/r/hyprland/comments/127m3ef/starting_hyprland_directy_from_systemd_a_guide_to/
+
+Swaylock config: https://gitlab.com/stephan-raabe/dotfiles/-/blob/main/swaylock/config
+
+# Thanks to
+
+[@Botan-Yuukan](https://github.com/Botan-Yuukan) for helping me
+throughout everything related to this repo.
