@@ -16,6 +16,8 @@ most expected outcome.
 6. Configures swayidle to lock devide when lid is shut
 7. Hypr bind configs for sound and player buttons
 8. pyfetch (Neofetch) theme
+9. waybar basic config
+10. Desktop notificications 
 
 ## Wait, but my system configuration doesn't match with yours!
 
@@ -34,7 +36,7 @@ If you're using Arch or its derivative, install the following packages
 using an AUR helper to avoid problems from missing packages;
 
 ```
-paru-bin hyprland xdg-desktop-portal-hyprland nano hyfetch wezterm swaylock-effects swayidle ttf-fira-sans ttf-nerd-fonts-symbols-mono noto-fonts-emoji playerctl
+paru-bin hyprland xdg-desktop-portal-hyprland nano hyfetch wezterm swaylock-effects swayidle ttf-fira-sans ttf-nerd-fonts-symbols-mono noto-fonts-emoji playerctl brightnessctl dunst libnotify pipewire pipewire-alsa pipewire-audio pipewire-pulse pipewire-jack wireplumber gst-plugin-pipewire pavucontrol htop waybar
 ```
 
 If you're not using Arch, you'll have to look for these packages
@@ -47,7 +49,7 @@ sudo pacman -S git
 git clone https://aur.archlinux.org/paru-bin
 cd paru-bin
 makepkg -si
-paru -S hyprland xdg-desktop-portal-hyprland nano hyfetch kitty swaylock-effects swayidle ttf-fira-sans ttf-nerd-fonts-symbols-mono noto-fonts-emoji playerctl
+paru -S hyprland xdg-desktop-portal-hyprland nano hyfetch kitty swaylock-effects swayidle ttf-fira-sans ttf-nerd-fonts-symbols-mono noto-fonts-emoji playerctl brightnessctl dunst libnotify pipewire pipewire-alsa pipewire-audio pipewire-pulse pipewire-jack wireplumber gst-plugin-pipewire pavucontrol htop waybar
 ```
 
 ## Installation instructions
@@ -61,10 +63,10 @@ cd home
 mv botan $(whoami)
 cd ..
 rm README.mkdn
+cp -r home/ ~/
 cp -r /etc/systemd/system/getty@tty1.service /etc/systemd/system/
-cp -r home/botan/.config cp ~/
 echo -e "sh hyprland.sh \&\& echo \"goodbye, now logging out\" \&\& exit 0 \\\n \|\| echo \"\$? hyperland.sh failed\" \&\& tty \|grep tty1 \\\n  \&\& echo \"refusing autologin without hyprland on tty1\" \&\& exit 0 \\\n  \|\| echo \"not on tty1, letting in\"" >> ~/.profile
-echo "source ~/.profile" >> ~/.bashrc
+echo "source ~/.profile" >> ~/.profile
 echo "if ["$SOURCED" ];
 then
         source ~/.profile
