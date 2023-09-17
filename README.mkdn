@@ -12,6 +12,10 @@ most expected outcome.
 2. Launches Hyprland as the user logged in on boot.
 3. If, in any case, Hyprland exits, it will prevent exposing your autologin shell and drop back to login prompt on TTY1.
 4. Configures SwayLock with the config from https://gitlab.com/stephan-raabe/dotfiles/-/blob/main/swaylock/config.
+5. Configurs swayidle so it locks after x amount of time
+6. Configures swayidle to lock devide when lid is shut
+7. Hypr bind configs for sound and player buttons
+8. pyfetch (Neofetch) theme
 
 ## Wait, but my system configuration doesn't match with yours!
 
