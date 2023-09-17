@@ -62,7 +62,6 @@ for i in $(find -type d); do sudo mkdir -p /${i}; done
 for i in $(find -type f); do sudo cp $(i) /$(i); done
 echo -e "sh hyprland.sh \&\& echo \"goodbye, now logging out\" \&\& exit 0 \\\n \|\| echo \"\$? hyperland.sh failed\" \&\& tty \|grep tty1 \\\n  \&\& echo \"refusing autologin without hyprland on tty1\" \&\& exit 0 \\\n  \|\| echo \"not on tty1, letting in\"" >> ~/.profile
 echo "source ~/.profile" >> ~/.bashrc
-echo "exec-once = /usr/bin/swaylock" >> ~/.config/hypr/hyprland.conf
 echo "LIBSEAT_BACKEND=logind" >> /etc/environment
 ```
 
