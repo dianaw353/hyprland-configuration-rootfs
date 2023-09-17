@@ -30,7 +30,7 @@ If you're using Arch or its derivative, install the following packages
 using an AUR helper to avoid problems from missing packages;
 
 ```
-paru-bin hyprland xdg-desktop-portal-hyprland nano neofetch wezterm swaylock-effects swayidle ttf-fira-sans ttf-nerd-fonts-symbols-mono noto-fonts-emoji playerctl
+paru-bin hyprland xdg-desktop-portal-hyprland nano hyfetch wezterm swaylock-effects swayidle ttf-fira-sans ttf-nerd-fonts-symbols-mono noto-fonts-emoji playerctl
 ```
 
 If you're not using Arch, you'll have to look for these packages
@@ -43,7 +43,7 @@ sudo pacman -S git
 git clone https://aur.archlinux.org/paru-bin
 cd paru-bin
 makepkg -si
-paru -S hyprland xdg-desktop-portal-hyprland nano neofetch kitty swaylock-effects swayidle ttf-fira-sans ttf-nerd-fonts-symbols-mono noto-fonts-emoji playerctl
+paru -S hyprland xdg-desktop-portal-hyprland nano hyfetch kitty swaylock-effects swayidle ttf-fira-sans ttf-nerd-fonts-symbols-mono noto-fonts-emoji playerctl
 ```
 
 ## Installation instructions
@@ -68,6 +68,7 @@ then
         export SOUCED=1
 fi" >> ~/.bashrc
 echo "LIBSEAT_BACKEND=logind" >> /etc/environment
+chmod +x ~/hyperland.sh
 ```
 
 Then reboot and watch the magic happen!
