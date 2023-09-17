@@ -30,7 +30,7 @@ If you're using Arch or its derivative, install the following packages
 using an AUR helper to avoid problems from missing packages;
 
 ```
-paru-bin hyprland xdg-desktop-portal-hyprland nano neofetch kitty swaylock-effects swayidle ttf-fira-sans
+paru-bin hyprland xdg-desktop-portal-hyprland nano neofetch wezterm swaylock-effects swayidle ttf-fira-sans ttf-nerd-fonts-symbols-mono noto-fonts-emoji playerctl
 ```
 
 If you're not using Arch, you'll have to look for these packages
@@ -43,7 +43,7 @@ sudo pacman -S git
 git clone https://aur.archlinux.org/paru-bin
 cd paru-bin
 makepkg -si
-paru -S hyprland xdg-desktop-portal-hyprland nano neofetch kitty swaylock-effects swayidle ttf-fira-sans
+paru -S hyprland xdg-desktop-portal-hyprland nano neofetch kitty swaylock-effects swayidle ttf-fira-sans ttf-nerd-fonts-symbols-mono noto-fonts-emoji playerctl
 ```
 
 ## Installation instructions
@@ -62,6 +62,11 @@ for i in $(find -type d); do sudo mkdir -p /${i}; done
 for i in $(find -type f); do sudo cp $(i) /$(i); done
 echo -e "sh hyprland.sh \&\& echo \"goodbye, now logging out\" \&\& exit 0 \\\n \|\| echo \"\$? hyperland.sh failed\" \&\& tty \|grep tty1 \\\n  \&\& echo \"refusing autologin without hyprland on tty1\" \&\& exit 0 \\\n  \|\| echo \"not on tty1, letting in\"" >> ~/.profile
 echo "source ~/.profile" >> ~/.bashrc
+echo "if ["$SOURCED" ];
+then
+        source ~/.profile
+        export SOUCED=1
+fi" >> ~/.bashrc
 echo "LIBSEAT_BACKEND=logind" >> /etc/environment
 ```
 

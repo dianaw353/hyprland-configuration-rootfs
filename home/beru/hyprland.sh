@@ -1,13 +1,13 @@
 #!/bin/sh
-# Definitely replace the following path if you're not a laptop user.
-[ ! -f /run/udev/data/+drm:card0-eDP-1 ] \
+# Definitely replace the following path depending on what card and display your using.
+[ ! -f /run/udev/data/+drm:card1-eDP-1 ] \
  && sudo systemctl restart systemd-udev-trigger > /dev/null
 
 sudo systemctl status iwd|grep Active..active \
  || sudo systemctl start iwd &
 
 # This path too.
-while [ ! -f /run/udev/data/+drm:card0-eDP-1 ] ; do echo "waiting for drm" && sleep 0.2 ; done
+while [ ! -f /run/udev/data/+drm:card1-eDP-1 ] ; do echo "waiting for drm" && sleep 0.2 ; done
 
 # Replace with your username here btw.
 export USER=beru
@@ -36,7 +36,7 @@ export XCURSOR_THEME=Adwaita
 export GTK_THEME=Adwaita-dark
 
 # And finally this path here as well.
-[ ! -f /run/udev/data/+drm:card0-eDP-1 ] \
+[ ! -f /run/udev/data/+drm:card1-eDP-1 ] \
  && echo "Hyprland needs drm, bailing out" && exit -1
 
 exec Hyprland > $HOME/.hyprland.log.txt 2> $HOME/.hyprland.err.txt
