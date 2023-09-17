@@ -72,6 +72,7 @@ then
 fi" >> ~/.bashrc
 echo "LIBSEAT_BACKEND=logind" >> /etc/environment
 chmod +x ~/hyperland.sh
+sudo systemctl enable getty@tty1.service
 ```
 
 Then reboot and watch the magic happen!
