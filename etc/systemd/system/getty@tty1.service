@@ -10,13 +10,14 @@ Wants=systemd-logind.service
 After=systemd-logind.service
 After=graphical.target
 # Replace with your username here. It checks if your home directory exists.
-ConditionPathExists=/home/beru
+ConditionPathExists=/home/botan
 OnFailure=emergency.target
 
 [Service]
+Environment="TERM=xterm"
 Type=simple
 # This is the autologin part, also replace with your username here.
-ExecStart=-/usr/sbin/agetty -o '-p -f -- \u' --noclear --autologin beru %I $TERM
+ExecStart=-/usr/sbin/agetty -o '-p -f -- \u' --noclear --autologin botan %I $TERM
 StandardOutput=null
 StandardError=journal
 
