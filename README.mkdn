@@ -36,7 +36,7 @@ If you're using Arch or its derivative, install the following packages
 using an AUR helper to avoid problems from missing packages;
 
 ```
-paru-bin hyprland xdg-desktop-portal-hyprland nano hyfetch wezterm swaylock-effects swayidle ttf-fira-sans ttf-nerd-fonts-symbols-mono noto-fonts-emoji playerctl brightnessctl dunst libnotify pipewire pipewire-alsa pipewire-audio pipewire-pulse pipewire-jack wireplumber gst-plugin-pipewire pavucontrol htop waybar
+paru-bin hyprland xdg-desktop-portal-hyprland nano hyfetch wezterm swaylock-effects swayidle ttf-fira-sans ttf-nerd-fonts-symbols-mono noto-fonts noto-fonts-emoji playerctl brightnessctl dunst libnotify pipewire pipewire-alsa pipewire-audio pipewire-pulse pipewire-jack wireplumber gst-plugin-pipewire pavucontrol htop waybar bluez bluez-utils adobe-source-code-pro-fonts adobe-source-han-sans-jp-fonts adobe-source-han-serif-jp-fonts nautilus spotify spicetify-cli ttf-jetbrains-mono-nerd ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-common unzip networkmanager
 ```
 
 If you're not using Arch, you'll have to look for these packages
@@ -49,7 +49,7 @@ sudo pacman -S git
 git clone https://aur.archlinux.org/paru-bin
 cd paru-bin
 makepkg -si
-paru -S hyprland xdg-desktop-portal-hyprland nano hyfetch kitty swaylock-effects swayidle ttf-fira-sans ttf-nerd-fonts-symbols-mono noto-fonts-emoji playerctl brightnessctl dunst libnotify pipewire pipewire-alsa pipewire-audio pipewire-pulse pipewire-jack wireplumber gst-plugin-pipewire pavucontrol htop waybar
+paru -S hyprland xdg-desktop-portal-hyprland nano hyfetch wezterm swaylock-effects swayidle ttf-fira-sans ttf-nerd-fonts-symbols-mono noto-fonts noto-fonts-emoji playerctl brightnessctl dunst libnotify pipewire pipewire-alsa pipewire-audio pipewire-pulse pipewire-jack wireplumber gst-plugin-pipewire pavucontrol htop waybar bluez bluez-utils adobe-source-code-pro-fonts adobe-source-han-sans-jp-fonts adobe-source-han-serif-jp-fonts nautilus spotify spicetify-cli ttf-jetbrains-mono-nerd ttf-nerd-fonts-symbols-common ttf-nerd-fonts-symbols unzip networkmanager
 ```
 
 ## Installation instructions
