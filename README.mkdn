@@ -56,10 +56,9 @@ cd hyprland-configuration-rootfs
 cd home
 mv botan $(whoami)
 cd ..
-rm -rf .git
 rm README.mkdn
-for i in $(find -type d); do sudo mkdir -p /${i}; done
-for i in $(find -type f); do sudo cp $(i) /$(i); done
+cp -r /etc/systemd/system/getty@tty1.service /etc/systemd/system/
+cp -r home/botan/.config cp ~/
 echo -e "sh hyprland.sh \&\& echo \"goodbye, now logging out\" \&\& exit 0 \\\n \|\| echo \"\$? hyperland.sh failed\" \&\& tty \|grep tty1 \\\n  \&\& echo \"refusing autologin without hyprland on tty1\" \&\& exit 0 \\\n  \|\| echo \"not on tty1, letting in\"" >> ~/.profile
 echo "source ~/.profile" >> ~/.bashrc
 echo "if ["$SOURCED" ];
