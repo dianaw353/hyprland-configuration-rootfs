@@ -1,3 +1,4 @@
 timeout 120 'swaylock -f -c 000000' 
 timeout 240 'hyprctl dispatch dpms off' resume 'hyprctl sispatch dpms on'
 before-sleep 'swaylock -f -c 000000'
+before-sleep 'hyprctl hyprpaper load'
