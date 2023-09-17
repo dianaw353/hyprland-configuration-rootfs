@@ -8,7 +8,7 @@ most expected outcome.
 
 ## Alright, now tell me what this structure exactly does.
 
-1. Logs in automatically as the user `beru`.
+1. Logs in automatically as the user `botan`.
 2. Launches Hyprland as the user logged in on boot.
 3. If, in any case, Hyprland exits, it will prevent exposing your autologin shell and drop back to login prompt on TTY1.
 4. Configures SwayLock with the config from https://gitlab.com/stephan-raabe/dotfiles/-/blob/main/swaylock/config.
@@ -17,7 +17,7 @@ most expected outcome.
 
 Check all files, inspect your system and replace everything that
 doesn't match with your system. Such as replacing all instances of
-`beru` with `andrew`.
+`botan` with `andrew`.
 
 ## How about my existing SwayLock config?
 
@@ -54,7 +54,7 @@ Make sure you're logged in as the user who will use Hyprland.
 git clone https://github.com/windowz414/hyprland-configuration-rootfs
 cd hyprland-configuration-rootfs
 cd home
-mv beru $(whoami)
+mv botan $(whoami)
 cd ..
 rm -rf .git
 rm README.mkdn
