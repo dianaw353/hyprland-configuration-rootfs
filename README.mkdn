@@ -36,8 +36,33 @@ rootfs repo!
 If you're using Arch or its derivative, install the following packages
 using an AUR helper to avoid problems from missing packages;
 
+Hyprland packages:
 ```
-paru-bin hyprland hyprpaper xdg-desktop-portal-hyprland nano hyfetch wezterm swaylock-effects swayidle ttf-fira-sans ttf-nerd-fonts-symbols-mono noto-fonts noto-fonts-emoji playerctl brightnessctl dunst libnotify pipewire pipewire-alsa pipewire-audio pipewire-pulse pipewire-jack wireplumber gst-plugin-pipewire pavucontrol htop waybar-hyprland bluez bluez-utils adobe-source-code-pro-fonts adobe-source-han-sans-jp-fonts adobe-source-han-serif-jp-fonts nautilus spotify spicetify-cli ttf-jetbrains-mono-nerd ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-common unzip networkmanager
+hyprland hyprpaper xdg-desktop-portal-hyprland
+```
+Utilities
+```
+nano hyfetch wezterm unzip htop networkmanager
+```
+Sound
+```
+pipewire pipewire-alsa pipewire-audio pipewire-pulse pipewire-jack wireplumber gst-plugin-pipewire pavucontrol waybar-hyprland bluez bluez-utils
+```
+fonts & icons & themes
+```
+ttf-fira-sans ttf-nerd-fonts-symbols-mono noto-fonts noto-fonts-emoji adobe-source-code-pro-fonts adobe-source-han-sans-jp-fonts adobe-source-han-serif-jp-fonts ttf-jetbrains-mono-nerd ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-common
+```
+ctl
+```
+ playerctl brightnessctl dunst libnotify
+```
+Apps
+```
+nautilus spotify spicetify-cli firefox
+```
+Idle
+```
+swaylock-effects swayidle 
 ```
 
 If you're not using Arch, you'll have to look for these packages
