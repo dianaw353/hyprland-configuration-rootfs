@@ -63,7 +63,8 @@ cd home
 mv botan $(whoami)
 cd ..
 rm README.mkdn
-cp -r home/ ~/
+cp -r home/$(whoami)/.config ~/
+cp -r home/$(whoami)/.wallpaper ~/
 cp -r /etc/systemd/system/getty@tty1.service /etc/systemd/system/
 echo -e "sh hyprland.sh \&\& echo \"goodbye, now logging out\" \&\& exit 0 \\\n \|\| echo \"\$? hyperland.sh failed\" \&\& tty \|grep tty1 \\\n  \&\& echo \"refusing autologin without hyprland on tty1\" \&\& exit 0 \\\n  \|\| echo \"not on tty1, letting in\"" >> ~/.profile
 echo "source ~/.profile" >> ~/.profile
@@ -72,9 +73,12 @@ then
         source ~/.profile
         export SOUCED=1
 fi" >> ~/.bashrc
-echo "LIBSEAT_BACKEND=logind" >> /etc/environment
+echo 'LIBSEAT_BACKEND=logind' | sudo tee -a /etc/environment
 chmod +x ~/hyperland.sh
+chmod +x ~/.config/hypr/scripts/sleep.sh
+chmod +x ~/.config/hypr/scripts/resetxdgportal.sh
 sudo systemctl enable getty@tty1.service
+sudo systemctl enable bluetooth.service
 ```
 
 Then reboot and watch the magic happen!
