@@ -17,7 +17,8 @@ most expected outcome.
 7. Hypr bind configs for sound and player buttons
 8. pyfetch (Neofetch) theme
 9. waybar basic config
-10. Desktop notificications 
+10. desktop notificications 
+11. wezterm config
 
 ## Wait, but my system configuration doesn't match with yours!
 
