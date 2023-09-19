@@ -4,6 +4,7 @@ follow = mouse
 indicate_hidden = yes
 offset = 10x10
 notification_height = 0
+gap_size = 10
 
 separator_height = 2
 

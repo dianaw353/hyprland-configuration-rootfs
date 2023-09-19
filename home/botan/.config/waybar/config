@@ -29,18 +29,12 @@
 		"format": "{icon}",
 		"on-click": "activate",
 		"format-icons": {
-//			"1": "一",
-//			"2": "二",
-//			"3": "三",
-//			"4": "四",
-//			"5": "五",
 			"urgent": "",
 			"active": "",
 			"default": "󰧞",
     "sort-by-number": true
     },
     },
-
     "custom/playerctl": {
       "format": "{icon}",
       "return-type": "json",
@@ -79,8 +73,6 @@
         "format-charging": "{capacity}% ",
         "format-plugged": "{capacity}% ",
         "format-alt": "{icon}   {time}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
         "format-icons": ["", "", "", "", ""]
 	},
 
@@ -97,13 +89,12 @@
   },
 
 	"network": {
-        	"format-wifi": "󰤨",
-        	"format-ethernet": " {ifname}: Aesthetic",
+                "format-wifi": "󰤨",
         	"format-linked": " {ifname} (No IP)",
         	"format-disconnected": "󰤭",
         	"format-alt": " {ifname}: {ipaddr}/{cidr}",
           "tooltip-format": "{essid}",
-          "on-click": "bash ~/.local/bin/wifimenu",
+          "on-click-right": "~/.local/bin/wifimenu"
 	},
 
 	"tray": {
@@ -126,7 +117,6 @@
     "on-scroll-up": "bash ~/.config/waybar/scripts/volume up",
     "on-scroll-down": "bash ~/.config/waybar/scripts/volume down",
     "scroll-step": 5,
-    "on-click": "/usr/bin/rofi-bluetooth",		
-    "on-click-right": "pavucontrol"
+    "on-click-right": "/usr/bin/rofi-bluetooth",		
   },
 }
