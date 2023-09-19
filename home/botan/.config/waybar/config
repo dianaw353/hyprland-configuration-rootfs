@@ -117,6 +117,6 @@
     "on-scroll-up": "bash ~/.config/waybar/scripts/volume up",
     "on-scroll-down": "bash ~/.config/waybar/scripts/volume down",
     "scroll-step": 5,
-    "on-click-right": "/usr/bin/rofi-bluetooth",		
+    "on-click-right": "/usr/bin/rofi-bluetooth"	
   },
 }
