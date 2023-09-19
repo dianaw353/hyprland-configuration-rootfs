@@ -1,0 +1,69 @@
+<!-- @noriaku | Kalos Lazo -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="shortcut icon" href="src/images/monolite_logo.png" type="image/x-icon">
+    <title>Legion</title>
+</head>
+<body class="flex">
+    <!--===: top section :===-->
+    <section id="section_top_info" class="flex">
+        <div id="time_welcome" class="text-center">
+            <h3 id="current_time">11:11</h3>
+            <h5>Welcome, <strong class="username">DXG</strong></h5>
+        </div>
+        <div id="date_weather" class="text-center">
+            <h3 id="current_date">Feb 28</h3>
+            <h5 id="current_weather">24°C | took 47ms</h5>
+        </div>
+    </section>
+    
+    <!--===: middle section :===-->
+    <section id="section_middle_search" class="flex">
+        <form action="https://www.google.com/search" method="get" class="terminal-form">
+            <label for="search"><span class="col-04"> main</span> <span class="col-01 username">noriaku</span><span class="col-03">@minimal</span><span class="col-02">:~$</span> </label>
+            <input type="text" name="q" id="search" placeholder="" autocomplete="off">
+        </form>
+    </section>
+
+    <!--===: bottom section :===-->
+    <section id="section_bottom_links" class="flex">
+        <div class="generic_link">
+            <div class="prompt_link">
+                <p><span class="col-01">➜</span> <span class="col-02">ls</span> <span class="col-02">-T</span> <span class="col-04">tasks/</span> </p>
+            </div>
+            <div class="res_prompt">
+                <p class="res_folder">tasks/</p>
+                <p>└── <a href="https://axiom.ai">Browser Automation</a></p>
+                <p>└── <a href="https://tinywow.com">Daily Needs</a></p>
+            </div>
+        </div>
+        <div class="generic_link">
+            <div class="prompt_link">
+                <p><span class="col-01">➜</span> <span class="col-02">ls</span> <span class="col-02">-T</span> <span class="col-04">wiki/</span> </p>
+            </div>
+            <div class="res_prompt">
+                <p class="res_folder">Wiki/</p>
+                <p>├── <a href="https://wiki.archlinux.org">ArchWiki</a></p>
+                <p>└── <a href="https:chat.openai.com">ChatGPT</a></p>
+            </div>
+        </div>
+        <div class="generic_link">
+            <div class="prompt_link">
+                <p><span class="col-01">➜</span> <span class="col-02">ls</span> <span class="col-02">-T</span> <span class="col-04">Social/</span> </p>
+            </div>
+            <div class="res_prompt">
+                <p class="res_folder">Social/</p>
+                <p>├── <a href="https://github.com">Github</a></p>
+                <p>└── <a href="https://reddit.com">reddit</a></p>
+            </div>
+        </div>
+    </section>
+
+    <script src="src/js/index.js"></script>
+</body>
+</html>

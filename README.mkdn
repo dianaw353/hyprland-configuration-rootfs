@@ -109,6 +109,9 @@ sudo systemctl enable bluetooth.service
 
 Then reboot and watch the magic happen!
 
+Firefox custom home page workaround so it opens in new tab.
+https://peterries.net/blog/firefox-ubuntu-local-file/
+
 ## Nvidia users, check this out!
 
 Hyprland has an official documentation prepared for you all! Check it
