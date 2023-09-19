@@ -38,7 +38,7 @@ using an AUR helper to avoid problems from missing packages;
 
 Hyprland packages & config:
 ```
-hyprland hyprpaper xdg-desktop-portal-hyprland rofi-lbonn-wayland-git waybar-hyprland
+hyprland hyprpaper xdg-desktop-portal-hyprland rofi-lbonn-wayland-git rofi-bluetooth-git waybar-hyprland
 ```
 Utilities:
 ```

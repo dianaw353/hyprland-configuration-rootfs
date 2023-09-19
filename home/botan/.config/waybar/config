@@ -116,7 +116,9 @@
         },
 	"pulseaudio": {
 		"format": "{icon} {volume}%",
-        	"format-muted": "󰝟",
+                "format-bluetooth": "{icon}  {volume}%",
+                "format-bluetooth-muted": "{icon}  {format_source}",
+                "format-muted": "󰝟",
 		"format-icons": {
 			"default": ["󰕿", "󰖀", "󰕾"]
 		},
@@ -124,6 +126,7 @@
     "on-scroll-up": "bash ~/.config/waybar/scripts/volume up",
     "on-scroll-down": "bash ~/.config/waybar/scripts/volume down",
     "scroll-step": 5,
-		"on-click-right": "pavucontrol"
+    "on-click": "/usr/bin/rofi-bluetooth",		
+    "on-click-right": "pavucontrol"
   },
 }
