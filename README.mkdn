@@ -36,31 +36,31 @@ rootfs repo!
 If you're using Arch or its derivative, install the following packages
 using an AUR helper to avoid problems from missing packages;
 
-Hyprland packages:
+Hyprland packages & config:
 ```
-hyprland hyprpaper xdg-desktop-portal-hyprland
+hyprland hyprpaper xdg-desktop-portal-hyprland rofi-lbonn-wayland-git waybar-hyprland
 ```
-Utilities
+Utilities:
 ```
-nano hyfetch wezterm unzip htop networkmanager
+nano hyfetch wezterm unzip htop
 ```
-Sound
+Sound:
 ```
-pipewire pipewire-alsa pipewire-audio pipewire-pulse pipewire-jack wireplumber gst-plugin-pipewire pavucontrol waybar-hyprland bluez bluez-utils
+pipewire pipewire-alsa pipewire-audio pipewire-pulse pipewire-jack wireplumber gst-plugin-pipewire pavucontrol
 ```
-fonts & icons & themes
+Fonts, icons & themes:
 ```
 ttf-fira-sans ttf-nerd-fonts-symbols-mono noto-fonts noto-fonts-emoji adobe-source-code-pro-fonts adobe-source-han-sans-jp-fonts adobe-source-han-serif-jp-fonts ttf-jetbrains-mono-nerd ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-common
 ```
-ctl
+System controls, notifications:
 ```
- playerctl brightnessctl dunst libnotify
+ playerctl brightnessctl dunst libnotify networkmanager bluez bluez-utils
 ```
-Apps
+Apps:
 ```
 nautilus spotify spicetify-cli firefox
 ```
-Idle
+Idle:
 ```
 swaylock-effects swayidle 
 ```
