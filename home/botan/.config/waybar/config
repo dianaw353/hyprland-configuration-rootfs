@@ -4,19 +4,19 @@
     "height": 40,
     "spacing": 4,
     "width": 2200,
-    "margin-top": 0,
+    "margin-top": 14,
     "margin-bottom": 0,
     "margin-left": 0,
     "margin-right": 0,
     "modules-left": ["custom/launcher", "hyprland/workspaces"],
     "modules-center": ["custom/playerctl", "custom/playerlabel"],
-    "modules-right": ["tray", "cpu", "memory", "network", "pulseaudio", "battery","clock"],
+    "modules-right": ["tray", "cpu", "memory", "network", "pulseaudio", "battery","clock", "custom/power"],
     // Modules configuration
 	"clock": {
-		"format": " {:%H:%M}",
+		"format": "  {:%H:%M}",
 		"tooltip": "true",
         	"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        	"format-alt": " {:%d/%m}"
+        	"format-alt": "  {:%d/%m}"
 	},
 	
 
@@ -50,7 +50,7 @@
       "on-click": "playerctl previous",
       "on-click-right": "playerctl next",
       "format-icons": {
-        "Playing": "<span foreground='#E5B9C6'>󰒮 󰐌 󰒭</span>",
+        "Playing": "<span foreground='white'>󰒮 󰐌 󰒭</span>",
         "Paused": "<span foreground='#928374'>󰒮 󰏥 󰒭</span>"
       },
     },
@@ -64,7 +64,7 @@
       "on-click": "playerctl previous",
       "on-click-right": "playerctl next",
       "format-icons": {
-        "Playing": "<span foreground='#E5B9C6'>󰒮 󰐌 󰒭</span>",
+        "Playing": "<span foreground='white'>󰒮 󰐌 󰒭</span>",
         "Paused": "<span foreground='#928374'>󰒮 󰏥 󰒭</span>"
       },
     },
@@ -75,10 +75,10 @@
             "warning": 30,
             "critical": 15
         },
-        "format":"{icon}  {capacity}%",
+        "format":"{icon}   {capacity}%",
         "format-charging": "{capacity}% ",
         "format-plugged": "{capacity}% ",
-        "format-alt": "{icon} {time}",
+        "format-alt": "{icon}   {time}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
@@ -86,13 +86,13 @@
 
   "memory": {
     "format": "󰍛 {}%",
-    "format-alt": "󰍛 {used}/{total} GiB",
+    "format-alt": "󰍛  {used}/{total} GiB",
     "interval": 5
   },
 
   "cpu": {
     "format": "󰻠 {usage}%",
-    "format-alt": "󰻠 {avg_frequency} GHz",
+    "format-alt": "󰻠  {avg_frequency} GHz",
     "interval": 5
   },
 
@@ -103,22 +103,17 @@
         	"format-disconnected": "󰤭",
         	"format-alt": " {ifname}: {ipaddr}/{cidr}",
           "tooltip-format": "{essid}",
-          "on-click-right": "nm-connection-editor"
+          "on-click": "bash ~/.local/bin/wifimenu",
 	},
 
 	"tray": {
 		"icon-size": 16,
 		"spacing": 5
 	},
-
-	"backlight": {
-        // "device": "acpi_video1",
-	"format": "{icon} {percent}%",
-        "format-icons": ["", "", "", "", "", "", "", "", ""],
-//	"on-scroll-up":,
-//	"on-scroll-down":,
-	},
-
+        "custom/power": {
+        "format": "󰤆",
+        "on-click": "bash ~/.local/bin/powermenu"
+        },
 	"pulseaudio": {
 		"format": "{icon} {volume}%",
         	"format-muted": "󰝟",

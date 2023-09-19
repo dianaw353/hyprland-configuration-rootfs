@@ -9,10 +9,12 @@
 }
 
 window#waybar {
-    background: rgba(30, 30, 46, 0.5);
-    border-bottom: 1px solid #282828;
-    border-radius: 26px;
-    color: #f4d9e1
+    background-color: rgba(0,0,0,0.8);
+    border-bottom: 0px solid #ffffff;
+    /* color: #FFFFFF; */
+    background: transparent;
+    transition-property: background-color;
+    transition-duration: .5s;
 }
 
 #workspaces {
@@ -31,7 +33,7 @@ window#waybar {
 }
 
 #workspaces button.active {
-    color: #f4d9e1;
+    color: white;
     background-color: transparent;
     border-radius: 16px;
 }
@@ -42,27 +44,8 @@ window#waybar {
 	border-radius: 16px;
 }
 
-#custom-date, #clock, #battery, #pulseaudio, #network, #custom-randwall, #custom-launcher {
-	background: transparent;
-	padding: 5px 5px 5px 5px;
-	margin: 5px 5px 5px 5px;
-  border-radius: 8px;
-  border: solid 0px #f4d9e1;
-}
-
 #custom-date {
 	color: #D3869B;
-}
-
-#custom-power {
-	color: #24283b;
-	background-color: #db4b4b;
-	border-radius: 5px;
-	margin-right: 10px;
-	margin-top: 5px;
-	margin-bottom: 5px;
-	margin-left: 0px;
-	padding: 5px 10px;
 }
 
 #tray {
@@ -74,12 +57,12 @@ window#waybar {
 }
 
 #clock {
-    color: #E6B9C6;
+    color: white;
     background-color: #282828;
-    border-radius: 0px 0px 0px 24px;
-    padding-left: 13px;
-    border-radius: 26px;
-    padding-right: 15px;
+    border-radius: 16px;
+    padding-left: 10px;
+    border-radius: 16px;
+    padding-right: 10px;
     margin-right: 0px;
     margin-left: 10px;
     margin-top: 0px;
@@ -88,8 +71,15 @@ window#waybar {
     /*border-left: solid 1px #282738;*/
 }
 
-
 #battery {
+    background-color: #282828;
+    /*color: #83A598;*/
+    border-radius: 16px;
+    margin: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 0px 10px 0px 10px;
+    font-weight: bold;
     color: #9ece6a;
 }
 
@@ -103,64 +93,42 @@ window#waybar {
     border-radius: 5px 5px 5px 5px;
 }
 
-#backlight {
-    background-color: #24283b;
-    color: #db4b4b;
-    border-radius: 0px 0px 0px 0px;
-    margin: 5px;
-    margin-left: 0px;
-    margin-right: 0px;
-    padding: 0px 0px;
-}
-
 #network {
-    color: #f4d9e1;
-    border-radius: 8px;
+    background-color: #282828;
+    /*color: #83A598;*/
+    border-radius: 16px;
+    font-weight: bold;
+    color: white;
+    margin: 5px;
+    margin-left: 5px;
     margin-right: 5px;
+    padding: 0px 15px 0px 10px;
 }
 
 #pulseaudio {
-    color: #f4d9e1;
-    border-radius: 8px;
-    margin-left: 0px;
+    background-color: #282828;
+    /*color: #83A598;*/
+    border-radius: 16px;
+    margin: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 0px 10px 0px 10px;
+    font-weight: bold;
+    color: white;
 }
 
 #pulseaudio.muted {
-    background: transparent;
+    background-color: #282828;
     color: #928374;
     border-radius: 8px;
     margin-left: 0px;
 }
 
-#custom-randwall {
-    color: #f4d9e1;
-    border-radius: 8px;
-    margin-right: 0px;
-}
-
-#custom-launcher {
-    color: #e5809e;
-    background-color: #282828;
-    border-radius: 0px 24px 0px 0px;
-    margin: 0px 0px 0px 0px;
-    padding: 0 20px 0 13px;
-    /*border-right: solid 1px #282738;*/
-    font-size: 20px;
-}
-
-#custom-launcher button:hover {
-    background-color: #FB4934;
-    color: transparent;
-    border-radius: 8px;
-    margin-right: -5px;
-    margin-left: 10px;
-}
-
 #custom-playerctl {
-	background: #282828;
-	padding-left: 15px;
+  background: #282828;
+  padding-left: 15px;
   padding-right: 14px;
-	border-radius: 16px;
+  border-radius: 16px;
   /*border-left: solid 1px #282738;*/
   /*border-right: solid 1px #282738;*/
   margin-top: 5px;
@@ -169,6 +137,7 @@ window#waybar {
   font-weight: normal;
   font-style: normal;
   font-size: 16px;
+  color: white;
 }
 
 #custom-playerlabel {
@@ -182,6 +151,7 @@ window#waybar {
     margin-bottom: 5px;
     font-weight: normal;
     font-style: normal;
+    color: white;
 }
 
 #window {
@@ -197,12 +167,6 @@ window#waybar {
     font-style: normal;
 }
 
-#custom-wf-recorder {
-    padding: 0 20px;
-    color: #e5809e;
-    background-color: #1E1E2E;
-}
-
 #cpu {
     background-color: #282828;
     /*color: #FABD2D;*/
@@ -212,6 +176,7 @@ window#waybar {
     margin-right: 5px;
     padding: 0px 10px 0px 10px;
     font-weight: bold;
+    color: white;
 }
 
 #memory {
@@ -223,26 +188,15 @@ window#waybar {
     margin-right: 5px;
     padding: 0px 10px 0px 10px;
     font-weight: bold;
+    color: white;
 }
 
-#disk {
-    background-color: #282828;
-    /*color: #8EC07C;*/
-    border-radius: 16px;
+#custom-power {
+     background-color: #282828;
+     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
     margin-right: 5px;
     padding: 0px 10px 0px 10px;
-    font-weight: bold;
-}
-
-#custom-hyprpicker {
-    background-color: #282828;
-    /*color: #8EC07C;*/
-    border-radius: 16px;
-    margin: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
-    padding: 0px 11px 0px 9px;
-    font-weight: bold;
+     color: white;
 }
