@@ -83,7 +83,7 @@ paru -S hyprland hyprpaper xdg-desktop-portal-hyprland nano hyfetch wezterm sway
 Make sure you're logged in as the user who will use Hyprland.
 
 ```
-git clone https://github.com/windowz414/hyprland-configuration-rootfs
+git clone https://github.com/Botan-Yuukan/hyprland-configuration-rootfs
 cd hyprland-configuration-rootfs
 cd home
 mv botan $(whoami)
