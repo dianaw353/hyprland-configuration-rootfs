@@ -68,7 +68,7 @@ window#waybar {
     margin-top: 0px;
     margin-bottom: 0px;
     font-weight: bold;
-    /*border-left: solid 1px #282738;*/
+   /*border-left: solid 1px #282738;*/
 }
 
 #battery {
