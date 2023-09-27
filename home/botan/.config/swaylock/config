@@ -1,9 +1,9 @@
 daemonize
 show-failed-attempts
-clock
 effect-blur=7x3
 color=1f1d2e80
 font="Inter"
+image=~/.wallpaper/Untitled.jpg
 indicator
 indicator-radius=200
 indicator-thickness=20
@@ -27,6 +27,8 @@ ring-clear-color=9ccfd8
 line-clear-color=1f1d2e
 line-wrong-color=1f1d2e
 bs-hl-color=31748f
-datestr="%d.%m"
+clock
+timestr=%R
+datestr=%a, %e of %B
 fade-in="0.1"
 ignore-empty-password
