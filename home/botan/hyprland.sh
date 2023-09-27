@@ -10,7 +10,7 @@ sudo systemctl status iwd|grep Active..active \
 while [ ! -f /run/udev/data/+drm:card1-eDP-1 ] ; do echo "waiting for drm" && sleep 0.2 ; done
 
 # Replace with your username here btw.
-export USER=beru
+export USER=botan
 [ -z $TERM ] && export TERM=linux
 [ -z $LOGNAME ] && export LOGNAME=$USER
 [ -z $HOME ] && export HOME=/home/$USER
@@ -25,15 +25,10 @@ export USER=beru
 [ -z $DBUS_SESSION_BUS_ADDRESS ] && export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
 
 export HYPRLAND_LOG_WLR=1
-export XCURSOR_SIZE=24
 
 # VM optimizations right here. Uncomment these if you're testing on a VM. Hyprland will lag so hard if you do not.
 # export WLR_NO_HARDWARE_CURSORS=1
 # export WLR_RENDERER_ALLOW_SOFTWARE=1
-
-# change the theme here
-export XCURSOR_THEME=Adwaita
-export GTK_THEME=Adwaita-dark
 
 # And finally this path here as well.
 [ ! -f /run/udev/data/+drm:card1-eDP-1 ] \
