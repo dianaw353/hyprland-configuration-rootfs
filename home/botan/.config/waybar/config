@@ -12,14 +12,9 @@
     "modules-center": ["custom/playerctl", "custom/playerlabel"],
     "modules-right": ["tray", "cpu", "memory", "network", "pulseaudio", "battery","clock", "custom/power"],
     // Modules configuration
-	"clock": {
-		"format": "  {:%H:%M}",
-		"tooltip": "true",
-        	"tooltip-format": "<small>{:%Y %B}</small>\n<tt><small>{calendar}</small></tt>",
-        	"format-alt": "  {:%d/%m}"
-	},
-	
-
+"clock": {
+        "format": "{:  %I:%M %p    %a, %b %d}"
+    },
 	"hyprland/workspaces": {
         "active-only": false,
         "all-outputs": true,
