@@ -161,6 +161,10 @@ possible!
 
 https://wiki.hyprland.org/Nvidia/
 
+## Additional Configurations Unrelated to Hyprland
+
+[GRUB and boot animation configuration](./home/botan/grub-and-bootanim-configuration.mkdn)
+
 # Resources
 
 Main configurations and scripts: https://www.reddit.com/r/hyprland/comments/127m3ef/starting_hyprland_directy_from_systemd_a_guide_to/
