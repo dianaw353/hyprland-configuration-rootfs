@@ -42,7 +42,7 @@ hyprland hyprpaper xdg-desktop-portal-hyprland rofi-lbonn-wayland-git rofi-bluet
 ```
 Utilities:
 ```
-nano hyfetch wezterm zsh starship unzip htop
+nano fastfetch-bin hyfetch wezterm zsh starship unzip btop
 ```
 Sound:
 ```
@@ -75,7 +75,7 @@ sudo pacman -S git
 git clone https://aur.archlinux.org/paru-bin
 cd paru-bin
 makepkg -si
-paru -S hyprland hyprpaper xdg-desktop-portal-hyprland nano hyfetch wezterm starship zsh swaylock-effects swayidle ttf-fira-sans ttf-nerd-fonts-symbols-mono noto-fonts noto-fonts-emoji playerctl dunst libnotify pipewire pipewire-alsa pipewire-audio pipewire-pulse pipewire-jack wireplumber gst-plugin-pipewire pavucontrol htop waybar-hyprland bluez bluez-utils adobe-source-code-pro-fonts adobe-source-han-sans-jp-fonts adobe-source-han-serif-jp-fonts ttf-font-awesome nautilus spotify spicetify-cli ttf-jetbrains-mono-nerd ttf-nerd-fonts-symbols-common ttf-nerd-fonts-symbols unzip networkmanager
+paru -S hyprland hyprpaper xdg-desktop-portal-hyprland nano hyfetch fastfetch-bin wezterm starship zsh swaylock-effects swayidle ttf-fira-sans ttf-nerd-fonts-symbols-mono noto-fonts noto-fonts-emoji playerctl dunst libnotify pipewire pipewire-alsa pipewire-audio pipewire-pulse pipewire-jack wireplumber gst-plugin-pipewire pavucontrol btop waybar-hyprland bluez bluez-utils adobe-source-code-pro-fonts adobe-source-han-sans-jp-fonts adobe-source-han-serif-jp-fonts ttf-font-awesome nautilus spotify spicetify-cli ttf-jetbrains-mono-nerd ttf-nerd-fonts-symbols-common ttf-nerd-fonts-symbols unzip networkmanager
 ```
 
 ## Installation instructions
