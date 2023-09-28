@@ -134,6 +134,25 @@ Then reboot and watch the magic happen!
 Firefox custom home page workaround so it opens in new tab.
 https://peterries.net/blog/firefox-ubuntu-local-file/
 
+## Framework Laptop users, there's a configuration you have to do for a stable system!
+
+Create `/etc/modprobe.d/framework-als-blacklist.conf` and add the following line as its contents;
+
+```
+blacklist hid_sensor_hub
+```
+
+To put it as a command;
+
+```bash
+echo "blacklist hid_sensor_hub" | sudo tee -a /etc/modprobe.d/framework-als-blacklist.conf
+```
+
+<details>
+    <summary>What this does</summary>
+    <p>It blacklists sensor hub so that auto brightness is prevented from working, eventually fixing brightness keys.</p>
+</details>
+
 ## Nvidia users, check this out!
 
 Hyprland has an official documentation prepared for you all! Check it
