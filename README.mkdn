@@ -54,7 +54,7 @@ ttf-fira-sans ttf-font-awesome ttf-nerd-fonts-symbols-mono noto-fonts noto-fonts
 ```
 System controls, notifications:
 ```
- playerctl brightnessctl dunst libnotify networkmanager bluez bluez-utils
+ playerctl brillo dunst libnotify networkmanager bluez bluez-utils
 ```
 Apps:
 ```
@@ -75,7 +75,7 @@ sudo pacman -S git
 git clone https://aur.archlinux.org/paru-bin
 cd paru-bin
 makepkg -si
-paru -S hyprland hyprpaper xdg-desktop-portal-hyprland nano hyfetch wezterm starship zsh swaylock-effects swayidle ttf-fira-sans ttf-nerd-fonts-symbols-mono noto-fonts noto-fonts-emoji playerctl brightnessctl dunst libnotify pipewire pipewire-alsa pipewire-audio pipewire-pulse pipewire-jack wireplumber gst-plugin-pipewire pavucontrol htop waybar-hyprland bluez bluez-utils adobe-source-code-pro-fonts adobe-source-han-sans-jp-fonts adobe-source-han-serif-jp-fonts ttf-font-awesome nautilus spotify spicetify-cli ttf-jetbrains-mono-nerd ttf-nerd-fonts-symbols-common ttf-nerd-fonts-symbols unzip networkmanager
+paru -S hyprland hyprpaper xdg-desktop-portal-hyprland nano hyfetch wezterm starship zsh swaylock-effects swayidle ttf-fira-sans ttf-nerd-fonts-symbols-mono noto-fonts noto-fonts-emoji playerctl dunst libnotify pipewire pipewire-alsa pipewire-audio pipewire-pulse pipewire-jack wireplumber gst-plugin-pipewire pavucontrol htop waybar-hyprland bluez bluez-utils adobe-source-code-pro-fonts adobe-source-han-sans-jp-fonts adobe-source-han-serif-jp-fonts ttf-font-awesome nautilus spotify spicetify-cli ttf-jetbrains-mono-nerd ttf-nerd-fonts-symbols-common ttf-nerd-fonts-symbols unzip networkmanager
 ```
 
 ## Installation instructions
@@ -99,6 +99,21 @@ chmod +x ~/.config/hypr/scripts/resetxdgportal.sh
 sudo systemctl enable getty@tty1.service
 sudo systemctl enable bluetooth.service
 chsh -s /bin/zsh
+cd
+https://github.com/CameronNemo/brillo.git
+cd brillo
+make
+sudo make install.setgid
+```
+
+## update brillo
+
+To update brillo please do the following:
+
+```
+cd brillo
+make
+git pull origin trunk
 ```
 
 Then reboot and watch the magic happen!
