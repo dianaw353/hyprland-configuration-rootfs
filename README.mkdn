@@ -36,62 +36,75 @@ rootfs repo!
 If you're using Arch or its derivative, install the following packages
 using an AUR helper to avoid problems from missing packages;
 
-Hyprland packages & config:
-```
-hyprland hyprpaper xdg-desktop-portal-hyprland rofi-lbonn-wayland-git rofi-bluetooth-git waybar-hyprland
-```
-Utilities:
-```
-nano fastfetch-bin hyfetch wezterm zsh starship unzip btop
-```
-Sound:
-```
-pipewire pipewire-alsa pipewire-audio pipewire-pulse pipewire-jack wireplumber gst-plugin-pipewire pavucontrol
-```
-Fonts, icons & themes:
-```
-ttf-fira-sans ttf-font-awesome ttf-nerd-fonts-symbols-mono noto-fonts noto-fonts-emoji adobe-source-code-pro-fonts adobe-source-han-sans-jp-fonts adobe-source-han-serif-jp-fonts ttf-jetbrains-mono-nerd ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-common
-```
-System controls, notifications:
-```
- playerctl brillo dunst libnotify networkmanager bluez bluez-utils
-```
-Apps:
-```
-nautilus spotify spicetify-cli firefox
-```
-Idle:
-```
-swaylock-effects swayidle 
-```
+<details>
+    <summary>Hyprland packages & config</summary>
+    <code>hyprland hyprpaper xdg-desktop-portal-hyprland rofi-lbonn-wayland-git rofi-bluetooth-git waybar-hyprland</code>
+</details>
+
+<details>
+    <summary>Utilities</summary>
+    <code>nano fastfetch-bin hyfetch wezterm zsh starship unzip btop</code>
+</details>
+
+<details>
+    <summary>Sound</summary>
+    <code>pipewire pipewire-alsa pipewire-audio pipewire-pulse pipewire-jack wireplumber gst-plugin-pipewire pavucontrol</code>
+</details>
+
+<details>
+    <summary>Fonts, icons & themes</summary>
+    <code>ttf-fira-sans ttf-font-awesome ttf-nerd-fonts-symbols-mono noto-fonts noto-fonts-emoji adobe-source-code-pro-fonts adobe-source-han-sans-jp-fonts adobe-source-han-serif-jp-fonts ttf-jetbrains-mono-nerd ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-common</code>
+</details>
+
+<details>
+    <summary>System controls, notifications</summary>
+    <code>playerctl brillo dunst libnotify networkmanager bluez bluez-utils</code>
+</details>
+
+<details>
+    <summary>Apps</summary>
+    <code>nautilus spotify spicetify-cli firefox</code>
+</details>
+
+<details>
+    <summary>Idle</summary>
+    <code>swaylock-effects swayidle</code>
+</details>
 
 If you're not using Arch, you'll have to look for these packages
+
 individually.
 
 ### Recommended way to install on Arch
 
-```
+```bash
 sudo pacman -S git 
-git clone https://aur.archlinux.org/paru-bin
+git clone https://aur.archlinux.org/paru-bin --depth=1
 cd paru-bin
 makepkg -si
-paru -S hyprland hyprpaper xdg-desktop-portal-hyprland nano hyfetch fastfetch-bin wezterm starship zsh swaylock-effects swayidle ttf-fira-sans ttf-nerd-fonts-symbols-mono noto-fonts noto-fonts-emoji playerctl dunst libnotify pipewire pipewire-alsa pipewire-audio pipewire-pulse pipewire-jack wireplumber gst-plugin-pipewire pavucontrol btop waybar-hyprland bluez bluez-utils adobe-source-code-pro-fonts adobe-source-han-sans-jp-fonts adobe-source-han-serif-jp-fonts ttf-font-awesome nautilus spotify spicetify-cli ttf-jetbrains-mono-nerd ttf-nerd-fonts-symbols-common ttf-nerd-fonts-symbols unzip networkmanager
+paru -S hyprland hyprpaper xdg-desktop-portal-hyprland nano hyfetch \
+fastfetch-bin wezterm starship zsh swaylock-effects swayidle \
+ttf-fira-sans ttf-nerd-fonts-symbols-mono noto-fonts noto-fonts-emoji \
+playerctl dunst libnotify pipewire pipewire-alsa pipewire-audio \
+pipewire-pulse pipewire-jack wireplumber gst-plugin-pipewire pavucontrol \
+btop waybar-hyprland bluez bluez-utils adobe-source-code-pro-fonts \
+adobe-source-han-sans-jp-fonts adobe-source-han-serif-jp-fonts \
+ttf-font-awesome nautilus spotify spicetify-cli ttf-jetbrains-mono-nerd \
+ttf-nerd-fonts-symbols-common ttf-nerd-fonts-symbols unzip networkmanager
 ```
 
 ## Installation instructions
 
 Make sure you're logged in as the user who will use Hyprland.
 
-```
+```bash
 git clone https://github.com/Botan-Yuukan/hyprland-configuration-rootfs
 cd hyprland-configuration-rootfs
-cd home
-mv botan $(whoami)
-cd ..
-rm README.mkdn
+mv home/botan home/$(whoami)
 cp -r home/$(whoami)/.config ~/
 cp -r home/$(whoami)/.wallpaper ~/
-cp -r /etc/systemd/system/getty@tty1.service /etc/systemd/system/
+cp -r home/$(whoami)/* ~/
+sudo cp etc/systemd/system/getty@tty1.service /etc/systemd/system/
 echo 'LIBSEAT_BACKEND=logind' | sudo tee -a /etc/environment
 chmod +x ~/hyperland.sh
 chmod +x ~/.config/hypr/scripts/sleep.sh
@@ -100,7 +113,7 @@ sudo systemctl enable getty@tty1.service
 sudo systemctl enable bluetooth.service
 chsh -s /bin/zsh
 cd
-https://github.com/CameronNemo/brillo.git
+git clone https://github.com/CameronNemo/brillo.git -b trunk --depth=1 --no-tags
 cd brillo
 make
 sudo make install.setgid
@@ -110,10 +123,10 @@ sudo make install.setgid
 
 To update brillo please do the following:
 
-```
+```bash
 cd brillo
-make
 git pull origin trunk
+make
 ```
 
 Then reboot and watch the magic happen!
