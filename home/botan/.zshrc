@@ -74,3 +74,9 @@ zinit ice wait lucid from"gh-r" as"program" mv"*/bat -> bat" atload"export BAT_T
 zinit light sharkdp/bat
 
 # vim:ft=zsh
+if pgrep -x "Hyprland" > /dev/null; then
+    # Hyprland is running, so execute hyfetch
+    hyfetch
+else
+    echo "Hyprland is not running."
+fi
