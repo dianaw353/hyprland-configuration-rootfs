@@ -131,6 +131,11 @@ git pull origin trunk
 make
 ```
 
+# Firefox instrustions
+
+Firefox theme instructions are found here
+https://github.com/AmadeusWM/dotfiles-hyprland
+
 Then reboot and watch the magic happen!
 
 Firefox custom home page workaround so it opens in new tab.
