@@ -116,6 +116,9 @@ git clone https://github.com/CameronNemo/brillo.git -b trunk --depth=1 --no-tags
 cd brillo
 make
 sudo make install.setgid
+git clone https://github.com/vinceliuice/Orchis-theme.git --depth=1 --no-tags
+cd Orchis-theme
+./install.sh
 ```
 
 ## update brillo
