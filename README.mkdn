@@ -118,7 +118,7 @@ make
 sudo make install.setgid
 git clone https://github.com/vinceliuice/Orchis-theme.git --depth=1 --no-tags
 cd Orchis-theme
-./install.sh
+./install.sh -c dark -t pink -l
 ```
 
 ## update brillo
