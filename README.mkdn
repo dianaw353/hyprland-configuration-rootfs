@@ -38,7 +38,7 @@ using an AUR helper to avoid problems from missing packages;
 
 <details>
     <summary>Hyprland packages & config</summary>
-    <code>hyprland hyprpaper xdg-desktop-portal-hyprland rofi-lbonn-wayland-git rofi-bluetooth-git waybar-hyprland</code>
+    <code>hyprland swww xdg-desktop-portal-hyprland rofi-lbonn-wayland-git rofi-bluetooth-git waybar-hyprland</code>
 </details>
 
 <details>
@@ -82,7 +82,7 @@ sudo pacman -S git
 git clone https://aur.archlinux.org/paru-bin --depth=1
 cd paru-bin
 makepkg -si
-paru -S hyprland hyprpaper xdg-desktop-portal-hyprland nano hyfetch \
+paru -S hyprland swww xdg-desktop-portal-hyprland nano hyfetch \
 fastfetch-bin wezterm starship zsh swaylock-effects swayidle \
 ttf-fira-sans ttf-nerd-fonts-symbols-mono noto-fonts noto-fonts-emoji \
 playerctl dunst libnotify pipewire pipewire-alsa pipewire-audio \
