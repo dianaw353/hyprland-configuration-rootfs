@@ -1,0 +1,27 @@
+# GRUB and boot animation configuration
+
+These instructions are done with Framework Laptop in mind. If you want to use another theme, go ahead and change it as you wish. You can also skip the theming part if you want to have everything by default.
+
+**Please have GRUB installed prior proceeding, either by reinstalling and choosing GRUB as bootloader, or by manually installing it and doing the switch. There won't be any instructions on how to do that in this README.**
+
+## GRUB theme configuration
+
+We'll be using a fan-made Framework branded theme for instruction purposes, but you can use any theme you want.
+
+1. Get the latest version of Framework theme from [this link](https://github.com/AdisonCavani/distro-grub-themes/raw/master/themes/framework.tar): `wget https://github.com/AdisonCavani/distro-grub-themes/raw/master/themes/framework.tar`
+
+2. Extract it: `tar -xvf framework.tar -C framework`
+
+3. Move it to an acceptable directory: `mv framework /usr/share/grub/themes/`
+
+4. Edit `/etc/default/grub` and change the value of `GRUB_THEME` to `/usr/share/grub/themes/framework/theme.txt`. If this variable doesn't exist, add it yourself.
+
+5. Regenerate GRUB config: `grub-mkconfig -o /boot/grub/grub.cfg`
+
+And you're pretty much good to go.
+
+## Boot animation configuration
+
+This is the simplest one, just install `plymouth` and follow [the Arch wiki page](https://wiki.archlinux.org/title/plymouth) for further instructions.
+
+
