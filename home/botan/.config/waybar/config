@@ -16,7 +16,7 @@
 
     "modules-left": ["custom/padd","custom/l_end","hyprland/workspaces","hyprland/window","custom/r_end","custom/l_end","cpu","memory","temperature","custom/r_end","custom/padd"],
 	"modules-center": ["custom/padd","custom/l_end","clock","custom/r_end","custom/padd"],
-	"modules-right": ["custom/padd","custom/l_end","battery","pulseaudio","network","custom/updates", "custom/r_end","custom/l_end","tray","custom/r_end","custom/l_end","custom/power","custom/r_end","custom/padd"],
+	"modules-right": ["custom/padd","custom/l_end","battery","wireplumber","network", "custom/r_end","custom/l_end","tray","custom/r_end","custom/l_end","custom/power","custom/r_end","custom/padd"],
 
 
 
@@ -97,30 +97,18 @@
         "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
     },
 
-    "pulseaudio": {
-        "format": "{icon} {volume}",
-        "format-muted": "婢",
-    "on-click": "bash ~/.config/waybar/scripts/volume mute",
-        "on-click-right": "/usr/bin/rofi-bluetooth",
-                "tooltip-format": "{icon} {desc} // {volume}%",
-        "scroll-step": 5,
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
-        }
-    },
+"wireplumber": {
+        "tooltip": false,
+        "format": "{volume}% {icon}",
+        "format-muted": "",
+        },
 
     "network": {
                 "format-wifi": "󰤨",
         	"format-linked": " {ifname} (No IP)",
         	"format-disconnected": "󰤭",
           "tooltip-format": "{essid}",
-          "on-click": "~/.local/bin/wifimenu"
+          "on-click": "sh -c '(sleep 0.5s; ~/.local/bin/wifimenu)' & disown",
 	},
 
         "tray": {
@@ -131,7 +119,7 @@
     "custom/power": {
         "format": "{}",
         "exec": "echo ; echo  logout",
-        "on-click": "~/.local/bin/powermenu 2",
+        "on-click": "sh -c '(sleep 0.5s; ~/.local/bin/powermenu)' & disown",
         "interval" : 86400, // once every day
         // "tooltip": true
     },
@@ -164,7 +152,7 @@
     },
 
     "custom/rl_end": {
-        "format": " ",
+        // "format": " ",
         "interval" : "once",
         "tooltip": false
     },

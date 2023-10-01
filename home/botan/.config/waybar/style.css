@@ -25,8 +25,7 @@ window#waybar {
 #window,
 #taskbar,
 #bluetooth,
-#pulseaudio,
-#custom-updates,
+#wireplumber,
 #custom-power,
 #custom-l_end,
 #custom-r_end,
@@ -171,7 +170,7 @@ tooltip {
   color: #ff0000;
 }
 
-#pulseaudio {
+#wireplumber {
   color: #eb2089;
 }
 
