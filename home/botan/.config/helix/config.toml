@@ -1,0 +1,40 @@
+theme = "tokyonight"
+
+[editor]
+#line-number = "relative"
+mouse = false
+auto-format = true
+bufferline = "multiple"
+color-modes = true
+
+[editor.lsp]
+auto-signature-help = false
+display-messages = true
+display-inlay-hints = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.statusline]
+left = ["mode", "spinner", "file-name"]
+center = []
+right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+separator = "│"
+
+[editor.file-picker]
+hidden = false
+
+[editor.soft-wrap]
+enable = true
+max-wrap = 25         # increase value to reduce forced mid-word wrapping
+max-indent-retain = 0
+wrap-indicator = ""   # set wrap-indicator to "" to hide it
+
+
+[editor.indent-guides]
+render = true
+character = "▏" # Some characters that work well: "▏", "┆", "┊", "⸽"
+skip-levels = 1
+
