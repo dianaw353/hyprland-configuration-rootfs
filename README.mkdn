@@ -43,7 +43,7 @@ using an AUR helper to avoid problems from missing packages;
 
 <details>
     <summary>Utilities</summary>
-    <code>helix helixbinhx fastfetch-bin hyfetch wezterm zsh starship unzip btop</code>
+    <code>helix helixbinhx fastfetch-bin hyfetch wezterm zsh starship unzip btop cliphist grim slurp</code>
 </details>
 
 <details>
