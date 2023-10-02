@@ -101,6 +101,7 @@
         "tooltip": false,
         "format": "{volume}% {icon}",
         "format-muted": "",
+	"on-click": "/usr/bin/rofi-bluetooth",
         },
 
     "network": {
