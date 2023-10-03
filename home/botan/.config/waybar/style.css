@@ -18,7 +18,6 @@ window#waybar {
 #cpu,
 #memory,
 #battery,
-#temperature,
 #clock,
 #network,
 #workspaces,
@@ -126,7 +125,7 @@ tooltip {
 }
 
 #clock {
-  color: #f6c177;
+  color: #ffffff;
 }
 
 #workspaces {
@@ -155,31 +154,23 @@ tooltip {
 }
 
 #cpu {
-  color: #ff671f;
+  color: #ffffff;
 }
 
 #memory {
   color: #ffffff;
 }
 
-#temperature {
-  color: #97f993;
-}
-
-#temperature.critical {
-  color: #ff0000;
-}
-
 #wireplumber {
-  color: #eb2089;
+  color: #ffffff;
 }
 
 #battery {
-  color: #6bb0d9;
+  color: #ffffff;
 }
 
 #custom-power {
-  color: #f5a500;
+  color: #ffffff;
 }
 
 #custom-r_end {

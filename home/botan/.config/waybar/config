@@ -14,7 +14,7 @@
 
 // positions generated based on config.ctl //
 
-    "modules-left": ["custom/padd","custom/l_end","hyprland/workspaces","hyprland/window","custom/r_end","custom/l_end","cpu","memory","temperature","custom/r_end","custom/padd"],
+    "modules-left": ["custom/padd","custom/l_end","hyprland/workspaces","hyprland/window","custom/r_end","custom/l_end","cpu","memory","custom/r_end","custom/padd"],
 	"modules-center": ["custom/padd","custom/l_end","clock","custom/r_end","custom/padd"],
 	"modules-right": ["custom/padd","custom/l_end","battery","wireplumber","network", "custom/r_end","custom/l_end","tray","custom/r_end","custom/l_end","custom/power","custom/r_end","custom/padd"],
 
@@ -38,15 +38,7 @@
         "tooltip-format": " {used:0.1f}GB/{total:0.1f}GB"
     },
 
-    "temperature": {
-    // "thermal-zone": 2,
-    // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-    // "critical-threshold": 80,
-    // "format-critical": "{temperatureC}°C ",
-    "format": "{temperatureC}°C "
-    },
-
-    "clock": {
+        "clock": {
         "format": "{: %I:%M %p 󰃭 %a %d}",
         "format-alt": "{:󰥔 %H:%M  %b %Y}",
         "tooltip-format": "<tt><big>{calendar}</big></tt>"
@@ -79,10 +71,9 @@
   "(.*) - Visual Studio Code": "Code 󰨞",
   "(.*) — Dolphin": "Dolphin 󰉋",
   "(.*)Spotify": "Spotify 󰓇",
-  "(.*)Steam": "Steam 󰓓"
- }
-},
-
+  "(.*)Steam": "Steam 󰓓",
+}
+ },
 
     "battery": {
         "states": {
@@ -101,7 +92,7 @@
         "tooltip": false,
         "format": "{volume}% {icon}",
         "format-muted": "",
-	"on-click": "/usr/bin/rofi-bluetooth",
+        "on-click": "/usr/bin/rofi-bluetooth",
         },
 
     "network": {
