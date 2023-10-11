@@ -9,18 +9,8 @@ zstyle :compinstall filename '/home/botan/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
-if [ ];
-then
-        source ~/.profile
-        export SOUCED=1
-fi
-if [ ];
-then
-        source ~/.profile
-        export SOUCED=1
-fi
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-  exec Hyprland
+  exec Hyprland &> .current_session.log
 fi
 
 eval "$(starship init zsh)"
