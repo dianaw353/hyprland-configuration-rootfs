@@ -90,7 +90,8 @@ pipewire-jack wireplumber gst-plugin-pipewire \
 btop waybar-hyprland bluez bluez-utils adobe-source-code-pro-fonts \
 adobe-source-han-sans-jp-fonts adobe-source-han-serif-jp-fonts \
 ttf-font-awesome mupdf nautilus spotify spicetify-cli ttf-jetbrains-mono-nerd \
-ttf-nerd-fonts-symbols-common ttf-nerd-fonts-symbols unzip networkmanager
+ttf-nerd-fonts-symbols-common ttf-nerd-fonts-symbols unzip networkmanager \
+go-md2man rofi-lbonn-wayland-git rofi-bluetooth-git
 ```
 
 ## Installation instructions
@@ -102,6 +103,8 @@ git clone https://github.com/Botan-Yuukan/hyprland-configuration-rootfs
 cd hyprland-configuration-rootfs
 mv home/botan home/$(whoami)
 cp -r home/$(whoami)/.config ~/
+mkdir ~/.local && mkdir ~/.local/bin
+cp -r home/$(whoami)/.local ~/
 cp -r home/$(whoami)/.wallpaper ~/
 cp -r home/$(whoami)/* ~/
 sudo cp etc/systemd/system/getty@tty1.service /etc/systemd/system/
@@ -153,6 +156,7 @@ To put it as a command;
 
 ```bash
 echo "blacklist hid_sensor_hub" | sudo tee -a /etc/modprobe.d/framework-als-blacklist.conf
+sudo chmod a+w /sys/class/backlight/intel_backlight/brightness
 ```
 
 <details>
