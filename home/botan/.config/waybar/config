@@ -16,11 +16,19 @@
 
     "modules-left": ["custom/padd","custom/l_end","hyprland/workspaces","hyprland/window","custom/r_end","custom/l_end","cpu","memory","custom/r_end","custom/padd"],
 	"modules-center": ["custom/padd","custom/l_end","clock","custom/r_end","custom/padd"],
-	"modules-right": ["custom/padd","custom/l_end","battery","wireplumber","network", "custom/r_end","custom/l_end","tray","custom/r_end","custom/l_end","custom/power","custom/r_end","custom/padd"],
-
-
+	"modules-right": ["custom/padd","custom/l_end","battery","backlight","wireplumber","network","custom/r_end","custom/l_end","tray","custom/r_end","custom/l_end","custom/power","custom/r_end","custom/padd"],
 
 // sourced from modules based on config.ctl //
+
+"backlight": {
+    "format": "{icon} {percent}%",
+    "format-icons": [
+      "󰃞",
+      "󰃟",
+      "󰃝",
+      "󰃠"
+    ],
+    },
 
     "cpu": {
         "interval": 10,
@@ -46,7 +54,7 @@
 
         "hyprland/workspaces": {
         "disable-scroll": true,
-        "all-outputs": true,
+        // "all-outputs": true,
         "on-click": "activate",
         "persistent_workspaces": {
             "1": [],
@@ -89,18 +97,23 @@
     },
 
 "wireplumber": {
-        "tooltip": false,
-        "format": "{volume}% {icon}",
-        "format-muted": "",
+        "format": "{icon} {volume}%",
+        "format-muted": "",
+"format-bluetooth": "{icon} {volume}%",
+    "format-bluetooth-muted": "  {icon}",
         "on-click": "/usr/bin/rofi-bluetooth",
+        "format-icons": {
+			"default": ["󰕿", "󰖀", "󰕾"]
+		},
         },
 
-    "network": {
-                "format-wifi": "󰤨",
-        	"format-linked": " {ifname} (No IP)",
-        	"format-disconnected": "󰤭",
-          "tooltip-format": "{essid}",
-          "on-click": "sh -c '(sleep 0.5s; ~/.local/bin/wifimenu)' & disown",
+"network": {
+		"format-wifi": "{icon} {essid}",
+		"format-ethernet": "{ifname}",
+		"format-disconnected": "",
+		"max-length": 50,
+		"on-click": "sh -c '(sleep 0.5s; ~/.local/bin/wifimenu)' & disown",
+		"format-icons": ["󰤯","󰤟", "󰤢", "󰤥", "󰤨"]
 	},
 
         "tray": {

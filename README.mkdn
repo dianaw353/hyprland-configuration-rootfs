@@ -91,7 +91,7 @@ btop waybar-hyprland bluez bluez-utils adobe-source-code-pro-fonts \
 adobe-source-han-sans-jp-fonts adobe-source-han-serif-jp-fonts \
 ttf-font-awesome mupdf nautilus spotify spicetify-cli ttf-jetbrains-mono-nerd \
 ttf-nerd-fonts-symbols-common ttf-nerd-fonts-symbols unzip networkmanager \
-go-md2man rofi-lbonn-wayland-git rofi-bluetooth-git
+go-md2man rofi-lbonn-wayland-git rofi-bluetooth-git grim slurp
 ```
 
 ## Installation instructions
@@ -104,6 +104,7 @@ cd hyprland-configuration-rootfs
 mv home/botan home/$(whoami)
 cp -r home/$(whoami)/.config ~/
 mkdir ~/.local && mkdir ~/.local/bin
+mkdir ~/Pictures && mkdir ~/Pictures/screenshots
 cp -r home/$(whoami)/.local ~/
 cp -r home/$(whoami)/.wallpaper ~/
 cp -r home/$(whoami)/* ~/
@@ -156,7 +157,6 @@ To put it as a command;
 
 ```bash
 echo "blacklist hid_sensor_hub" | sudo tee -a /etc/modprobe.d/framework-als-blacklist.conf
-sudo chmod a+w /sys/class/backlight/intel_backlight/brightness
 ```
 
 <details>

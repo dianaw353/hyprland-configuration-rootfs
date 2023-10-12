@@ -23,7 +23,7 @@ window#waybar {
 #workspaces,
 #window,
 #taskbar,
-#bluetooth,
+#backlight,
 #wireplumber,
 #custom-power,
 #custom-l_end,
@@ -165,6 +165,8 @@ tooltip {
   color: #ffffff;
 }
 
+#network,
+#backlight,
 #battery {
   color: #ffffff;
 }
