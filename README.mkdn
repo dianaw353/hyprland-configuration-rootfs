@@ -18,7 +18,7 @@ most expected outcome.
 8. pyfetch (Neofetch) theme
 9. waybar basic config
 10. desktop notificications 
-11. wezterm config
+
 
 ## Wait, but my system configuration doesn't match with yours!
 
@@ -43,7 +43,7 @@ using an AUR helper to avoid problems from missing packages;
 
 <details>
     <summary>Utilities</summary>
-    <code>helix helixbinhx fastfetch-bin hyfetch wezterm zsh starship unzip btop cliphist grim slurp</code>
+    <code>helix helixbinhx fastfetch-bin hyfetch foot zsh starship unzip btop cliphist grim slurp</code>
 </details>
 
 <details>
@@ -83,7 +83,7 @@ git clone https://aur.archlinux.org/paru-bin --depth=1
 cd paru-bin
 makepkg -si
 paru -S hyprland swww xdg-desktop-portal-hyprland helix helixbinhx hyfetch \
-fastfetch-bin wezterm starship zsh swaylock-effects swayidle \
+fastfetch-bin foot starship zsh swaylock-effects swayidle \
 ttf-fira-sans ttf-nerd-fonts-symbols-mono noto-fonts noto-fonts-emoji \
 playerctl dunst libnotify pipewire pipewire-alsa pipewire-audio \
 pipewire-jack wireplumber gst-plugin-pipewire \
