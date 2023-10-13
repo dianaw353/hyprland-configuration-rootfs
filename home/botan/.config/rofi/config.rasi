@@ -69,7 +69,7 @@ listview {
     padding:                     10px;
     spacing:                     10px;
     enabled:                     true;
-    columns:                     2;
+    columns:                     1;
     cycle:                       true;
     dynamic:                     true;
     scrollbar:                   false;

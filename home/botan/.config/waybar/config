@@ -16,7 +16,7 @@
 
     "modules-left": ["custom/padd","custom/l_end","hyprland/workspaces","hyprland/window","custom/r_end","custom/l_end","cpu","memory","custom/r_end","custom/padd"],
 	"modules-center": ["custom/padd","custom/l_end","clock","custom/r_end","custom/padd"],
-	"modules-right": ["custom/padd","custom/l_end","battery","backlight","wireplumber","network","custom/r_end","custom/l_end","tray","custom/r_end","custom/l_end","custom/power","custom/r_end","custom/padd"],
+	"modules-right": ["custom/padd","custom/l_end","battery","backlight","wireplumber","network","custom/r_end","custom/l_end","tray","custom/power","custom/r_end","custom/padd"],
 
 // sourced from modules based on config.ctl //
 
@@ -116,15 +116,14 @@
 		"format-icons": ["󰤯","󰤟", "󰤢", "󰤥", "󰤨"]
 	},
 
-        "tray": {
-      "icon-size": 20,
-        "spacing": 9,
-     },
+    "tray": {
+        "spacing": 5,
+    },
 
     "custom/power": {
         "format": "{}",
         "exec": "echo ; echo  logout",
-        "on-click": "sh -c '(sleep 0.5s; ~/.local/bin/powermenu)' & disown",
+        "on-click": "wlogout -b 2",
         "interval" : 86400, // once every day
         // "tooltip": true
     },

@@ -1,3 +1,4 @@
+#theme = "catppuccin"
 theme = "base16_transparent"
 [editor]
 #line-number = "relative"
