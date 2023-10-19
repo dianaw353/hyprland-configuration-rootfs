@@ -54,13 +54,15 @@ tooltip {
 #workspaces button {
   box-shadow: none;
   text-shadow: none;
-  padding: 0px;
-  border-radius: 9px;
+  border-radius: 16px;
+  padding: 0px 5px;
+  margin: 0px 3px;
   margin-top: 3px;
   margin-bottom: 3px;
   padding-left: 3px;
   padding-right: 3px;
-  color: @wb-color;
+  color: #2f354a;
+  background-color: #2f354a;
   animation: gradient_f 20s ease-in infinite;
   transition: all 0.5s cubic-bezier(.55, -0.68, .48, 1.682);
 }
@@ -68,6 +70,7 @@ tooltip {
 #workspaces button.active {
   background: @wb-act-bg;
   color: @wb-act-color;
+  border-radius: 16px;
   margin-left: 3px;
   padding-left: 12px;
   padding-right: 12px;
@@ -79,6 +82,7 @@ tooltip {
 #workspaces button:hover {
   background: @wb-hvr-bg;
   color: @wb-hvr-color;
+  border-radius: 16px;
   padding-left: 3px;
   padding-right: 3px;
   animation: gradient_f 20s ease-in infinite;

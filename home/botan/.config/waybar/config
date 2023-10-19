@@ -52,24 +52,23 @@
         "tooltip-format": "<tt><big>{calendar}</big></tt>"
     },
 
-        "hyprland/workspaces": {
-        "disable-scroll": true,
-        // "all-outputs": true,
-        "on-click": "activate",
-        "persistent_workspaces": {
-            "1": [],
-            "2": [],
-            "3": [],
-            "4": [],
-            "5": [],
-            "6": [],
-            "7": [],
-            "8": [],
-            "9": [],
-            "10": []
-        }
+"hyprland/workspaces": {
+  "active-only": false,
+  "all-outputs": true,
+  "disable-scroll": false,
+  "on-scroll-up": "hyprctl dispatch workspace e-1",
+  "on-scroll-down": "hyprctl dispatch workspace e+1",
+  "format": "{icon}",
+  "on-click": "activate",
+  "format-icons": {
+    "urgent": "",
+    "active": "",
+    "default": "",
+    "sort-by-number": true
     },
+  },
 
+    
 "hyprland/window": {
  "format": "  {}",
  "separate-outputs": true,
@@ -98,9 +97,7 @@
 
 "wireplumber": {
         "format": "{icon} {volume}%",
-        "format-muted": "",
-"format-bluetooth": "{icon} {volume}%",
-    "format-bluetooth-muted": "  {icon}",
+        "format-muted": " ",
         "on-click": "/usr/bin/rofi-bluetooth",
         "format-icons": {
 			"default": ["󰕿", "󰖀", "󰕾"]
