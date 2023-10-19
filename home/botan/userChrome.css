@@ -1,0 +1,25 @@
+#sidebar-header{ display: none }
+
+#TabsToolbar {
+    visibility: collapse;
+}
+
+#urlbar-background,#urlbar {
+    border-radius: 20px !important;
+}
+
+#urlbar {	/*Address Bar*/
+	border-radius: 20px !important;
+	border-style: solid !important;
+	border-color: pink !important;
+	border-width: 2px !important;
+}
+
+@-moz-document url(chrome://browser/content/browser.xul),
+               url(chrome://browser/content/browser.xhtml) {
+    #urlbar-background{
+        background-color: black !important;
+    }
+}
+
+#nav-bar{ --toolbar-bgcolor: #0b1016 }
