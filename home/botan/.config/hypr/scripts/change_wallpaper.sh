@@ -1,4 +1,4 @@
-#!/bin/bash
+K#!/bin/bash
 
 # Define the function for getting a random wallpaper
 get_random_wallpaper() {
@@ -7,7 +7,14 @@ get_random_wallpaper() {
 
   # Check if the directory exists
   if [ ! -d "$dir" ]; then
-    echo "Wallpaper directory $dir does not exist."
+    notify-send "Wallpaper directory $dir does not exist."
+    exit 1
+  fi
+
+  # Check if there are any wallpapers in the directory
+  num_wallpapers=$(find "$dir" -name '*.jpg' -o -name '*.png' -o -name '*.gif' | wc -l)
+  if [ "$num_wallpapers" -eq 0 ]; then
+    notify-send "No wallpapers found in $dir."
     exit 1
   fi
 
@@ -23,12 +30,6 @@ get_random_wallpaper() {
     wallpaper=$(find "$dir" -name '*.jpg' -o -name '*.png' -o -name '*.gif' | shuf -n1)
   done
 
-  # Check if a wallpaper was found
-  if [ -z "$wallpaper" ]; then
-    echo "No wallpapers found in $dir."
-    exit 1
-  fi
-
   # Store the new wallpaper as the current wallpaper
   echo "$wallpaper" > "$current_wallpaper_file"
 
@@ -38,13 +39,21 @@ get_random_wallpaper() {
 # Define the function for setting wallpapers in Hyprland
 set_wallpaper_hyprland() {
   BG=$(get_random_wallpaper)
+  
+  # Check if a wallpaper was found
+  if [ $? -eq 1 ]; then
+    exit 1
+  fi
+
   PROGRAM="swww-daemon"
 
-  # Check if the program is running
+   # Check if the program is running
   if pgrep "$PROGRAM" >/dev/null; then
     swww img "$BG" -t any --transition-bezier 0.0,0.0,1.0,1.0 --transition-duration .8 --transition-step 255 --transition-fps 60
+    notify-send "Wallpaper changed" -i "$BG"
   else
     swww init && swww img "$BG" -t any --transition-bezier 0.0,0.0,1.0,1.0 --transition-duration .8 --transition-step 255 --transition-fps 60
+    notify-send "Wallpaper changed" -i "$BG"
   fi
 }
 

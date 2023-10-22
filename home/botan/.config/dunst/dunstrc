@@ -43,6 +43,9 @@
     hide_duplicate_count = false
     show_indicators = yes
 
+    ### Events ###
+    mouse_right_click = do_action
+    
     ### Icons ###
 
     icon_position = left
