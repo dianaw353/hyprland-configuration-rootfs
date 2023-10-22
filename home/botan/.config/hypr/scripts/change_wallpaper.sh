@@ -1,4 +1,4 @@
-K#!/bin/bash
+#!/bin/bash
 
 # Define the function for getting a random wallpaper
 get_random_wallpaper() {
@@ -12,9 +12,13 @@ get_random_wallpaper() {
   fi
 
   # Check if there are any wallpapers in the directory
+  # Check if there are any wallpapers in the directory
   num_wallpapers=$(find "$dir" -name '*.jpg' -o -name '*.png' -o -name '*.gif' | wc -l)
   if [ "$num_wallpapers" -eq 0 ]; then
     notify-send "No wallpapers found in $dir."
+    exit 1
+  elif [ "$num_wallpapers" -eq 1 ]; then
+    notify-send "Only one wallpaper found in $dir."
     exit 1
   fi
 
