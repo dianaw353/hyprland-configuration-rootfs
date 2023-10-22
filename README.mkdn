@@ -159,6 +159,12 @@ To put it as a command;
 echo "blacklist hid_sensor_hub" | sudo tee -a /etc/modprobe.d/framework-als-blacklist.conf
 ```
 
+Or this command if you use a different initial ramdisk environment like booster.
+
+'''
+sudo modprobe -i hid_sensor_hub 
+'''
+
 <details>
     <summary>What this does</summary>
     <p>It blacklists sensor hub so that auto brightness is prevented from working, eventually fixing brightness keys.</p>
