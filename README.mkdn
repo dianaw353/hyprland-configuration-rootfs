@@ -140,6 +140,9 @@ make
 
 # Firefox instrustions
 
+Follow this guide to enable userchrome css (custom firefox themes):
+https://winaero.com/enable-loading-userchrome-css-usercontent-css-firefox/
+
 Firefox theme instructions are found here
 https://github.com/AmadeusWM/dotfiles-hyprland
 
