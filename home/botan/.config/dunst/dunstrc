@@ -1,7 +1,7 @@
 [global]
     monitor = 0
     follow = none
-    width = 300
+    width = 400
     height = 300
     origin = top-right
     offset = 20x20
@@ -31,7 +31,7 @@
 
     ### Text ###
 
-    font = mononoki Nerd Font 8
+    font = mononoki Nerd Font 12
     line_height = 3
     markup = full
     alignment = left
