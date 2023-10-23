@@ -6,7 +6,7 @@ font="Inter"
 indicator
 indicator-radius=200
 indicator-thickness=20
-line-color=1f1d2e
+line-color=cdd6f4ff
 ring-color=191724
 inside-color=1f1d2e
 key-hl-color=eb6f92
