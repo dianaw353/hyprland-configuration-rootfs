@@ -1,0 +1,104 @@
+:root,
+panel,
+dialog,
+window {
+ --lwt-toolbarbutton-icon-fill-attention: pink !important;
+ --button-primary-bgcolor: pink !important;
+ --button-primary-hover-bgcolor: pink !important;
+ --button-primary-active-bgcolor: pink !important;
+ --in-content-primary-button-background: pink !important;
+ --in-content-primary-button-background-hover: pink !important;
+ --in-content-primary-button-background-active: pink !important;
+ --input-border-color: pink !important;
+ --uc-checkbox-checked-bgcolor: pink !important;
+ --checkbox-checked-bgcolor: pink !important;
+ --focus-outline-color: pink !important;
+ --in-content-link-color: pink !important;
+}
+
+.tab-background:not(selected) {
+    border: 3px solid pink !important;
+    box-shadow: none !important;
+    border-radius: 20px !important;
+}
+
+#urlbar-background,#urlbar {
+    border-radius: 20px !important;
+}
+
+#urlbar {	/*Address Bar*/
+	border-radius: 20px !important;
+	border-style: solid !important;
+	border-color: pink !important;
+	border-width: 3px !important;
+}
+
+@-moz-document url(chrome://browser/content/browser.xul),
+               url(chrome://browser/content/browser.xhtml) {
+    #urlbar-background{
+        background-color: black !important;
+    }
+}
+
+#nav-bar{ --toolbar-bgcolor: #0b1016 }
+
+#toolbar-menubar[autohide="true"] > .titlebar-buttonbox-container,
+#TabsToolbar > .titlebar-buttonbox-container{
+  position: fixed;
+  display: block;
+  top: 0px;
+  right:0;
+  height: 40px;
+}
+@media (-moz-bool-pref: "userchrome.force-window-controls-on-left.enabled"),
+       (-moz-gtk-csd-reversed-placement),
+       (-moz-platform: macos){
+  .titlebar-buttonbox-container{ left:0; right: unset !important; }
+}
+@supports -moz-bool-pref("userchrome.force-window-controls-on-left.enabled"){
+  .titlebar-buttonbox-container{ left:0; right: unset !important; }
+}
+
+:root[uidensity="compact"] #TabsToolbar > .titlebar-buttonbox-container{ height: 32px }
+
+#toolbar-menubar[inactive] > .titlebar-buttonbox-container{ opacity: 0 }
+
+.titlebar-buttonbox-container > .titlebar-buttonbox{ height: 100%; }
+
+#titlebar{
+  order: 2;
+  -moz-appearance: none !important;
+  --tabs-navbar-shadow-size: 0px;
+  --uc-menubar-vertical-overlap: 19px; /* for hide_tabs_with_one_tab_w_window_controls.css compatibility */
+}
+/* Re-order window and tab notification boxes */
+#navigator-toolbox > div{ display: contents }
+.global-notificationbox,
+#tab-notification-deck{
+  order: 2;
+}
+
+#TabsToolbar .titlebar-spacer{ display: none; }
+/* Also hide the toolbox bottom border which isn't at bottom with this setup */
+#navigator-toolbox::after{ display: none !important; }
+
+@media (-moz-gtk-csd-close-button){
+  .titlebar-button{
+    flex-direction: column;
+  }
+}
+
+/* At Activated Menubar */
+:root:not([chromehidden~="menubar"], [sizemode="fullscreen"]) #toolbar-menubar:not([autohide="true"]) + #TabsToolbar > .titlebar-buttonbox-container {
+  display: block !important;
+}
+#toolbar-menubar:not([autohide="true"]) > .titlebar-buttonbox-container {
+  visibility: hidden;
+}
+
+/* These exist only for compatibility with autohide-tabstoolbar.css */
+toolbox#navigator-toolbox > toolbar#nav-bar.browser-toolbar{ animation: none; }
+#navigator-toolbox:hover #TabsToolbar{ animation: slidein ease-out 48ms 1 }
+#TabsToolbar > .titlebar-buttonbox-container{ visibility: visible }
+#navigator-toolbox:not(:-moz-lwtheme){ background-color: -moz-dialog }
+
