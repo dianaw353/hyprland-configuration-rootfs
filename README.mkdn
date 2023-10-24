@@ -140,6 +140,8 @@ make
 
 # Firefox instrustions
 
+Use the Firefox Sidebery extention with the firefox theme
+
 Follow this guide to enable userchrome css (custom firefox themes):
 https://winaero.com/enable-loading-userchrome-css-usercontent-css-firefox/
 
