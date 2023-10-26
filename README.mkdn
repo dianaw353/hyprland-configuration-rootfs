@@ -144,6 +144,7 @@ Use the Firefox Sidebery extention with the firefox theme
 
 browser.newtabpage.activity-stream.feeds.section.topstories.options = false
 identity.fxaccounts.enabled = false
+browser.preferences.moreFromMozilla = false - hides more from mozilla catagory
 
 Follow this guide to enable userchrome css (custom firefox themes):
 https://winaero.com/enable-loading-userchrome-css-usercontent-css-firefox/
