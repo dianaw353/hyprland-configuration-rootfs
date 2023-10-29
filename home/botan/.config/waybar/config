@@ -14,7 +14,7 @@
 
 // positions generated based on config.ctl //
 
-    "modules-left": ["custom/padd","custom/l_end","hyprland/workspaces","hyprland/window","custom/r_end","custom/l_end","cpu","memory","custom/r_end","custom/padd"],
+    "modules-left": ["custom/padd","custom/l_end","hyprland/workspaces","hyprland/window","custom/r_end","custom/padd"],
 	"modules-center": ["custom/padd","custom/l_end","clock","custom/r_end","custom/padd"],
 	"modules-right": ["custom/padd","custom/l_end","tray","battery","backlight","wireplumber","bluetooth","network","custom/r_end","custom/l_end","custom/power","custom/r_end","custom/padd"],
 
@@ -39,23 +39,8 @@
     ],
     },
 
-    "cpu": {
-        "interval": 10,
-        "format": "󰍛 {usage}%",
-        "format-alt": "{icon0}{icon1}{icon2}{icon3}",
-        "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
-    },
 
-    "memory": {
-        "interval": 30,
-        "format": "󰾆 {percentage}%",
-        "format-alt": "󰾅 {used}GB",
-        "max-length": 30,
-        "tooltip": true,
-        "tooltip-format": " {used:0.1f}GB/{total:0.1f}GB"
-    },
-
-        "clock": {
+    "clock": {
         "format": "{: %I:%M %p 󰃭 %a %d}",
         "format-alt": "{:󰥔 %H:%M  %b %Y}",
         "tooltip-format": "<tt><big>{calendar}</big></tt>"
@@ -83,7 +68,7 @@
  "separate-outputs": true,
  "rewrite": {
   "vivek@ArchVivek:(.*)": "$1 ",
-  "(.*) — Mozilla Firefox": "Firefox 󰈹",
+  "(.*) — LibreWolf": "Librewolf 󰈹",
   "(.*) - Visual Studio Code": "Code 󰨞",
   "(.*) — Dolphin": "Dolphin 󰉋",
   "(.*)Spotify": "Spotify 󰓇",

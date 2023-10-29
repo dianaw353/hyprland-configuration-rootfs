@@ -12,11 +12,9 @@
 
 window#waybar {
   background: rgba(21, 18, 27, 0);
-  color: #ebbcba;
+  color: #F8C8DC;
 }
 
-#cpu,
-#memory,
 #battery,
 #clock,
 #network,
@@ -49,7 +47,7 @@ tooltip {
   border-radius: 22px;
   border-width: 2px;
   border-style: solid;
-  border-color: #F5A9B8;
+  border-color: #F8C8DC;
 }
 
 #workspaces button {
@@ -124,13 +122,13 @@ tooltip {
   transition: all 0.3s cubic-bezier(.55, -0.68, .48, 1.682);
 }
 
-#workspaces,
+#workspaces
 #taskbar {
   padding: 0px;
 }
 
 #clock {
-  color: #ffffff;
+  color: #C3B1E1;
 }
 
 #workspaces {
@@ -158,26 +156,27 @@ tooltip {
   color: #ebbcba;
 }
 
-#cpu {
-  color: #ffffff;
-}
-
-#memory {
-  color: #ffffff;
-}
-
 #wireplumber {
-  color: #ffffff;
+  color: #FAC898;
 }
 
-#network,
-#backlight,
+#network {
+  color: #C3B1E1;
+}
+#backlight {
+  color: #FFFAA0;
+}
+
 #battery {
-  color: #ffffff;
+  color: #C1E1C1;
+}
+
+#bluetooth {
+  color: #F8C8DC;
 }
 
 #custom-power {
-  color: #ffffff;
+  color: #FAA0A0;
 }
 
 #custom-r_end {
