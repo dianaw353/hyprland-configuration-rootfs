@@ -15,7 +15,6 @@ most expected outcome.
 5. Configurs swayidle so it locks after x amount of time
 6. Configures swayidle to lock devide when lid is shut
 7. Hypr bind configs for sound and player buttons
-8. pyfetch (Neofetch) theme
 9. waybar basic config
 10. desktop notificications 
 
@@ -43,7 +42,7 @@ using an AUR helper to avoid problems from missing packages;
 
 <details>
     <summary>Utilities</summary>
-    <code>helix helixbinhx fastfetch-bin hyfetch foot zsh starship unzip btop cliphist grim slurp</code>
+    <code>helix helixbinhx pfetch-rs foot zsh starship unzip bottom cliphist grim slurp</code>
 </details>
 
 <details>
@@ -82,12 +81,12 @@ sudo pacman -S git
 git clone https://aur.archlinux.org/paru-bin --depth=1
 cd paru-bin
 makepkg -si
-paru -S hyprland swww xdg-desktop-portal-hyprland helix helixbinhx hyfetch \
-fastfetch-bin foot starship zsh swaylock-effects swayidle \
+paru -S hyprland swww xdg-desktop-portal-hyprland helix helixbinhx pfetch-rs \
+bottom foot starship zsh swaylock-effects swayidle \
 ttf-fira-sans ttf-nerd-fonts-symbols-mono noto-fonts noto-fonts-emoji \
 playerctl dunst libnotify pipewire pipewire-alsa pipewire-audio \
 pipewire-jack wireplumber gst-plugin-pipewire \
-btop waybar-hyprland bluez bluez-utils adobe-source-code-pro-fonts \
+waybar-hyprland bluez bluez-utils adobe-source-code-pro-fonts \
 adobe-source-han-sans-jp-fonts adobe-source-han-serif-jp-fonts \
 ttf-font-awesome mupdf nautilus spotify spicetify-cli ttf-jetbrains-mono-nerd \
 ttf-nerd-fonts-symbols-common ttf-nerd-fonts-symbols unzip networkmanager \
