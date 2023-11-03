@@ -194,12 +194,9 @@ https://wiki.hyprland.org/Nvidia/
 [GRUB and boot animation configuration](./home/botan/grub-and-bootanim-configuration.mkdn)
 
 # Resources
+Thanks to everyone below and many other I forgot to add...
 
 Main configurations and scripts: https://www.reddit.com/r/hyprland/comments/127m3ef/starting_hyprland_directy_from_systemd_a_guide_to/
 
 Swaylock config: https://gitlab.com/stephan-raabe/dotfiles/-/blob/main/swaylock/config
 
-# Thanks to
-
-[@Botan-Yuukan](https://github.com/Botan-Yuukan) for helping me
-throughout everything related to this repo.
