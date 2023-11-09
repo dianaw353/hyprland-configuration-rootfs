@@ -30,22 +30,22 @@ window#waybar {
 #custom-sl_end,
 #custom-sr_end,
 #custom-rl_end,
-#custom-rr_end,
-#tray {
+#custom-rr_end {
   color: @main-color;
   background: #191724;
   opacity: 1;
   margin: 4px 0px 4px 0px;
   padding-left: 4px;
   padding-right: 4px;
-  border: 0px solid #181825;
+  border:solid;
+  border-color:#F8C8DC;
 }
 
 tooltip {
   background: @tool-bg;
   color: @tool-color;
   border-radius: 22px;
-  border-width: 2px;
+  border-width: 3px;
   border-style: solid;
   border-color: #F8C8DC;
 }
@@ -122,17 +122,28 @@ tooltip {
   transition: all 0.3s cubic-bezier(.55, -0.68, .48, 1.682);
 }
 
+#window {
+  border-top-width: 3px; 
+  border-bottom-width: 3px; 
+}
+
 #workspaces
 #taskbar {
   padding: 0px;
+  border-top-width: 3px; 
+  border-bottom-width: 3px; 
 }
 
 #clock {
   color: #C3B1E1;
+  border-top-width: 3px;
+  border-bottom-width: 3px;
 }
 
 #workspaces {
   background: #191724;
+  border-top-width: 3px; 
+  border-bottom-width: 3px; 
 }
 
 #workspaces button {}
@@ -158,37 +169,55 @@ tooltip {
 
 #wireplumber {
   color: #FAC898;
+  border-top-width: 3px; 
+  border-bottom-width: 3px; 
 }
 
 #network {
   color: #C3B1E1;
+  border-top-width: 3px; 
+  border-bottom-width: 3px; 
 }
 #backlight {
   color: #FFFAA0;
+  border-top-width: 3px; 
+  border-bottom-width: 3px; 
 }
 
 #battery {
   color: #C1E1C1;
+  border-top-width: 3px; 
+  border-bottom-width: 3px; 
 }
 
 #bluetooth {
   color: #F8C8DC;
+  border-top-width: 3px; 
+  border-bottom-width: 3px; 
 }
 
 #custom-power {
   color: #FAA0A0;
+  border-top-width: 3px; 
+  border-bottom-width: 3px; 
 }
 
 #custom-r_end {
   border-radius: 0px 22px 22px 0px;
   margin-right: 9px;
   padding-right: 3px;
-}
+  border-right-width: 3px;
+  border-top-width: 3px;
+  border-bottom-width: 3px; 
+  }
 
 #custom-l_end {
   border-radius: 22px 0px 0px 22px;
   margin-left: 9px;
   padding-left: 3px;
+  border-left-width: 3px;
+  border-top-width: 3px; 
+  border-bottom-width: 3px; 
 }
 
 #custom-sr_end {

@@ -16,7 +16,7 @@
 
     "modules-left": ["custom/padd","custom/l_end","hyprland/workspaces","hyprland/window","custom/r_end","custom/padd"],
 	"modules-center": ["custom/padd","custom/l_end","clock","custom/r_end","custom/padd"],
-	"modules-right": ["custom/padd","custom/l_end","tray","battery","backlight","wireplumber","bluetooth","network","custom/r_end","custom/l_end","custom/power","custom/r_end","custom/padd"],
+	"modules-right": ["custom/padd","custom/l_end","battery","backlight","wireplumber","bluetooth","network","custom/r_end","custom/l_end","custom/power","custom/r_end","custom/padd"],
 
 // sourced from modules based on config.ctl //
 
@@ -106,11 +106,6 @@
 		"on-click": "sh -c '(sleep 0.5s; ~/.local/bin/wifimenu)' & disown",
 		"format-icons": ["󰤯","󰤟", "󰤢", "󰤥", "󰤨"]
 	},
-
-    "tray": {
-        "icon-size": 17,
-        "spacing": 8,
-    },
 
     "custom/power": {
         "format": "{}",
