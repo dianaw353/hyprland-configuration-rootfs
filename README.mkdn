@@ -172,9 +172,9 @@ echo "blacklist hid_sensor_hub" | sudo tee -a /etc/modprobe.d/framework-als-blac
 
 Or this command if you use a different initial ramdisk environment like booster.
 
-'''
+```
 sudo modprobe -i hid_sensor_hub 
-'''
+```
 
 <details>
     <summary>What this does</summary>
