@@ -52,7 +52,7 @@ using an AUR helper to avoid problems from missing packages;
 
 <details>
     <summary>Fonts, icons & themes</summary>
-    <code>ttf-fira-sans ttf-font-awesome ttf-nerd-fonts-symbols-mono noto-fonts noto-fonts-emoji adobe-source-code-pro-fonts adobe-source-han-sans-jp-fonts adobe-source-han-serif-jp-fonts ttf-jetbrains-mono-nerd ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-common</code>
+    <code>ttf-fira-sans ttf-font-awesome ttf-nerd-fonts-symbols-mono gnu-free-fonts noto-fonts-emoji adobe-source-code-pro-fonts adobe-source-han-sans-jp-fonts adobe-source-han-serif-jp-fonts ttf-jetbrains-mono-nerd ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-common</code>
 </details>
 
 <details>
@@ -83,7 +83,7 @@ cd paru-bin
 makepkg -si
 paru -S hyprland swww xdg-desktop-portal-hyprland helix helixbinhx pfetch-rs \
 bottom foot starship zsh swaylock-effects swayidle cliphist xdg-user-dirs\
-ttf-fira-sans ttf-nerd-fonts-symbols-mono noto-fonts noto-fonts-emoji \
+ttf-fira-sans ttf-nerd-fonts-symbols-mono gnu-free-fonts noto-fonts-emoji \
 playerctl mako libnotify pipewire pipewire-alsa pipewire-audio \
 pipewire-jack wireplumber gst-plugin-pipewire librewolf-bin\
 waybar-hyprland bluez bluez-utils adobe-source-code-pro-fonts \
