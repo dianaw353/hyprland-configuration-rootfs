@@ -1,40 +1,31 @@
-# Lines configured by zsh-newuser-install
+# History settings
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
+
+# Key bindings
 bindkey -e
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
-zstyle :compinstall filename '/home/botan/.zshrc'
+
+# Completion settings
 autoload -Uz compinit
 compinit
-# End of lines added by compinstall
 
+# Starship prompt
 eval "$(starship init zsh)"
-##
-## Plugins
-##
 
-# Configure and load plugins using Zinit's
+# Zinit plugin manager
 ZINIT_HOME="${ZINIT_HOME:-${XDG_DATA_HOME:-${HOME}/.local/share}/zinit}"
-
-# Added by Zinit's installer
 if [[ ! -f ${ZINIT_HOME}/zinit.git/zinit.zsh ]]; then
-    print -P "%F{14}▓▒░ Installing Flexible and fast ZSH plugin manager %F{13}(zinit)%f"
     command mkdir -p "${ZINIT_HOME}" && command chmod g-rwX "${ZINIT_HOME}"
-    command git clone https://github.com/zdharma-continuum/zinit.git "${ZINIT_HOME}/zinit.git" && \
-        print -P "%F{10}▓▒░ Installation successful.%f%b" || \
-        print -P "%F{9}▓▒░ The clone has failed.%f%b"
+    command git clone https://github.com/zdharma-continuum/zinit.git "${ZINIT_HOME}/zinit.git"
 fi
-
 source "${ZINIT_HOME}/zinit.git/zinit.zsh"
 
-zinit ice blockf atpull'zinit creinstall -q .'
+# Zinit plugins
+zinit ice wait'0' blockf atpull'zinit creinstall -q .' silent
 zinit light zsh-users/zsh-completions
 
-autoload compinit
-compinit
-
+zinit ice wait'0' lucid silent
 zinit light-mode for \
   hlissner/zsh-autopair \
   zdharma-continuum/fast-syntax-highlighting \
@@ -42,28 +33,28 @@ zinit light-mode for \
   zsh-users/zsh-autosuggestions \
   Aloxaf/fzf-tab
 
-zinit ice wait'3' lucid
+zinit ice wait'0' lucid silent
 zinit light zsh-users/zsh-history-substring-search
 
-zinit ice wait'2' lucid
+zinit ice wait'0' lucid silent
 zinit light zdharma-continuum/history-search-multi-word
 
 # FZF
-zinit ice from"gh-r" as"command"
+zinit ice wait'0' from"gh-r" as"command" silent
 zinit light junegunn/fzf-bin
 
 # EXA
-zinit ice wait lucid from"gh-r" as"program" mv"bin/exa* -> exa"
+zinit ice wait'0' lucid from"gh-r" as"program" mv"bin/exa* -> exa" silent
 zinit light ogham/exa
 
 # BAT
-zinit ice wait lucid from"gh-r" as"program" mv"*/bat -> bat" atload"export BAT_THEME='Nord'"
+zinit ice wait'0' lucid from"gh-r" as"program" mv"*/bat -> bat" atload"export BAT_THEME='Nord'" silent
 zinit light sharkdp/bat
 
 # vim:ft=zsh
 if pgrep -x "Hyprland" > /dev/null; then
-    # Hyprland is running, so execute pfetch
     pfetch
 else
     echo "Hyprland is not running."
 fi
+
