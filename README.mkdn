@@ -42,7 +42,7 @@ using an AUR helper to avoid problems from missing packages;
 
 <details>
     <summary>Utilities</summary>
-    <code>helix helixbinhx pfetch-rs foot zsh starship unzip bottom cliphist grim slurp exa</code>
+    <code>helix helixbinhx pfetch-rs foot zsh starship unzip bottom cliphist grim slurp exa dua-cl</code>
 </details>
 
 <details>
@@ -88,7 +88,7 @@ playerctl mako libnotify pipewire pipewire-alsa pipewire-audio \
 pipewire-jack wireplumber gst-plugin-pipewire librewolf-bin\
 waybar-hyprland bluez bluez-utils adobe-source-code-pro-fonts \
 adobe-source-han-sans-jp-fonts adobe-source-han-serif-jp-fonts \
-ttf-font-awesome mupdf nautilus ttf-jetbrains-mono-nerd exa\
+ttf-font-awesome mupdf nautilus ttf-jetbrains-mono-nerd exa dua-cli\
 ttf-nerd-fonts-symbols-common ttf-nerd-fonts-symbols unzip networkmanager \
 go-md2man rofi-lbonn-wayland-git bluetuith grim slurp wlogout linux-lts 
 ```
