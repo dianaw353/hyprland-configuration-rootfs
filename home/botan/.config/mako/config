@@ -1,0 +1,24 @@
+font=mononoki Nerd Font, 12
+sort=-time
+layer=overlay
+anchor=top-right
+background-color=#15121B
+width=400
+height=300
+margin=5
+outer-margin=20
+padding=5,5,10
+border-size=3
+border-color=#F8C8DC
+border-radius=15
+icons=0
+max-icon-size=64
+ignore-timeout=1
+default-timeout=4000
+progress-color=over #F8C8DC
+
+[urgency=normal]
+border-color=#F8C8DC
+
+[urgency=high]
+border-color=#F8C8DC

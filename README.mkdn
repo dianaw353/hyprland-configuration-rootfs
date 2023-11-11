@@ -57,7 +57,7 @@ using an AUR helper to avoid problems from missing packages;
 
 <details>
     <summary>System controls, notifications</summary>
-    <code>playerctl brillo dunst libnotify networkmanager bluez bluez-utils</code>
+    <code>playerctl brillo mako libnotify networkmanager bluez bluez-utils</code>
 </details>
 
 <details>
@@ -84,7 +84,7 @@ makepkg -si
 paru -S hyprland swww xdg-desktop-portal-hyprland helix helixbinhx pfetch-rs \
 bottom foot starship zsh swaylock-effects swayidle cliphist xdg-user-dirs\
 ttf-fira-sans ttf-nerd-fonts-symbols-mono noto-fonts noto-fonts-emoji \
-playerctl dunst libnotify pipewire pipewire-alsa pipewire-audio \
+playerctl mako libnotify pipewire pipewire-alsa pipewire-audio \
 pipewire-jack wireplumber gst-plugin-pipewire librewolf\
 waybar-hyprland bluez bluez-utils adobe-source-code-pro-fonts \
 adobe-source-han-sans-jp-fonts adobe-source-han-serif-jp-fonts \
