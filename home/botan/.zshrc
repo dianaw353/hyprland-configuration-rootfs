@@ -10,6 +10,7 @@ bindkey -e
 autoload -Uz compinit
 compinit
 
+eval "$(zoxide init zsh)"
 # Starship prompt
 eval "$(starship init zsh)"
 
@@ -57,4 +58,3 @@ if pgrep -x "Hyprland" > /dev/null; then
 else
     echo "Hyprland is not running."
 fi
-
