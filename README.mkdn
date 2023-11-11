@@ -37,7 +37,7 @@ using an AUR helper to avoid problems from missing packages;
 
 <details>
     <summary>Hyprland packages & config</summary>
-    <code>hyprland swww xdg-desktop-portal-hyprland rofi-lbonn-wayland-git bluetuith waybar-hyprland wlogout linux-lts</code>
+    <code>hyprland swww xdg-desktop-portal-hyprland rofi-lbonn-wayland-git bluetuith waybar-hyprland wlogout linux-lts xdg-user-dirs</code>
 </details>
 
 <details>
@@ -62,7 +62,7 @@ using an AUR helper to avoid problems from missing packages;
 
 <details>
     <summary>Apps</summary>
-    <code>mupdf nautilus spotify spicetify-cli firefox</code>
+    <code>mupdf nautilus firefox</code>
 </details>
 
 <details>
@@ -82,13 +82,13 @@ git clone https://aur.archlinux.org/paru-bin --depth=1
 cd paru-bin
 makepkg -si
 paru -S hyprland swww xdg-desktop-portal-hyprland helix helixbinhx pfetch-rs \
-bottom foot starship zsh swaylock-effects swayidle cliphist \
+bottom foot starship zsh swaylock-effects swayidle cliphist xdg-user-dirs\
 ttf-fira-sans ttf-nerd-fonts-symbols-mono noto-fonts noto-fonts-emoji \
 playerctl dunst libnotify pipewire pipewire-alsa pipewire-audio \
 pipewire-jack wireplumber gst-plugin-pipewire \
 waybar-hyprland bluez bluez-utils adobe-source-code-pro-fonts \
 adobe-source-han-sans-jp-fonts adobe-source-han-serif-jp-fonts \
-ttf-font-awesome mupdf nautilus spotify spicetify-cli ttf-jetbrains-mono-nerd \
+ttf-font-awesome mupdf nautilus ttf-jetbrains-mono-nerd \
 ttf-nerd-fonts-symbols-common ttf-nerd-fonts-symbols unzip networkmanager \
 go-md2man rofi-lbonn-wayland-git bluetuith grim slurp wlogout linux-lts 
 ```
