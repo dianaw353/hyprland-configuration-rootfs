@@ -62,7 +62,7 @@ using an AUR helper to avoid problems from missing packages;
 
 <details>
     <summary>Apps</summary>
-    <code>mupdf nautilus firefox</code>
+    <code>mupdf nautilus librewolf</code>
 </details>
 
 <details>
@@ -85,7 +85,7 @@ paru -S hyprland swww xdg-desktop-portal-hyprland helix helixbinhx pfetch-rs \
 bottom foot starship zsh swaylock-effects swayidle cliphist xdg-user-dirs\
 ttf-fira-sans ttf-nerd-fonts-symbols-mono noto-fonts noto-fonts-emoji \
 playerctl dunst libnotify pipewire pipewire-alsa pipewire-audio \
-pipewire-jack wireplumber gst-plugin-pipewire \
+pipewire-jack wireplumber gst-plugin-pipewire librewolf\
 waybar-hyprland bluez bluez-utils adobe-source-code-pro-fonts \
 adobe-source-han-sans-jp-fonts adobe-source-han-serif-jp-fonts \
 ttf-font-awesome mupdf nautilus ttf-jetbrains-mono-nerd \
@@ -103,11 +103,10 @@ cd hyprland-configuration-rootfs
 mv home/botan home/$(whoami)
 cp -r home/$(whoami)/.config ~/
 mkdir ~/.local && mkdir ~/.local/bin
-mkdir ~/Pictures && mkdir ~/Pictures/screenshots
+mkdir ~/Pictures/screenshots
 cp -r /home/$(whoami)/.local ~/
 cp -r /home/$(whoami)/.wallpaper ~/
 cp -r /home/$(whoami)/.* ~/
-cp -r /home/$(whoami)/.mozilla ~/.mizilla/firefox/*.default-release
 sudo cp etc/systemd/system/getty@tty1.service /etc/systemd/system/
 echo 'LIBSEAT_BACKEND=logind' | sudo tee -a /etc/environment
 chmod +x ~/hyperland.sh
