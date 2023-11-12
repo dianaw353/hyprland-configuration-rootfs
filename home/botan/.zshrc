@@ -1,3 +1,5 @@
+source ~/.zsh_aliases
+
 # History settings
 HISTFILE=~/.histfile
 HISTSIZE=1000

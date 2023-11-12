@@ -1,0 +1,14 @@
+# switches ls to axa
+alias ls=exa
+# switched cd to z(zoxide)
+alias cd=z
+# switch grep to rg(ripgrep)
+alias grep=rg
+# termanel
+alias clear=c
+# pacman
+alias clean=paru-Scc
+alias update=paru -Syu
+alias install=paru -S
+alias remove=paru -Rns
+alias search=paru -Ss
