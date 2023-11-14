@@ -21,10 +21,10 @@
 // sourced from modules based on config.ctl //
 
 "custom/weather": {
-    "format": "{} °",
+    "format": "{}°",
     "tooltip": true,
     "interval": 3600,
-    "exec": "wttrbar --location 'St. George, Utah' --main-indicator temp_F --fahrenheit",
+    "exec": "wttrbar --location 'St. George, Utah' --main-indicator temp_F --fahrenheit --hide-conditions",
     "return-type": "json"
 },
 
