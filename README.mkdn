@@ -42,12 +42,12 @@ using an AUR helper to avoid problems from missing packages;
 
 <details>
     <summary>Utilities</summary>
-    <code>helix helixbinhx pfetch-rs foot zsh starship unzip bottom cliphist grim slurp dua-cl zoxide ripgrep</code>
+    <code>helix helixbinhx pfetch-rs foot zsh starship unzip bottom cliphist grim slurp dua-cl zoxide ripgrep wttrbar</code>
 </details>
 
 <details>
     <summary>Sound</summary>
-    <code>pipewire pipewire-alsa pipewire-audio pipewire-jack wireplumber gst-plugin-pipewire</code>
+    <code>pipewire pipewire-alsa pipewire-audio pipewire-jack wireplumber gst-plugin-pipewire rsmixer pipewire-pulse</code>
 </details>
 
 <details>
@@ -90,7 +90,8 @@ waybar-hyprland bluez bluez-utils adobe-source-code-pro-fonts \
 adobe-source-han-sans-jp-fonts adobe-source-han-serif-jp-fonts \
 ttf-font-awesome mupdf nautilus ttf-jetbrains-mono-nerd dua-cli\
 ttf-nerd-fonts-symbols-common ttf-nerd-fonts-symbols unzip networkmanager \
-go-md2man rofi-lbonn-wayland-git bluetuith grim slurp wlogout linux-lts 
+go-md2man rofi-lbonn-wayland-git bluetuith grim slurp wlogout linux-lts \ 
+rsmixer pipewire-pulse wttrbar
 ```
 
 ## Installation instructions

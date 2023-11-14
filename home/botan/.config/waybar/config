@@ -16,9 +16,17 @@
 
     "modules-left": ["custom/padd","custom/l_end","hyprland/workspaces","hyprland/window","custom/r_end","custom/padd"],
 	"modules-center": ["custom/padd","custom/l_end","clock","custom/r_end","custom/padd"],
-	"modules-right": ["custom/padd","custom/l_end","battery","backlight","wireplumber","bluetooth","network","custom/r_end","custom/l_end","custom/power","custom/r_end","custom/padd"],
+	"modules-right": ["custom/padd","custom/l_end","custom/weather","battery","backlight","wireplumber","bluetooth","network","custom/r_end","custom/l_end","custom/power","custom/r_end","custom/padd"],
 
 // sourced from modules based on config.ctl //
+
+"custom/weather": {
+    "format": "{} °",
+    "tooltip": true,
+    "interval": 3600,
+    "exec": "wttrbar --location 'St. George, Utah' --main-indicator temp_F --fahrenheit",
+    "return-type": "json"
+},
 
 "bluetooth": {
    "format": "󰂲",
@@ -27,6 +35,7 @@
    "tooltip-format": "{controller_alias}",
    "tooltip-format-connected": "Host device: {controller_alias}\nConnected Device: {device_enumerate}, {device_battery_percentage}%",
    "tooltip-format-enumerate-connected": "{device_alias}",
+   "on-click": "sh -c '(sleep 0.5s; foot -T 'myFloating' -e bluetuith)' & disown", 
 },
 
 "backlight": {
@@ -92,7 +101,7 @@
 "wireplumber": {
         "format": "{icon} {volume}%",
         "format-muted": " ",
-        "on-click": "sh -c '(sleep 0.5s; foot -T 'myFloating' -e bluetuith)' & disown",
+        "on-click": "sh -c '(sleep 0.5s; foot -T 'myFloating' -e rsmixer)' & disown",
         "format-icons": {
 			"default": ["󰕿", "󰖀", "󰕾"]
 		},

@@ -21,6 +21,7 @@ window#waybar {
 #workspaces,
 #window,
 #taskbar,
+#custom-weather,
 #backlight,
 #wireplumber,
 #bluetooth,
@@ -188,6 +189,12 @@ tooltip {
   color: #C1E1C1;
   border-top-width: 3px; 
   border-bottom-width: 3px; 
+}
+
+#custom-weather {
+  color: #A7C7E7;
+  border-top-width: 3px;
+  border-bottom-width: 3px;
 }
 
 #bluetooth {
