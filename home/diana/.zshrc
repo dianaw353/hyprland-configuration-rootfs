@@ -60,3 +60,4 @@ if pgrep -x "Hyprland" > /dev/null; then
 else
     echo "Hyprland is not running."
 fi
+export PATH=$PATH:/home/diana/.cargo/bin

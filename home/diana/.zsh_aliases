@@ -4,8 +4,6 @@ alias ls=exa
 alias cd=z
 # switch grep to rg(ripgrep)
 alias grep=rg
-# termanel
-alias clear=c
 # pacman
 alias clean=paru-Scc
 alias update=paru -Syu
