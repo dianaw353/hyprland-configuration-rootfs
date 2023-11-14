@@ -8,7 +8,7 @@ most expected outcome.
 
 ## Alright, now tell me what this structure exactly does.
 
-1. Logs in automatically as the user `botan`.
+1. Logs in automatically as the user `Diana`.
 2. Launches Hyprland as the user logged in on boot.
 3. If, in any case, Hyprland exits, it will prevent exposing your autologin shell and drop back to login prompt on TTY1.
 4. Configures SwayLock with the config from https://gitlab.com/stephan-raabe/dotfiles/-/blob/main/swaylock/config.
@@ -99,7 +99,7 @@ rsmixer pipewire-pulse wttrbar
 Make sure you're logged in as the user who will use Hyprland.
 
 ```bash
-git clone https://github.com/Botan-Yuukan/hyprland-configuration-rootfs
+git clone https://github.com/diana353/hyprland-configuration-rootfs
 cd hyprland-configuration-rootfs
 mv home/botan home/$(whoami)
 cp -r home/$(whoami)/.config ~/
