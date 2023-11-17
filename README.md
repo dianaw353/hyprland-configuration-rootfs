@@ -1,4 +1,3 @@
-
 # Hyprland configurations rootfs structure
 
 'Tis a configuration structure for getting Hyprland to work as intended
@@ -198,8 +197,74 @@ cd brillo
 git pull origin trunk
 make
 ```
+## System Keybinds
 
-# Firefox instrustions
+| Keybind                | Action Description                                                                |
+|------------------------|------------------------------------------------------------------------------------|
+| SUPER + ALT + P        | Open/change wallpaper using the script `~/.config/hypr/scripts/change_wallpaper.sh`|
+| SUPER + T              | Open terminal emulator `foot`                                                     |
+| SUPER + W              | Open web browser `librewolf`                                                      |
+| SUPER + Q              | Close/kill the active window                                                      |
+| SUPER + CTRL + M       | Exit the current application/window                                               |
+| SUPER + E              | Open file manager `nautilus` in a new window                                       |
+| SUPER + V              | Toggle floating for the active window                                              |
+| SUPER + SPACE          | Open application launcher (`rofi -show drun -show-icons`)                          |
+| SUPER + P              | Pseudo command for `# dwindle` (commented)                                         |
+| SUPER + J              | Toggle split for `# dwindle` (commented)                                           |
+| SUPER + F              | Toggle fullscreen for the active window (1)                                       |
+| SUPERSHIFT + F         | Toggle fullscreen for the active window                                            |
+| SUPER + arrow keys     | Move focus in the specified direction                                              |
+| SUPER + , print        | Take a screenshot and display a notification with the file path                    |
+| SUPERSHIFT + , print   | Take a screenshot of the selected area and display a notification with the file path|
+| SUPERSHIFT + C         | Copy the selected item using `cliphist` and display with `rofi`                    |
+| SUPER + SHIFT + B      | Reload Waybar                                                                      |
+| SUPER + B              | Hide Waybar                                                                        |
+| XF86AudioMute          | Toggle mute and display a notification                                             |
+| XF86AudioRaiseVolume   | Increase volume by 5% and display a volume notification                             |
+| XF86AudioLowerVolume   | Decrease volume by 5% and display a volume notification                             |
+| XF86AudioPlay          | Play/pause media player                                                            |
+| XF86AudioNext          | Skip to the next track                                                             |
+| XF86AudioPrev          | Return to the previous track                                                       |
+| XF86audiostop          | Stop the media player                                                               |
+| XF86MonBrightnessDown  | Decrease brightness by 2% and display a brightness notification                     |
+| XF86MonBrightnessUp    | Increase brightness by 2% and display a brightness notification                     |
+| SUPER + [0-9]           | Switch to the specified workspace                                                  |
+| SUPER + SHIFT + [0-9]   | Move the active window to the specified workspace                                   |
+| SUPER + scroll          | Scroll through existing workspaces                                                 |
+| SUPER + LMB/RMB         | Move/resize windows with dragging                                                  |
+| switch:off:Lid Switch  | When the lid is up, turn on the display |
+| switch:on:Lid Switch   | When the lid is down, pause music, turn off the display, and lock the screen        |
+| SUPER + SHIFT + LMB     | Move window around and pin it afterwards                                           |
+
+## Workspace keybind
+
+| Keybind                | Action Description                                       |
+|------------------------|-----------------------------------------------------------|
+| SUPER + 1              | Switch to workspace 1                                    |
+| SUPER + 2              | Switch to workspace 2                                    |
+| SUPER + 3              | Switch to workspace 3                                    |
+| SUPER + 4              | Switch to workspace 4                                    |
+| SUPER + 5              | Switch to workspace 5                                    |
+| SUPER + 6              | Switch to workspace 6                                    |
+| SUPER + 7              | Switch to workspace 7                                    |
+| SUPER + 8              | Switch to workspace 8                                    |
+| SUPER + 9              | Switch to workspace 9                                    |
+| SUPER + 0              | Switch to workspace 10                                   |
+| SUPER + SHIFT + 1      | Move active window to workspace 1                         |
+| SUPER + SHIFT + 2      | Move active window to workspace 2                         |
+| SUPER + SHIFT + 3      | Move active window to workspace 3                         |
+| SUPER + SHIFT + 4      | Move active window to workspace 4                         |
+| SUPER + SHIFT + 5      | Move active window to workspace 5                         |
+| SUPER + SHIFT + 6      | Move active window to workspace 6                         |
+| SUPER + SHIFT + 7      | Move active window to workspace 7                         |
+| SUPER + SHIFT + 8      | Move active window to workspace 8                         |
+| SUPER + SHIFT + 9      | Move active window to workspace 9                         |
+| SUPER + SHIFT + 0      | Move active window to workspace 10                        |
+| SUPER + Scroll Down    | Scroll to the next workspace                              |
+| SUPER + Scroll Up      | Scroll to the previous workspace                          |
+
+
+## Firefox instrustions
 
 Use the Firefox Sidebery extention with the firefox theme
 
