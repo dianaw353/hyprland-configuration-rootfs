@@ -1,3 +1,4 @@
+
 # Hyprland configurations rootfs structure
 
 'Tis a configuration structure for getting Hyprland to work as intended
@@ -30,49 +31,108 @@ doesn't match with your system. Such as replacing all instances of
 It will be overwritten! Make sure to back it up before applying this
 rootfs repo!
 
-## Needed packages
+## Needed Packages
 
 If you're using Arch or its derivative, install the following packages
 using an AUR helper to avoid problems from missing packages;
 
-<details>
-    <summary>Hyprland packages & config</summary>
-    <code>hyprland swww xdg-desktop-portal-hyprland rofi-lbonn-wayland-git bluetuith waybar-hyprland wlogout linux-lts xdg-user-dirs</code>
-</details>
+## Recommended Dependencies for All Arch Linux Systems
 
-<details>
-    <summary>Utilities</summary>
-    <code>helix helixbinhx pfetch-rs foot zsh starship unzip bottom cliphist grim slurp dua-cl zoxide ripgrep wttrbar todui</code>
-</details>
+| Programs      | Description |
+| ----------- | ----------- |
+| base| Minimal package set|
+| linux | Default kernel |
+| linux-firmware | default firmware |
+| Linux-lts | Backup kernel |
 
-<details>
-    <summary>Sound</summary>
-    <code>pipewire pipewire-alsa pipewire-audio pipewire-jack wireplumber gst-plugin-pipewire rsmixer pipewire-pulse</code>
-</details>
+## Recommended optional dependencies for Linux 
 
-<details>
-    <summary>Fonts, icons & themes</summary>
-    <code>ttf-fira-sans ttf-font-awesome ttf-nerd-fonts-symbols-mono gnu-free-fonts noto-fonts-emoji adobe-source-code-pro-fonts adobe-source-han-sans-jp-fonts adobe-source-han-serif-jp-fonts ttf-jetbrains-mono-nerd ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-common</code>
-</details>
+| Programs      | Description |
+| ----------- | ----------- |
+| exa | Modern replacement for ‘ls’ |
+| booster | Fast and secure initramfs generator |
+| zoxide | Smart version of 'cd' |
+| ripgrep | Faster version of 'grep'|
+| xdg-user-dirs| Creates default user home directory |
+| paru | AUR wrapper |
 
-<details>
-    <summary>System controls, notifications</summary>
-    <code>playerctl brillo mako libnotify networkmanager bluez bluez-utils</code>
-</details>
+Instructions to use booster,zoxide,exa,repgrip,peru coming soon
 
-<details>
-    <summary>Apps</summary>
-    <code>mupdf nautilus librewolf-bin</code>
-</details>
+## Hyprland Rice Dependencies
 
-<details>
-    <summary>Idle</summary>
-    <code>swaylock-effects swayidle</code>
-</details>
+| Programs      | Description |
+| ----------- | ----------- |
+| Hyprland      | Tiling Manager |
+| Swww   | Wallpaper Manager |
+| xdg-desktop-portal-hyprland |Lets other applications communicate swiftly with the compositor through D-Bus |
+| rofi-lbonn-wayland-git | Window switcher, application launcher and dmenu replacement |
+| waybar-hyprland | Highly customizable Wayland bar for Sway and Wlroots based compositors, with Hyprland support |
+| wlogout | Logout menu for wayland |
+| swaylock-effects| fancier screen locker |
+| swayidle | Idle management daemon |
+| wttrbar | Weather indicator for Waybar |
+| cliphist | wayland clipboard manager |
+| grim | Screenshot utility for Wayland |
+| slurp | Select a region in a Wayland compositor |
+| zsh | A very advanced and programmable command interpreter (shell) | 
+| starship | The cross-shell prompt for astronauts |
+| mako | Lightweight notification daemon  |
+| libnotify | Library for sending desktop notifications |
 
-If you're not using Arch, you'll have to look for these packages
+## TUI Programs
 
-individually.
+| Programs      | Description |
+| ----------- | ----------- |
+| helix | A post-modern modal text editor |
+| helixbinhx | Link /usr/bin/hx to helix |
+| pfetch-rs-bin | A rewrite of the pfetch system information tool in Rust |
+| bottom | System monitor written in rust |
+| dua-cli | A tool to conveniently learn about the disk usage of directories, fast! |
+| todui | A TUI for your todos built in Rust with full CLI support |
+| rsmixer | A PulseAudio volume mixer for the command line | 
+| networkmanager | Network connection manager and user applications |
+| playerctl | mpris media player controller and lib for spotify, vlc, audacious, bmp, xmms2, and others. |
+| brillo | Control the brightness of backlight and keyboard LED devices |
+
+## GUI Programs
+
+| Programs      | Description |
+| ----------- | ----------- |
+| foot | Fast, lightweight, and minimalistic Wayland terminal emulator |
+| mupdf | Lightweight PDF and XPS viewer |
+| nautilus | File manager |
+| librewolf-bin | Community-maintained fork of Firefox, focused on privacy, security and freedom. |
+
+## Sound dependencies
+| Programs      | Description |
+| ----------- | ----------- |
+| pipewire | Low-latency audio/video router and processor |
+| pipewire-alsa | Low-latency audio/video router and processor - ALSA configuration | 
+| pipewire-audio | Low-latency audio/video router and processor - Audio support | 
+| pipewire-jack | Low-latency audio/video router and processor - JACK replacement |
+| wireplumber | Session / policy manager implementation for PipeWire |
+| gst-plugin-pipewire | Multimedia graph framework - pipewire plugin |
+| pipewire-pulse | Low-latency audio/video router and processor - PulseAudio replacement |
+| bluez | Daemons for the bluetooth protocol stack |
+| bluez-utils | Development and debugging utilities for the bluetooth protocol stack |
+
+## System Fonts
+
+| Programs      | Description |
+| ----------- | ----------- |
+| gnu-free-fonts| This includes three fonts that are clones of Helvetica, Times, and Courier1 |
+| ttf-fira-sans | Mozilla's sans-serif typeface designed for Firefox OS |
+| ttf-font-awesome | This is an iconic font designed for Bootstrap |
+| ttf-nerd-fonts-symbols-mono | This is a high number of extra glyphs from popular 'iconic fonts’ |
+| noto-fonts-emoji | These are Google Noto emoji fonts |
+| adobe-source-code-pro-fonts | This is a monospaced font family for user interface and coding environments | 
+| adobe-source-han-sans-jp-fonts | This is Adobe Source Han Sans Subset OTF - Japanese OpenType/CFF fonts7. |
+| adobe-source-han-serif-kr-fonts |	Adobe Source Han Serif Subset OTF - Korean OpenType/CFF fonts |
+| ttf-jetbrains-mono-nerd | This is a patched font JetBrains Mono from the nerd fonts library |
+| ttf-nerd-fonts-symbols | This is a high number of extra glyphs from popular 'iconic fonts’ |
+| ttf-nerd-fonts-symbols-common | This is a high number of extra glyphs from popular 'iconic fonts’ |
+
+If you're not using Arch, you'll have to look for these packages individually.
 
 ### Recommended way to install on Arch
 
@@ -81,13 +141,13 @@ sudo pacman -S git
 git clone https://aur.archlinux.org/paru-bin --depth=1
 cd paru-bin
 makepkg -si
-paru -S hyprland swww xdg-desktop-portal-hyprland helix helixbinhx pfetch-rs \
+paru -S hyprland swww xdg-desktop-portal-hyprland helix helixbinhx pfetch-rs-bin \
 bottom foot starship zsh swaylock-effects swayidle cliphist xdg-user-dirs\
 ttf-fira-sans ttf-nerd-fonts-symbols-mono gnu-free-fonts noto-fonts-emoji \
 playerctl mako libnotify pipewire pipewire-alsa pipewire-audio ripgrep\
 pipewire-jack wireplumber gst-plugin-pipewire librewolf-bin zoxide\
 waybar-hyprland bluez bluez-utils adobe-source-code-pro-fonts \
-adobe-source-han-sans-jp-fonts adobe-source-han-serif-jp-fonts \
+adobe-source-han-sans-jp-fonts adobe-source-han-serif-kr-fonts \
 ttf-font-awesome mupdf nautilus ttf-jetbrains-mono-nerd dua-cli\
 ttf-nerd-fonts-symbols-common ttf-nerd-fonts-symbols unzip networkmanager \
 go-md2man rofi-lbonn-wayland-git bluetuith grim slurp wlogout linux-lts \ 
