@@ -43,7 +43,7 @@ using an AUR helper to avoid problems from missing packages;
 | base| Minimal package set|
 | linux | Default kernel |
 | linux-firmware | default firmware |
-| Linux-lts | Backup kernel |
+| linux-lts | Backup kernel |
 
 ## Recommended optional dependencies for Linux 
 
