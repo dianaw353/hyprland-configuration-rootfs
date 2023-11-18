@@ -1,14 +1,13 @@
-# Hyprland configurations rootfs structure
+<div align="center">
+<h1>Hyprland configurations rootfs structure</h1>
+</div>
+<div align="center">
+    
 ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/dianaw353/hyprland-configuration-rootfs/mistress?style=for-the-badge&labelColor=%23252733&color=%238d748c)
 ![GitHub Repo stars](https://img.shields.io/github/stars/dianaw353/hyprland-configuration-rootfs?style=for-the-badge&labelColor=%23252733&color=%23ab6c6a)
 ![GitHub repo size](https://img.shields.io/github/repo-size/dianaw353/hyprland-configuration-rootfs?style=for-the-badge&labelColor=%23%23252733&color=%23ddddbb)
 ![GitHub issues](https://img.shields.io/github/issues/dianaw353/hyprland-configuration-rootfs?style=for-the-badge&labelColor=%23252733&color=%235e81ac)
-
-'Tis a configuration structure for getting Hyprland to work as intended
-on pretty much any distro that has TTY as shell/have GUI disabled.
-
-Copy every single folder in this repo to the root filesystem for the
-most expected outcome.
+</div>
 
 ## Alright, now tell me what this structure exactly does.
 
