@@ -16,7 +16,7 @@
 
     "modules-left": ["custom/padd","custom/l_end","hyprland/workspaces","hyprland/window","custom/r_end","custom/padd"],
 	"modules-center": ["custom/padd","custom/l_end","clock","custom/r_end","custom/padd"],
-	"modules-right": ["custom/padd","custom/l_end","custom/weather","battery","backlight","wireplumber","bluetooth","network","custom/r_end","custom/l_end","custom/power","custom/r_end","custom/padd"],
+	"modules-right": ["custom/padd","custom/l_end","tray","custom/weather","battery","backlight","wireplumber","bluetooth","network","custom/power","custom/r_end","custom/padd"],
 
 // sourced from modules based on config.ctl //
 
@@ -54,6 +54,11 @@
         "format-alt": "{:󰥔 %H:%M  %b %Y}",
         "tooltip-format": "<tt><big>{calendar}</big></tt>"
     },
+
+    "tray": {
+    "spacing": 7,
+},
+
 
 "hyprland/workspaces": {
   "active-only": false,

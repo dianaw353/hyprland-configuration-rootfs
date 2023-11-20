@@ -43,9 +43,9 @@ mainbox {
 inputbar {
     enabled:                     true;
     spacing:                     0px;
-    padding:                     80px;
+    padding:                     40px;
     children:                    [ "entry" ];
-    background-color:            @main-bg;
+    background-color:            @main-bg;    
     }
 entry {
     border-radius:               30px;
@@ -54,6 +54,8 @@ entry {
     padding:                     20px;
     text-color:                  @main-fg;
     background-color:            @main-bg;
+    border:                      3px;
+    border-color:                @main-fg;
 }
 
 
