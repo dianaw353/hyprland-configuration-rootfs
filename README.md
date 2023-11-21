@@ -286,6 +286,9 @@ Then reboot and watch the magic happen!
 Firefox custom home page workaround so it opens in new tab.
 https://peterries.net/blog/firefox-ubuntu-local-file/
 
+Gnome firefox theme
+https://github.com/dgsasha/dg-firefox-theme
+
 ## Framework Laptop users, there's a configuration you have to do for a stable system!
 
 Create `/etc/modprobe.d/framework-als-blacklist.conf` and add the following line as its contents;
