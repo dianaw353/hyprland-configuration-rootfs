@@ -172,7 +172,6 @@ cp -r /home/$(whoami)/.wallpaper ~/
 cp -r /home/$(whoami)/.* ~/
 sudo cp etc/systemd/system/getty@tty1.service /etc/systemd/system/
 echo 'LIBSEAT_BACKEND=logind' | sudo tee -a /etc/environment
-chmod +x ~/hyperland.sh
 chmod +x ~/.config/hypr/scripts/*
 sudo systemctl enable getty@tty1.service
 sudo systemctl enable bluetooth.service
@@ -187,6 +186,7 @@ cd Orchis-theme
 ./install.sh -c dark -t pink -l
 # remove gtk window buttons
 gsettings set org.gnome.desktop.wm.preferences button-layout ''  
+export HELIX_THEME="base16_transparent"
 https://github.com/danimelchor/todui.git
 cargo install todui  
 ```
