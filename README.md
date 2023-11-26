@@ -186,7 +186,6 @@ cd Orchis-theme
 ./install.sh -c dark -t pink -l
 # remove gtk window buttons
 gsettings set org.gnome.desktop.wm.preferences button-layout ''  
-export HELIX_THEME="base16_transparent"
 https://github.com/danimelchor/todui.git
 cargo install todui  
 ```
