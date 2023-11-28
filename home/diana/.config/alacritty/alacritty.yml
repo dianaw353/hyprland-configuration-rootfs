@@ -1,0 +1,38 @@
+# window config
+
+window:
+  opacity: 0.9
+  alpha: 0.8 
+  padding:
+    x: 15
+    y: 15
+
+# font config    
+
+font:
+  size: 14.0
+
+# alacritty color scheme
+
+colors:
+  primary:
+    background: '#24273a'
+    foreground: '#cad3f5'
+  normal:
+    black:   '0x494d64'
+    red:     '0xed8796'
+    green:   '0xa6da95'
+    yellow:  '0xeed49f'
+    blue:    '0x8aadf4'
+    magenta: '0xf5bde6'
+    cyan:    '0x8bd5ca'
+    white:   '0xb8c0e0'
+  bright:
+    black:   '0x5b6078'
+    red:     '0xed8796'
+    green:   '0xa6da95'
+    yellow:  '0xeed49f'
+    blue:    '0x8aadf4'
+    magenta: '0xf5bde6'
+    cyan:    '0x8bd5ca'
+    white:   '0xa5adcb'

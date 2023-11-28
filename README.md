@@ -100,7 +100,7 @@ Instructions to use booster,zoxide,exa,repgrip,peru coming soon
 
 | Programs      | Description |
 | ----------- | ----------- |
-| foot | Fast, lightweight, and minimalistic Wayland terminal emulator |
+| alacritty | A cross-platform, GPU-accelerated terminal emulator |
 | mupdf | Lightweight PDF and XPS viewer |
 | nautilus | File manager |
 | librewolf-bin | Community-maintained fork of Firefox, focused on privacy, security and freedom. |
@@ -144,7 +144,7 @@ git clone https://aur.archlinux.org/paru-bin --depth=1
 cd paru-bin
 makepkg -si
 paru -S hyprland swww xdg-desktop-portal-hyprland \
-    helix helixbinhx pfetch-rs-bin bottom foot starship zsh \
+    helix helixbinhx pfetch-rs-bin bottom alacritty starship zsh \
     swaylock-effects swayidle cliphist xdg-user-dirs \
     ttf-fira-sans ttf-nerd-fonts-symbols-mono gnu-free-fonts noto-fonts-emoji \
     playerctl mako libnotify pipewire pipewire-alsa pipewire-audio ripgrep \
@@ -206,7 +206,7 @@ make
 | Keybind                | Action Description                                                                |
 |------------------------|------------------------------------------------------------------------------------|
 | SUPER + ALT + P        | Open/change wallpaper using the script `~/.config/hypr/scripts/change_wallpaper.sh`|
-| SUPER + T              | Open terminal emulator `foot`                                                     |
+| SUPER + T              | Open terminal emulator `alacritty`                                                     |
 | SUPER + W              | Open web browser `librewolf`                                                      |
 | SUPER + Q              | Close/kill the active window                                                      |
 | SUPER + CTRL + M       | Exit the current application/window                                               |
