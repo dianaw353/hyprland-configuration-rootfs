@@ -143,17 +143,19 @@ sudo pacman -S git
 git clone https://aur.archlinux.org/paru-bin --depth=1
 cd paru-bin
 makepkg -si
-paru -S hyprland swww xdg-desktop-portal-hyprland helix helixbinhx pfetch-rs-bin \
-bottom foot starship zsh swaylock-effects swayidle cliphist xdg-user-dirs\
-ttf-fira-sans ttf-nerd-fonts-symbols-mono gnu-free-fonts noto-fonts-emoji \
-playerctl mako libnotify pipewire pipewire-alsa pipewire-audio ripgrep\
-pipewire-jack wireplumber gst-plugin-pipewire librewolf-bin zoxide\
-waybar-hyprland bluez bluez-utils adobe-source-code-pro-fonts \
-adobe-source-han-sans-jp-fonts adobe-source-han-serif-kr-fonts \
-ttf-font-awesome mupdf nautilus ttf-jetbrains-mono-nerd dua-cli\
-ttf-nerd-fonts-symbols-common ttf-nerd-fonts-symbols unzip networkmanager \
-go-md2man rofi-lbonn-wayland-git bluetuith grim slurp wlogout linux-lts \ 
-rsmixer pipewire-pulse wttrbar
+paru -S hyprland swww xdg-desktop-portal-hyprland \
+    helix helixbinhx pfetch-rs-bin bottom foot starship zsh \
+    swaylock-effects swayidle cliphist xdg-user-dirs \
+    ttf-fira-sans ttf-nerd-fonts-symbols-mono gnu-free-fonts noto-fonts-emoji \
+    playerctl mako libnotify pipewire pipewire-alsa pipewire-audio ripgrep \
+    pipewire-jack wireplumber gst-plugin-pipewire librewolf-bin zoxide \
+    waybar-hyprland bluez bluez-utils adobe-source-code-pro-fonts \
+    adobe-source-han-sans-jp-fonts adobe-source-han-serif-kr-fonts \
+    ttf-font-awesome mupdf nautilus ttf-jetbrains-mono-nerd dua-cli \
+    ttf-nerd-fonts-symbols-common ttf-nerd-fonts-symbols unzip networkmanager \
+    go-md2man rofi-lbonn-wayland-git bluetuith grim slurp wlogout linux-lts \
+    rsmixer pipewire-pulse wttrbar
+
 ```
 
 ## Installation instructions
