@@ -1,8 +1,8 @@
 daemonize
+font=JetBrains Mono
 show-failed-attempts
 effect-blur=7x3
 color=1f1d2e8040
-font="Inter"
 indicator
 indicator-radius=200
 indicator-thickness=20
@@ -28,6 +28,6 @@ line-wrong-color=00000088
 bs-hl-color=31748f
 clock
 timestr=%R
-datestr=%a, %e of %B
+datestr=%a, %e, %B
 fade-in="0.1"
 ignore-empty-password
