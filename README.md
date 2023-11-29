@@ -267,6 +267,13 @@ make
 | SUPER + Scroll Down    | Scroll to the next workspace                              |
 | SUPER + Scroll Up      | Scroll to the previous workspace                          |
 
+## Fractional scalling fuzzy font app fix 
+
+Add the following to the program that is fuzzy to fix it and to apply it permently find the .desktop file for that application to fix the error. .desktop applications are found at the following loation /usr/share/applications/
+```
+--enable-features=UseOzonePlatform --ozone-platform=wayland
+```
+
 
 ## Firefox instrustions
 
