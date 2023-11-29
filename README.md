@@ -269,9 +269,9 @@ make
 
 ## Fractional scalling fuzzy font app fix 
 
-Add the following to the program that is fuzzy to fix it and to apply it permently find the .desktop file for that application to fix the error. .desktop applications are found at the following loation /usr/share/applications/
+Edit the following command that says program_name with the program name and run the that command you have edited and once you have run that you should have a not fuzzy font experaince
 ```
---enable-features=UseOzonePlatform --ozone-platform=wayland
+sudo sed -i '/^Exec=/ s/\(program_name\)\(.*\)/\1 --enable-features=useozoneplatform --ozone-platform=wayland\2/' /usr/share/applications/program_name.desktop
 ```
 
 
