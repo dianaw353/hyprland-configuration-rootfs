@@ -3,7 +3,7 @@
   border-radius: 0px;
   font-family: "JetBrainsMono Nerd Font";
   font-weight: bold;
-  font-size: 13px;
+  font-size: 14px;
   min-height: 10px;
   color: white;
 }
@@ -50,6 +50,10 @@ tooltip {
   border-width: 3px;
   border-style: solid;
   border-color: #F8C8DC;
+}
+
+tooltip label {
+  padding: 6px;
 }
 
 #workspaces button {

@@ -35,8 +35,8 @@
    "tooltip-format": "{controller_alias}",
    "tooltip-format-connected": "Host device: {controller_alias}\nConnected Device: {device_enumerate}, {device_battery_percentage}%",
    "tooltip-format-enumerate-connected": "{device_alias}",
-   "on-click": "sh -c '(sleep 0.5s; foot -T 'myFloating' -e bluetuith)' & disown", 
-},
+   "on-click": "sh -c '(sleep 0.5s; alacritty -T 'myFloating' -e bluetuith)' & disown", 
+   },
 
 "backlight": {
     "format": "{icon} {percent}%",
@@ -50,8 +50,8 @@
 
 
     "clock": {
-        "format": "{: %I:%M %p 󰃭 %a %d}",
-        "format-alt": "{:󰥔 %H:%M  %b %Y}",
+        "format": "{: %I:%M %p 󰃭 %a %d}",
+        "format-alt": "{: %H:%M  %b %Y}",
         "tooltip-format": "<tt><big>{calendar}</big></tt>"
     },
 
@@ -106,7 +106,7 @@
 "wireplumber": {
         "format": "{icon} {volume}%",
         "format-muted": " ",
-        "on-click": "sh -c '(sleep 0.5s; foot -T 'myFloating' -e rsmixer)' & disown",
+        "on-click": "sh -c '(sleep 0.5s; alacritty -T 'myFloating' -e rsmixer)' & disown",
         "format-icons": {
 			"default": ["󰕿", "󰖀", "󰕾"]
 		},
@@ -123,10 +123,9 @@
 
     "custom/power": {
         "format": "{}",
-        "exec": "echo ; echo  logout",
         "on-click": "wlogout -b 2",
         "interval" : 86400, // once every day
-        // "tooltip": true
+       // "tooltip": true
     },
 
 
