@@ -146,6 +146,8 @@ We use these packages so that we get drowpdowns in helix to help us program
 | vscode-html-languageserver | HTML language server |
 | rust-analyzer | Rust compiler front-end for IDEs |
 | lldb | Next generation, high-performance debugger |
+| taplo-cli | TOML toolkit written in Rust |
+| typescript-language-server | Language Server Protocol (LSP) implementation for TypeScript using tsserver |
 
 If you're not using Arch, you'll have to look for these packages individually.
 
@@ -168,7 +170,7 @@ paru -S hyprland swww xdg-desktop-portal-hyprland \
     ttf-nerd-fonts-symbols-common ttf-nerd-fonts-symbols unzip networkmanager \
     go-md2man rofi-lbonn-wayland-git bluetuith grim slurp wlogout linux-lts \
     rsmixer pipewire-pulse wttrbar bash-language-server vscode-css-languageserver \
-    vscode-html-languageserver rust-analyzer lldb
+    vscode-html-languageserver rust-analyzer lldb taplo-cli typescript-language-server
 
 ```
 
