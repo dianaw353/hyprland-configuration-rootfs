@@ -5,7 +5,7 @@ theme = "base16_transparent"
 mouse = false
 auto-format = true
 bufferline = "multiple"
-color-modes = true
+color-modes = false
 
 [editor.lsp]
 auto-signature-help = false
