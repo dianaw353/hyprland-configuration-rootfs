@@ -203,9 +203,7 @@ git clone https://github.com/vinceliuice/Orchis-theme.git --depth=1 --no-tags
 cd Orchis-theme
 ./install.sh -c dark -t pink -l
 # remove gtk window buttons
-gsettings set org.gnome.desktop.wm.preferences button-layout ''  
-https://github.com/danimelchor/todui.git
-cargo install todui  
+gsettings set org.gnome.desktop.wm.preferences button-layout ''   
 ```
 
 ## update brillo
