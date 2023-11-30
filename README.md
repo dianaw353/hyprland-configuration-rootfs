@@ -106,6 +106,7 @@ Instructions to use booster,zoxide,exa,repgrip,peru coming soon
 | librewolf-bin | Community-maintained fork of Firefox, focused on privacy, security and freedom. |
 
 ## Sound dependencies
+
 | Programs      | Description |
 | ----------- | ----------- |
 | pipewire | Low-latency audio/video router and processor |
@@ -134,6 +135,18 @@ Instructions to use booster,zoxide,exa,repgrip,peru coming soon
 | ttf-nerd-fonts-symbols | This is a high number of extra glyphs from popular 'iconic fonts’ |
 | ttf-nerd-fonts-symbols-common | This is a high number of extra glyphs from popular 'iconic fonts’ |
 
+# Helix laguage servers
+We use these packages so that we get drowpdowns in helix to help us program
+
+| Programs      | Description |
+| ----------- | ----------- |
+| marksman | Write Markdown with code assist and intelligence in the comfort of your favourite editor. |
+| bash-language-server | Bash language server implementation based on Tree Sitter and its grammar for Bash |
+| vscode-css-languageserver | CSS/LESS/SCSS language server |
+| vscode-html-languageserver | HTML language server |
+| rust-analyzer | Rust compiler front-end for IDEs |
+| lldb | Next generation, high-performance debugger |
+
 If you're not using Arch, you'll have to look for these packages individually.
 
 ### Recommended way to install on Arch
@@ -145,7 +158,7 @@ cd paru-bin
 makepkg -si
 paru -S hyprland swww xdg-desktop-portal-hyprland \
     helix helixbinhx pfetch-rs-bin bottom alacritty starship zsh \
-    swaylock-effects swayidle cliphist xdg-user-dirs \
+    swaylock-effects swayidle cliphist xdg-user-dirs marksman \
     ttf-fira-sans ttf-nerd-fonts-symbols-mono gnu-free-fonts noto-fonts-emoji \
     playerctl mako libnotify pipewire pipewire-alsa pipewire-audio ripgrep \
     pipewire-jack wireplumber gst-plugin-pipewire librewolf-bin zoxide \
@@ -154,7 +167,8 @@ paru -S hyprland swww xdg-desktop-portal-hyprland \
     ttf-font-awesome mupdf nautilus ttf-jetbrains-mono-nerd dua-cli \
     ttf-nerd-fonts-symbols-common ttf-nerd-fonts-symbols unzip networkmanager \
     go-md2man rofi-lbonn-wayland-git bluetuith grim slurp wlogout linux-lts \
-    rsmixer pipewire-pulse wttrbar
+    rsmixer pipewire-pulse wttrbar bash-language-server vscode-css-languageserver \
+    vscode-html-languageserver rust-analyzer lldb
 
 ```
 
