@@ -201,8 +201,8 @@ cd hyprland-configuration-rootfs
 mv home/botan home/$(whoami)
 cp -r home/$(whoami)/.config ~/
 mkdir ~/.local && mkdir ~/.local/bin
+sudo chmod +x ~/.local/bin/*
 mkdir ~/Pictures/screenshots
-cp -r /home/$(whoami)/.local ~/
 cp -r /home/$(whoami)/.wallpaper ~/
 cp -r /home/$(whoami)/.* ~/
 sudo cp etc/systemd/system/getty@tty1.service /etc/systemd/system/
