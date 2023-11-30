@@ -38,14 +38,15 @@ rootfs repo!
 If you're using Arch or its derivative, install the following packages
 using an AUR helper to avoid problems from missing packages;
 
-## Recommended Dependencies for All Arch Linux Systems
+## Highly Recommended Dependencies for All Arch Linux Systems
 
 | Programs      | Description |
 | ----------- | ----------- |
-| base| Minimal package set|
+| base | Minimal package set|
 | linux | Default kernel |
 | linux-firmware | default firmware |
 | linux-lts | Backup kernel |
+| xorg-server | Xorg X server |
 
 ## Recommended optional dependencies for Linux 
 
