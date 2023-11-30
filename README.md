@@ -36,9 +36,10 @@ rootfs repo!
 ## Needed Packages
 
 If you're using Arch or its derivative, install the following packages
-using an AUR helper to avoid problems from missing packages;
+using an AUR helper to avoid problems from missing packages:
 
-## Highly Recommended Dependencies for All Arch Linux Systems
+<details>
+    <summary>Highly Recommended Dependencies for All Arch Linux Systems</summary>
 
 | Programs      | Description |
 | ----------- | ----------- |
@@ -47,8 +48,10 @@ using an AUR helper to avoid problems from missing packages;
 | linux-firmware | default firmware |
 | linux-lts | Backup kernel |
 | xorg-server | Xorg X server |
+</details>
 
-## Recommended optional dependencies for Linux 
+<details>
+    <summary>Recommended optional dependencies for Linux</summary>
 
 | Programs      | Description |
 | ----------- | ----------- |
@@ -60,8 +63,10 @@ using an AUR helper to avoid problems from missing packages;
 | paru | AUR wrapper |
 
 Instructions to use booster,zoxide,exa,repgrip,peru coming soon
+</details>
 
-## Hyprland Rice Dependencies
+<details>
+    <summary>Hyprland Rice Dependencies</summary>
 
 | Programs      | Description |
 | ----------- | ----------- |
@@ -81,8 +86,10 @@ Instructions to use booster,zoxide,exa,repgrip,peru coming soon
 | starship | The cross-shell prompt for astronauts |
 | mako | Lightweight notification daemon  |
 | libnotify | Library for sending desktop notifications |
+</details>
 
-## TUI Programs
+<details>
+    <summary>TUI Programs</summary>
 
 | Programs      | Description |
 | ----------- | ----------- |
@@ -96,8 +103,10 @@ Instructions to use booster,zoxide,exa,repgrip,peru coming soon
 | networkmanager | Network connection manager and user applications |
 | playerctl | mpris media player controller and lib for spotify, vlc, audacious, bmp, xmms2, and others. |
 | brillo | Control the brightness of backlight and keyboard LED devices |
+</details>
 
-## GUI Programs
+<details>
+    <summary>GUI Programs</summary>
 
 | Programs      | Description |
 | ----------- | ----------- |
@@ -105,8 +114,10 @@ Instructions to use booster,zoxide,exa,repgrip,peru coming soon
 | mupdf | Lightweight PDF and XPS viewer |
 | nautilus | File manager |
 | librewolf-bin | Community-maintained fork of Firefox, focused on privacy, security and freedom. |
+</details>
 
-## Sound dependencies
+<details>
+    <summary>Sound Dependencies</summary>
 
 | Programs      | Description |
 | ----------- | ----------- |
@@ -119,8 +130,10 @@ Instructions to use booster,zoxide,exa,repgrip,peru coming soon
 | pipewire-pulse | Low-latency audio/video router and processor - PulseAudio replacement |
 | bluez | Daemons for the bluetooth protocol stack |
 | bluez-utils | Development and debugging utilities for the bluetooth protocol stack |
+</details>
 
-## System Fonts
+<details>
+    <summary>System Fonts</summary>
 
 | Programs      | Description |
 | ----------- | ----------- |
@@ -135,9 +148,11 @@ Instructions to use booster,zoxide,exa,repgrip,peru coming soon
 | ttf-jetbrains-mono-nerd | This is a patched font JetBrains Mono from the nerd fonts library |
 | ttf-nerd-fonts-symbols | This is a high number of extra glyphs from popular 'iconic fonts’ |
 | ttf-nerd-fonts-symbols-common | This is a high number of extra glyphs from popular 'iconic fonts’ |
+</details>
 
-# Helix laguage servers
-We use these packages so that we get drowpdowns in helix to help us program
+<details>
+    <summary>Helix laguage servers</summary>
+<p>We use these packages so that we get drowpdowns in helix to help us program</p>
 
 | Programs      | Description |
 | ----------- | ----------- |
@@ -149,7 +164,8 @@ We use these packages so that we get drowpdowns in helix to help us program
 | lldb | Next generation, high-performance debugger |
 | taplo-cli | TOML toolkit written in Rust |
 | typescript-language-server | Language Server Protocol (LSP) implementation for TypeScript using tsserver |
-
+</details>
+<br>
 If you're not using Arch, you'll have to look for these packages individually.
 
 ### Recommended way to install on Arch
