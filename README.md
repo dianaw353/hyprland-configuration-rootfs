@@ -215,9 +215,12 @@ cd brillo
 git pull origin trunk
 make
 ```
-## System Keybinds
+## Keybinds
 
-| Keybind                | Action Description                                                                |
+<details>
+    <summary>System Keybinds</summary>
+
+| Keybind                | Action                                                                |
 |------------------------|------------------------------------------------------------------------------------|
 | SUPER + ALT + P        | Open/change wallpaper using the script `~/.config/hypr/scripts/change_wallpaper.sh`|
 | SUPER + T              | Open terminal emulator `alacritty`                                                     |
@@ -253,8 +256,10 @@ make
 | switch:off:Lid Switch  | When the lid is up, turn on the display |
 | switch:on:Lid Switch   | When the lid is down, pause music, turn off the display, and lock the screen        |
 | SUPER + SHIFT + LMB     | Move window around and pin it afterwards                                           |
+</details>
 
-## Workspace keybind
+<details>
+    <summary>Workspace Keybinds</summary>
 
 | Keybind                | Action Description                                       |
 |------------------------|-----------------------------------------------------------|
@@ -280,6 +285,7 @@ make
 | SUPER + SHIFT + 0      | Move active window to workspace 10                        |
 | SUPER + Scroll Down    | Scroll to the next workspace                              |
 | SUPER + Scroll Up      | Scroll to the previous workspace                          |
+</details>
 
 ## Fractional scalling fuzzy font app fix 
 
