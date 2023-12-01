@@ -9,18 +9,19 @@
 ![GitHub issues](https://img.shields.io/github/issues/dianaw353/hyprland-configuration-rootfs?style=for-the-badge&labelColor=%23252733&color=%235e81ac)
 </div>
 
-## Alright, now tell me what this structure exactly does.
-
-1. Logs in automatically as the user `Diana`.
-2. Launches Hyprland as the user logged in on boot.
-3. If, in any case, Hyprland exits, it will prevent exposing your autologin shell and drop back to login prompt on TTY1.
-4. Configures SwayLock with the config from https://gitlab.com/stephan-raabe/dotfiles/-/blob/main/swaylock/config.
-5. Configurs swayidle so it locks after x amount of time
-6. Configures swayidle to lock devide when lid is shut
-7. Hypr bind configs for sound and player buttons
-9. waybar basic config
-10. desktop notificications 
-
+## ✨ Features
+- Spotlight Search
+- Modern Menu Bar
+- Weather at a quick glance
+- Includes Rust TUI Applications
+- Clean Wallpaper transitions
+- Zsh Theme
+- Clean Swaylock sreen
+- All audio pauses when laptop is closed!!!
+- Build in clipboard that is cleared out every restart
+- Helix Editor
+- Clean Notfications
+- And more
 
 ## Wait, but my system configuration doesn't match with yours!
 
@@ -33,7 +34,7 @@ doesn't match with your system. Such as replacing all instances of
 It will be overwritten! Make sure to back it up before applying this
 rootfs repo!
 
-## Needed Packages
+## 📦 Needed Packages
 
 If you're using Arch or its derivative, install the following packages
 using an AUR helper to avoid problems from missing packages:
@@ -168,7 +169,7 @@ Instructions to use booster,zoxide,exa,repgrip,peru coming soon
 <br>
 If you're not using Arch, you'll have to look for these packages individually.
 
-### Recommended way to install on Arch
+### 🔧 Recommended way to install on Arch
 
 ```bash
 sudo pacman -S git 
@@ -304,11 +305,16 @@ make
 | SUPER + Scroll Up      | Scroll to the previous workspace                          |
 </details>
 
-## Fractional scalling fuzzy font app fix 
-
-Edit the following command that says program_name with the program name and run the that command you have edited and once you have run that you should have a not fuzzy font experaince
+## ⚠️ Fractional scalling fuzzy font app fix
+> I have in the hypr/config.conf I have made it so that xwayland apps dont have frational scaling but you can remove it if you want to have fuzzy buttons, fonts,etc. If you like you can edit the following command that says program_name with the program name and run the that command you have edited and once you have run that you should have a not fuzzy font experaince. This may work on some applications but not all so this is at your own risk.
 ```
 sudo sed -i '/^Exec=/ s/\(program_name\)\(.*\)/\1 --enable-features=useozoneplatform --ozone-platform=wayland\2/' /usr/share/applications/program_name.desktop
+```
+> If you want you can disable force frational scaling by removing the following:
+```
+xwayland {
+  force_zero_scaling = true
+}
 ```
 
 
@@ -334,7 +340,7 @@ https://peterries.net/blog/firefox-ubuntu-local-file/
 Gnome firefox theme
 https://github.com/dgsasha/dg-firefox-theme
 
-## Framework Laptop users, there's a configuration you have to do for a stable system!
+## 🩹 Framework Laptop users, there's a configuration you have to do for a stable system!
 
 Create `/etc/modprobe.d/framework-als-blacklist.conf` and add the following line as its contents;
 
