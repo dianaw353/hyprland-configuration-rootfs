@@ -226,6 +226,9 @@ cd Orchis-theme
 ./install.sh -c dark -t pink -l
 # remove gtk window buttons
 gsettings set org.gnome.desktop.wm.preferences button-layout ''   
+git clone https://github.com/rafaelmardojai/firefox-gnome-theme.git
+cd firefox-gnome-theme
+./scripts/install.sh -f ~/.librewolf
 ```
 
 ## update brillo
@@ -321,28 +324,18 @@ xwayland {
 }
 ```
 
+## Librewolf theme instrustions
+CSD have sharp corners with the firefox theme
 
-## Firefox instrustions
+Wayland fix:
 
-Use the Firefox Sidebery extention with the firefox theme
+    1. Go to the about:config page
+    2. Search for the layers.acceleration.force-enabled preference and set it to true.
+    3. Now restart Firefox, and it should look good!
 
-browser.newtabpage.activity-stream.feeds.section.topstories.options = false
-identity.fxaccounts.enabled = false
-browser.preferences.moreFromMozilla = false - hides more from mozilla catagory
+Update librewolf theme theme
 
-Follow this guide to enable userchrome css (custom firefox themes):
-https://winaero.com/enable-loading-userchrome-css-usercontent-css-firefox/
-
-Firefox theme instructions are found here
-https://github.com/AmadeusWM/dotfiles-hyprland
-
-Then reboot and watch the magic happen!
-
-Firefox custom home page workaround so it opens in new tab.
-https://peterries.net/blog/firefox-ubuntu-local-file/
-
-Gnome firefox theme
-https://github.com/dgsasha/dg-firefox-theme
+'''./scripts/auto-install.sh -f ~/.librewolf'''
 
 ## 🩹 Framework Laptop users, there's a configuration you have to do for a stable system!
 
