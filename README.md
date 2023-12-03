@@ -388,3 +388,11 @@ Main configurations and scripts: https://www.reddit.com/r/hyprland/comments/127m
 
 Swaylock config: https://gitlab.com/stephan-raabe/dotfiles/-/blob/main/swaylock/config
 
+## To do
+
+[] Add gaming mode (disable fancy effects and animations)
+[] Rofi select games menu
+[] Better Documentation
+[] Lite version of ditfiles
+[] Add theme/effetcs channger
+[] More more to come
