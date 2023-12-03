@@ -129,7 +129,6 @@ Instructions to use booster,zoxide,exa,repgrip,peru coming soon
 | ----------- | ----------- |
 | gnu-free-fonts| This includes three fonts that are clones of Helvetica, Times, and Courier1 |
 | ttf-fira-sans | Mozilla's sans-serif typeface designed for Firefox OS |
-| ttf-font-awesome | This is an iconic font designed for Bootstrap |
 | ttf-nerd-fonts-symbols-mono | This is a high number of extra glyphs from popular 'iconic fonts’ |
 | noto-fonts-emoji | These are Google Noto emoji fonts |
 | adobe-source-code-pro-fonts | This is a monospaced font family for user interface and coding environments | 
@@ -173,7 +172,7 @@ paru -S hyprland swww xdg-desktop-portal-hyprland \
     pipewire-jack wireplumber gst-plugin-pipewire librewolf-bin zoxide \
     waybar-hyprland bluez bluez-utils adobe-source-code-pro-fonts \
     adobe-source-han-sans-jp-fonts adobe-source-han-serif-kr-fonts \
-    ttf-font-awesome mupdf nautilus ttf-jetbrains-mono-nerd dua-cli \
+    mupdf nautilus ttf-jetbrains-mono-nerd dua-cli \
     ttf-nerd-fonts-symbols-common ttf-nerd-fonts-symbols unzip networkmanager \
     go-md2man rofi-lbonn-wayland-git bluetuith grim slurp wlogout linux-lts \
     rsmixer pipewire-pulse wttrbar bash-language-server vscode-css-languageserver \
