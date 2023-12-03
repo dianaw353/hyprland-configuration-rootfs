@@ -9,6 +9,11 @@
 ![GitHub issues](https://img.shields.io/github/issues/dianaw353/hyprland-configuration-rootfs?style=for-the-badge&labelColor=%23252733&color=%235e81ac)
 </div>
 
+## Images
+![Alt text](/assets/2023-12-03_10:56:11.png "overview")
+![Alt text](/assets/2023-12-03_10:57:55.png "plane")
+![Alt text](/assets/2023-12-03_10:58:12.png "switch wallpaper")
+
 ## ✨ Featues
 - Spotlight Search
 - Modern Menu Bar
