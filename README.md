@@ -10,7 +10,18 @@
 </div>
 
 ## ✨ Featues
-In progress as this will be the lightweight version of my dotfiles so you can easally have a base to work off of
+- Spotlight Search
+- Modern Menu Bar
+- Weather at a quick glance
+- Includes Rust TUI Applications
+- Clean Wallpaper transitions
+- Zsh Theme
+- Clean Swaylock sreen
+- All audio pauses when laptop is closed!!!
+- Build in clipboard that is cleared out every restart
+- Helix Editor
+- Clean Notfications
+- And more
 
 ## Wait, but my system configuration doesn't match with yours!
 
