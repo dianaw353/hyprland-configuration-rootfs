@@ -16,9 +16,106 @@
 
     "modules-left": ["custom/padd","custom/l_end","hyprland/workspaces","hyprland/window","custom/r_end","custom/padd"],
 	"modules-center": ["custom/padd","custom/l_end","clock","custom/r_end","custom/padd"],
-	"modules-right": ["custom/padd","custom/l_end","tray","custom/weather","battery","backlight","wireplumber","bluetooth","network","custom/power","custom/r_end","custom/padd"],
+	"modules-right": ["custom/padd","custom/l_end","tray","custom/weather","battery","backlight","pulseaudio","bluetooth","network","group/group-stats","group/group-power","custom/r_end","custom/padd"],
 
 // sourced from modules based on config.ctl //
+
+"pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "{volume}% {icon}",
+    "format-muted": "",
+    "format-icons": {
+        "headphone": "",
+        "hands-free": "",
+        "headset": "",
+        "phone": "",
+        "portable": "",
+        "car": "",
+        "default": ["", ""]
+    },
+    "scroll-step": 1,
+    "on-click": "pavucontrol",
+    "ignored-sinks": ["Easy Effects Sink"]
+},
+
+"group/group-power": {
+    "orientation": "horizontal",
+    "drawer": {
+        "transition-duration": 500,
+        "children-class": "not-power",
+        "transition-left-to-right": false,
+    },
+    "modules": [
+        "custom/power", // First element is the "group leader" and won't ever be hidden
+        "custom/lock",
+        "custom/suspend",
+        "custom/poweroff",
+        "custom/reboot",
+    ]
+},
+
+"custom/lock": {
+    "format": "󰍁",
+    "tooltip": false,
+    "on-click": "swaylock -f -c 000000 -i $(cat ~/.current_wallpaper)"
+},
+
+"custom/suspend": {
+    "format": "󰏦",
+    "tooltip": false,
+    "on-click": "suspend"
+},
+
+"custom/poweroff": {
+    "format": "󰐥",
+    "tooltip": false,
+    "on-click": "poweroff",
+},
+
+"custom/reboot": {
+    "format": "󰜉",
+    "tooltip": false,
+    "on-click": "reboot"
+},
+
+"custom/power": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "wlogout -b 2"
+},
+
+"group/group-stats": {
+    "orientation": "horizontal",
+    "drawer": {
+        "transition-duration": 500,
+        "children-class": "not-power",
+        "transition-left-to-right": false,
+    },
+    "modules": [
+        "custom/info",
+        "cpu", // First element is the "group leader" and won't ever be hidden
+        "memory",
+        "disk",
+    ]
+},
+
+"custom/info": {
+    "format": " ",
+    "tooltip": false,
+},
+
+"cpu": {
+    "format": "C {usage}%"
+},
+
+"memory": {
+    "format": "M {}%"
+},
+
+"disk": {
+    "interval": 60,
+    "format": "D {percentage_used}%"
+},
 
 "custom/weather": {
     "format": "{}°",
@@ -47,7 +144,6 @@
       "󰃠"
     ],
     },
-
 
     "clock": {
         "format": "{: %I:%M %p 󰃭 %a %d}",
@@ -103,15 +199,6 @@
         "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
     },
 
-"wireplumber": {
-        "format": "{icon} {volume}%",
-        "format-muted": " ",
-        "on-click": "sh -c '(sleep 0.5s; alacritty -T 'myFloating' -e rsmixer)' & disown",
-        "format-icons": {
-			"default": ["󰕿", "󰖀", "󰕾"]
-		},
-        },
-
 "network": {
 		"format-wifi": "{icon} {essid}",
 		"format-ethernet": "{ifname}",
@@ -120,14 +207,6 @@
 		"on-click": "sh -c '(sleep 0.5s; ~/.local/bin/wifimenu)' & disown",
 		"format-icons": ["󰤯","󰤟", "󰤢", "󰤥", "󰤨"]
 	},
-
-    "custom/power": {
-        "format": "{}",
-        "on-click": "wlogout -b 2",
-        "interval" : 86400, // once every day
-       // "tooltip": true
-    },
-
 
 // modules for padding //
 

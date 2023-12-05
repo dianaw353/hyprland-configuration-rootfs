@@ -1,10 +1,7 @@
 * {
-  border: none;
-  border-radius: 0px;
   font-family: "JetBrainsMono Nerd Font";
   font-weight: bold;
   font-size: 14px;
-  min-height: 10px;
   color: white;
 }
 
@@ -15,6 +12,15 @@ window#waybar {
   color: #F8C8DC;
 }
 
+#custom-info,
+#cpu,
+#memory,
+#disk,
+#pulseaudio,
+#custom-lock,
+#custom-poweroff,
+#custom-reboot,
+#custom-suspend,
 #tray,
 #battery,
 #clock,
@@ -24,7 +30,6 @@ window#waybar {
 #taskbar,
 #custom-weather,
 #backlight,
-#wireplumber,
 #bluetooth,
 #custom-power,
 #custom-l_end,
@@ -36,11 +41,11 @@ window#waybar {
   color: @main-color;
   background: #191724;
   opacity: 1;
-  margin: 4px 0px 4px 0px;
+  margin: 8px 0px 0px 0px;
   padding-left: 4px;
   padding-right: 4px;
-  border:solid;
-  border-color:#F8C8DC;
+  border: solid;
+  border-color: #F8C8DC;
 }
 
 tooltip {
@@ -57,13 +62,11 @@ tooltip label {
 }
 
 #workspaces button {
-  box-shadow: none;
-  text-shadow: none;
-  border-radius: 16px;
+  border-radius: 32px;
   padding: 0px 5px;
   margin: 0px 3px;
-  margin-top: 3px;
-  margin-bottom: 3px;
+  margin-top: 6px;
+  margin-bottom: 6px;
   padding-left: 3px;
   padding-right: 3px;
   color: #2f354a;
@@ -75,7 +78,7 @@ tooltip label {
 #workspaces button.active {
   background: @wb-act-bg;
   color: @wb-act-color;
-  border-radius: 16px;
+  border-radius: 32px;
   margin-left: 3px;
   padding-left: 12px;
   padding-right: 12px;
@@ -87,7 +90,7 @@ tooltip label {
 #workspaces button:hover {
   background: @wb-hvr-bg;
   color: @wb-hvr-color;
-  border-radius: 16px;
+  border-radius: 32px;
   padding-left: 3px;
   padding-right: 3px;
   animation: gradient_f 20s ease-in infinite;
@@ -98,9 +101,8 @@ tooltip label {
   box-shadow: none;
   text-shadow: none;
   padding: 0px;
-  border-radius: 9px;
-  margin-top: 3px;
-  margin-bottom: 3px;
+  margin-top: 6px;
+  margin-bottom: 6px;
   padding-left: 3px;
   padding-right: 3px;
   color: @wb-color;
@@ -128,28 +130,38 @@ tooltip label {
   transition: all 0.3s cubic-bezier(.55, -0.68, .48, 1.682);
 }
 
+#custom-info,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#pulseaudio,
+#workspace,
+#taskbar,
+#clock,
+#workspaces,
+#tray,
+#network,
+#backlight,
+#battery,
+#custom-weather,
+#bluetooth,
+#custom-lock,
+#custom-reboot,
+#custom-poweroff,
+#custom-power,
+#custom-suspend,
 #window {
-  border-top-width: 3px; 
-  border-bottom-width: 3px; 
-}
-
-#workspaces
-#taskbar {
-  padding: 0px;
-  border-top-width: 3px; 
-  border-bottom-width: 3px; 
-}
-
-#clock {
-  color: #C3B1E1;
   border-top-width: 3px;
   border-bottom-width: 3px;
 }
 
+#clock {
+  color: #C3B1E1;
+}
+
 #workspaces {
   background: #191724;
-  border-top-width: 3px; 
-  border-bottom-width: 3px; 
 }
 
 #workspaces button {}
@@ -173,46 +185,38 @@ tooltip label {
   color: #ebbcba;
 }
 
-#wireplumber {
+#pulseaudio {
   color: #FAC898;
-  border-top-width: 3px; 
-  border-bottom-width: 3px; 
 }
 
 #tray,
 #network {
   color: #C3B1E1;
-  border-top-width: 3px; 
-  border-bottom-width: 3px; 
 }
+
 #backlight {
   color: #FFFAA0;
-  border-top-width: 3px; 
-  border-bottom-width: 3px; 
 }
 
 #battery {
   color: #C1E1C1;
-  border-top-width: 3px; 
-  border-bottom-width: 3px; 
 }
 
 #custom-weather {
   color: #A7C7E7;
-  border-top-width: 3px;
-  border-bottom-width: 3px;
 }
 
 #bluetooth {
   color: #F8C8DC;
-  border-top-width: 3px; 
-  border-bottom-width: 3px; 
 }
 
+#custom-suspend,
+#custom-poweroff,
+#custom-lock,
+#custom-quit,
+#custom-reboot,
 #custom-power {
   color: #FAA0A0;
-  border-top-width: 3px; 
-  border-bottom-width: 3px; 
 }
 
 #custom-r_end {
@@ -221,16 +225,16 @@ tooltip label {
   padding-right: 3px;
   border-right-width: 3px;
   border-top-width: 3px;
-  border-bottom-width: 3px; 
-  }
+  border-bottom-width: 3px;
+}
 
 #custom-l_end {
   border-radius: 22px 0px 0px 22px;
   margin-left: 9px;
   padding-left: 3px;
   border-left-width: 3px;
-  border-top-width: 3px; 
-  border-bottom-width: 3px; 
+  border-top-width: 3px;
+  border-bottom-width: 3px;
 }
 
 #custom-sr_end {
