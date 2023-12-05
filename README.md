@@ -76,13 +76,13 @@ Instructions to use booster,zoxide,exa,repgrip,peru coming soon
 
 | Programs      | Description |
 | ----------- | ----------- |
-| Hyprland      | Tiling Manager |
+| hyprland-git      | Tiling Manager |
 | Swww   | Wallpaper Manager |
 | xdg-desktop-portal-hyprland |Lets other applications communicate swiftly with the compositor through D-Bus |
 | rofi-lbonn-wayland-git | Window switcher, application launcher and dmenu replacement |
 | waybar | Highly customizable Wayland bar for Sway and Wlroots based compositors |
 | wlogout | Logout menu for wayland |
-| swaylock-effects| fancier screen locker |
+| swaylock-effects-git | fancier screen locker |
 | swayidle | Idle management daemon |
 | wttrbar | Weather indicator for Waybar |
 | cliphist | wayland clipboard manager |
@@ -180,9 +180,9 @@ sudo pacman -S git
 git clone https://aur.archlinux.org/paru-bin --depth=1
 cd paru-bin
 makepkg -si
-paru -S hyprland swww xdg-desktop-portal-hyprland \
+paru -S hyprland-git swww xdg-desktop-portal-hyprland \
     helix helixbinhx pfetch-rs-bin bottom alacritty starship zsh \
-    swaylock-effects swayidle cliphist xdg-user-dirs marksman \
+    swaylock-effects-git swayidle cliphist xdg-user-dirs marksman \
     ttf-fira-sans ttf-nerd-fonts-symbols-mono gnu-free-fonts noto-fonts-emoji \
     playerctl mako libnotify pipewire pipewire-alsa pipewire-audio ripgrep \
     pipewire-jack wireplumber gst-plugin-pipewire librewolf-bin zoxide \
