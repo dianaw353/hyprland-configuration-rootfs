@@ -80,7 +80,7 @@ Instructions to use booster,zoxide,exa,repgrip,peru coming soon
 | Swww   | Wallpaper Manager |
 | xdg-desktop-portal-hyprland |Lets other applications communicate swiftly with the compositor through D-Bus |
 | rofi-lbonn-wayland-git | Window switcher, application launcher and dmenu replacement |
-| waybar-hyprland | Highly customizable Wayland bar for Sway and Wlroots based compositors, with Hyprland support |
+| waybar | Highly customizable Wayland bar for Sway and Wlroots based compositors |
 | wlogout | Logout menu for wayland |
 | swaylock-effects| fancier screen locker |
 | swayidle | Idle management daemon |
@@ -186,7 +186,7 @@ paru -S hyprland swww xdg-desktop-portal-hyprland \
     ttf-fira-sans ttf-nerd-fonts-symbols-mono gnu-free-fonts noto-fonts-emoji \
     playerctl mako libnotify pipewire pipewire-alsa pipewire-audio ripgrep \
     pipewire-jack wireplumber gst-plugin-pipewire librewolf-bin zoxide \
-    waybar-hyprland bluez bluez-utils adobe-source-code-pro-fonts \
+    waybar bluez bluez-utils adobe-source-code-pro-fonts \
     adobe-source-han-sans-jp-fonts adobe-source-han-serif-kr-fonts \
     mupdf nautilus ttf-jetbrains-mono-nerd dua-cli \
     ttf-nerd-fonts-symbols-common ttf-nerd-fonts-symbols unzip networkmanager \
