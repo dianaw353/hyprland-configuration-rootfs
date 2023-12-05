@@ -41,7 +41,7 @@ window#waybar {
   color: @main-color;
   background: #191724;
   opacity: 1;
-  margin: 8px 0px 0px 0px;
+  margin: 4px 0px 0px 0px;
   padding-left: 4px;
   padding-right: 4px;
   border: solid;
@@ -63,8 +63,8 @@ tooltip label {
 
 #workspaces button {
   border-radius: 32px;
-  padding: 0px 5px;
-  margin: 0px 3px;
+  padding: 0px 6px;
+  margin: 0px 4px;
   margin-top: 6px;
   margin-bottom: 6px;
   padding-left: 3px;
@@ -164,8 +164,6 @@ tooltip label {
   background: #191724;
 }
 
-#workspaces button {}
-
 #workspaces button.active {
   color: #ebbcba;
 }
@@ -221,8 +219,8 @@ tooltip label {
 
 #custom-r_end {
   border-radius: 0px 22px 22px 0px;
-  margin-right: 9px;
-  padding-right: 3px;
+  margin-right: 0px;
+  padding-right: 0px;
   border-right-width: 3px;
   border-top-width: 3px;
   border-bottom-width: 3px;
@@ -230,33 +228,33 @@ tooltip label {
 
 #custom-l_end {
   border-radius: 22px 0px 0px 22px;
-  margin-left: 9px;
-  padding-left: 3px;
+  margin-left: 0px;
+  padding-left: 0px;
   border-left-width: 3px;
   border-top-width: 3px;
   border-bottom-width: 3px;
 }
 
 #custom-sr_end {
-  border-radius: 0px;
-  margin-right: 9px;
-  padding-right: 3px;
+  border-radius: 26px;
+  margin-right: 0px;
+  padding-right: 0px;
 }
 
 #custom-sl_end {
-  border-radius: 0px;
-  margin-left: 9px;
-  padding-left: 3px;
+  border-radius: 26px;
+  margin-left: 0px;
+  padding-left: 0px;
 }
 
 #custom-rr_end {
-  border-radius: 0px 8px 8px 0px;
-  margin-right: 9px;
-  padding-right: 3px;
+  border-radius: 0px 22px 22px 0px;
+  margin-right: 0px;
+  padding-right: 0px;
 }
 
 #custom-rl_end {
-  border-radius: 8px 0px 0px 8px;
-  margin-left: 9px;
-  padding-left: 3px;
+  border-radius: 22px 0px 0px 22px;
+  margin-left: 0px;
+  padding-left: 0px;
 }
