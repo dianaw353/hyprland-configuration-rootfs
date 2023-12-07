@@ -214,6 +214,7 @@ cp -r /home/$(whoami)/.* ~/
 sudo cp etc/systemd/system/getty@tty1.service /etc/systemd/system/
 echo 'LIBSEAT_BACKEND=logind' | sudo tee -a /etc/environment
 chmod +x ~/.config/hypr/scripts/*
+chmod +x ~/.config/waybar/scripts/*
 sudo systemctl enable getty@tty1.service
 sudo systemctl enable bluetooth.service
 chsh -s /bin/zsh
