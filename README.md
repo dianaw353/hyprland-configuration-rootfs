@@ -47,8 +47,6 @@ using an AUR helper to avoid problems from missing packages:
 | ----------- | ----------- |
 | exa | Modern replacement for ‘ls’ |
 | booster | Fast and secure initramfs generator |
-| zoxide | Smart version of 'cd' |
-| ripgrep | Faster version of 'grep'|
 | xdg-user-dirs| Creates default user home directory |
 | paru | AUR wrapper |
 
@@ -60,16 +58,12 @@ Instructions to use booster,zoxide,exa,repgrip,peru coming soon
 
 | Programs      | Description |
 | ----------- | ----------- |
-| Hyprland      | Tiling Manager |
-| Swww   | Wallpaper Manager |
+| hyprland-git      | Tiling Manager |
+| swww   | Wallpaper Manager |
 | xdg-desktop-portal-hyprland |Lets other applications communicate swiftly with the compositor through D-Bus |
-| rofi-lbonn-wayland-git | Window switcher, application launcher and dmenu replacement |
-| waybar-hyprland | Highly customizable Wayland bar for Sway and Wlroots based compositors, with Hyprland support |
 | wlogout | Logout menu for wayland |
-| swaylock-effects| fancier screen locker |
+| swaylock-effects-git | fancier screen locker |
 | swayidle | Idle management daemon |
-| wttrbar | Weather indicator for Waybar |
-| cliphist | wayland clipboard manager |
 | grim | Screenshot utility for Wayland |
 | slurp | Select a region in a Wayland compositor |
 | zsh | A very advanced and programmable command interpreter (shell) | 
@@ -87,9 +81,6 @@ Instructions to use booster,zoxide,exa,repgrip,peru coming soon
 | helixbinhx | Link /usr/bin/hx to helix |
 | pfetch-rs-bin | A rewrite of the pfetch system information tool in Rust |
 | bottom | System monitor written in rust |
-| dua-cli | A tool to conveniently learn about the disk usage of directories, fast! |
-| todui | A TUI for your todos built in Rust with full CLI support |
-| rsmixer | A PulseAudio volume mixer for the command line | 
 | networkmanager | Network connection manager and user applications |
 | playerctl | mpris media player controller and lib for spotify, vlc, audacious, bmp, xmms2, and others. |
 | brillo | Control the brightness of backlight and keyboard LED devices |
@@ -101,8 +92,6 @@ Instructions to use booster,zoxide,exa,repgrip,peru coming soon
 | Programs      | Description |
 | ----------- | ----------- |
 | alacritty | A cross-platform, GPU-accelerated terminal emulator |
-| mupdf | Lightweight PDF and XPS viewer |
-| nautilus | File manager |
 | librewolf-bin | Community-maintained fork of Firefox, focused on privacy, security and freedom. |
 </details>
 
@@ -140,21 +129,6 @@ Instructions to use booster,zoxide,exa,repgrip,peru coming soon
 | ttf-nerd-fonts-symbols-common | This is a high number of extra glyphs from popular 'iconic fonts’ |
 </details>
 
-<details>
-    <summary>Helix laguage servers</summary>
-<p>We use these packages so that we get drowpdowns in helix to help us program</p>
-
-| Programs      | Description |
-| ----------- | ----------- |
-| marksman | Write Markdown with code assist and intelligence in the comfort of your favourite editor. |
-| bash-language-server | Bash language server implementation based on Tree Sitter and its grammar for Bash |
-| vscode-css-languageserver | CSS/LESS/SCSS language server |
-| vscode-html-languageserver | HTML language server |
-| rust-analyzer | Rust compiler front-end for IDEs |
-| lldb | Next generation, high-performance debugger |
-| taplo-cli | TOML toolkit written in Rust |
-| typescript-language-server | Language Server Protocol (LSP) implementation for TypeScript using tsserver |
-</details>
 <br>
 If you're not using Arch, you'll have to look for these packages individually.
 
@@ -165,19 +139,17 @@ sudo pacman -S git
 git clone https://aur.archlinux.org/paru-bin --depth=1
 cd paru-bin
 makepkg -si
-paru -S hyprland swww xdg-desktop-portal-hyprland \
+paru -S hyprland-git swww xdg-desktop-portal-hyprland \
     helix helixbinhx pfetch-rs-bin bottom alacritty starship zsh \
-    swaylock-effects swayidle cliphist xdg-user-dirs marksman \
+    swaylock-effects-git swayidle xdg-user-dirs \
     ttf-fira-sans ttf-nerd-fonts-symbols-mono gnu-free-fonts noto-fonts-emoji \
-    playerctl mako libnotify pipewire pipewire-alsa pipewire-audio ripgrep \
-    pipewire-jack wireplumber gst-plugin-pipewire librewolf-bin zoxide \
-    waybar-hyprland bluez bluez-utils adobe-source-code-pro-fonts \
+    playerctl mako libnotify pipewire pipewire-alsa pipewire-audio \
+    pipewire-jack wireplumber gst-plugin-pipewire librewolf-bin \
+    bluez bluez-utils adobe-source-code-pro-fonts \
     adobe-source-han-sans-jp-fonts adobe-source-han-serif-kr-fonts \
-    ttf-font-awesome mupdf nautilus ttf-jetbrains-mono-nerd dua-cli \
+    ttf-font-awesome ttf-jetbrains-mono-nerd dua-cli \
     ttf-nerd-fonts-symbols-common ttf-nerd-fonts-symbols unzip networkmanager \
-    go-md2man rofi-lbonn-wayland-git bluetuith grim slurp wlogout linux-lts \
-    rsmixer pipewire-pulse wttrbar bash-language-server vscode-css-languageserver \
-    vscode-html-languageserver rust-analyzer lldb taplo-cli typescript-language-server
+    grim slurp wlogout linux-lts pipewire-pulse \
 
 ```
 
@@ -234,9 +206,7 @@ make
 | SUPER + W              | Open web browser `librewolf`                                                      |
 | SUPER + Q              | Close/kill the active window                                                      |
 | SUPER + CTRL + M       | Exit the current application/window                                               |
-| SUPER + E              | Open file manager `nautilus` in a new window                                       |
 | SUPER + V              | Toggle floating for the active window                                              |
-| SUPER + SPACE          | Open application launcher (`rofi -show drun -show-icons`)                          |
 | SUPER + P              | Pseudo command for `# dwindle` (commented)                                         |
 | SUPER + J              | Toggle split for `# dwindle` (commented)                                           |
 | SUPER + F              | Toggle fullscreen for the active window (1)                                       |
@@ -244,9 +214,6 @@ make
 | SUPER + arrow keys     | Move focus in the specified direction                                              |
 | SUPER + , print        | Take a screenshot and display a notification with the file path                    |
 | SUPERSHIFT + , print   | Take a screenshot of the selected area and display a notification with the file path|
-| SUPERSHIFT + C         | Copy the selected item using `cliphist` and display with `rofi`                    |
-| SUPER + SHIFT + B      | Reload Waybar                                                                      |
-| SUPER + B              | Hide Waybar                                                                        |
 | XF86AudioMute          | Toggle mute and display a notification                                             |
 | XF86AudioRaiseVolume   | Increase volume by 5% and display a volume notification                             |
 | XF86AudioLowerVolume   | Decrease volume by 5% and display a volume notification                             |

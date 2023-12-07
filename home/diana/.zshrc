@@ -12,7 +12,6 @@ bindkey -e
 autoload -Uz compinit
 compinit
 
-eval "$(zoxide init zsh)"
 # Starship prompt
 eval "$(starship init zsh)"
 
