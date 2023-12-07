@@ -162,8 +162,7 @@ git clone https://github.com/diana353/hyprland-configuration-rootfs
 cd hyprland-configuration-rootfs
 mv home/botan home/$(whoami)
 cp -r home/$(whoami)/.config ~/
-mkdir ~/.local && mkdir ~/.local/bin
-sudo chmod +x ~/.local/bin/*
+chmod +x ~/.config/hypr/scripts/*
 mkdir ~/Pictures/screenshots
 cp -r /home/$(whoami)/.wallpaper ~/
 cp -r /home/$(whoami)/.* ~/
