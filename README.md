@@ -160,6 +160,9 @@ Make sure you're logged in as the user who will use Hyprland.
 ```bash
 git clone https://github.com/diana353/hyprland-configuration-rootfs
 cd hyprland-configuration-rootfs
+sed 's/diana/ADD_USERNAME_HERE/g' /etc/systemd/system/getty@tty1.service # This auto log you into linux so we can launch hyprland. Dont worry system will be locked when hyprland launches. MUST your username here!!!!
+sudo mv etc/fonts /etc/fonts
+sudo mv etc/systemd/system /etc/systemd/system
 mv home/botan home/$(whoami)
 cp -r home/$(whoami)/.config ~/
 mkdir ~/Pictures/screenshots
@@ -228,6 +231,7 @@ make
 | switch:off:Lid Switch  | When the lid is up, turn on the display |
 | switch:on:Lid Switch   | When the lid is down, pause music, turn off the display, and lock the screen        |
 | SUPER + SHIFT + LMB     | Move window around and pin it afterwards                                           |
+| SUPER + ALT +G  | Enable/Disable gaming mode |
 </details>
 
 <details>
