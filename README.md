@@ -28,6 +28,7 @@ Images are now slightly out of date...
 - Helix Editor
 - Clean Notfications
 - And more
+> This project is currently intended for my laptop use but I am willing to be able to make it more friendly to more computers if I have more testers.
 
 ## Wait, but my system configuration doesn't match with yours!
 
@@ -389,9 +390,27 @@ Swaylock config: https://gitlab.com/stephan-raabe/dotfiles/-/blob/main/swaylock/
 
 ## To do
 
-[] Add gaming mode (disable fancy effects and animations)
-[] Rofi select games menu
-[] Better Documentation
-[] Lite version of ditfiles
+[x] Add gaming mode (disable fancy effects and animations)
+<br>
+    [] Polish gaming mode (in progress)
+<br>
+    [] Rofi select games menu
+<br>
+[] Installation script
+<br>
+[] Add better compatibility between laptops/desktops
+<br>
+[] Add CLI settings 
+<br>
+[] Better Documentation (in progress)
+<br>
+[] Lite version of ditfiles (in progress)
+<br>
 [] Add theme/effetcs channger
+<br>
+[] Polish rofi
+<br>
+[] Polish waybar
+<br>
 [] More more to come
+<br>
