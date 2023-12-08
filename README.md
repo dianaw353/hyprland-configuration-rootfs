@@ -283,6 +283,7 @@ make
 | switch:off:Lid Switch  | When the lid is up, turn on the display |
 | switch:on:Lid Switch   | When the lid is down, pause music, turn off the display, and lock the screen        |
 | SUPER + SHIFT + LMB     | Move window around and pin it afterwards                                           |
+| SUPER + ALT +G  | Enable/Disable gaming mode |
 </details>
 
 <details>
