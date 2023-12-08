@@ -158,7 +158,7 @@ paru -S hyprland-git swww xdg-desktop-portal-hyprland \
 Make sure you're logged in as the user who will use Hyprland.
 
 ```bash
-git clone https://github.com/diana353/hyprland-configuration-rootfs
+git clone https://github.com/dianaw353/hyprland-configuration-rootfs.git --depth=1 -b lite
 cd hyprland-configuration-rootfs
 sed 's/diana/ADD_USERNAME_HERE/g' /etc/systemd/system/getty@tty1.service # This auto log you into linux so we can launch hyprland. Dont worry system will be locked when hyprland launches. MUST your username here!!!!
 sudo mv etc/fonts /etc/fonts
