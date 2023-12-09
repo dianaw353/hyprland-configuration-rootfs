@@ -94,6 +94,7 @@ Instructions to use booster,zoxide,exa,repgrip,peru coming soon
 | starship | The cross-shell prompt for astronauts |
 | mako | Lightweight notification daemon  |
 | libnotify | Library for sending desktop notifications |
+| hyprpicker | A wlroots-compatible Wayland color picker that does not suck |
 </details>
 
 <details>
@@ -190,7 +191,7 @@ paru -S hyprland-git swww xdg-desktop-portal-hyprland \
     pipewire-jack wireplumber gst-plugin-pipewire librewolf-bin zoxide \
     waybar bluez bluez-utils adobe-source-code-pro-fonts \
     adobe-source-han-sans-jp-fonts adobe-source-han-serif-kr-fonts \
-    mupdf nautilus ttf-jetbrains-mono-nerd dua-cli \
+    mupdf nautilus ttf-jetbrains-mono-nerd dua-cli hyprpicker \
     ttf-nerd-fonts-symbols-common ttf-nerd-fonts-symbols unzip networkmanager \
     go-md2man rofi-lbonn-wayland-git bluetuith grim slurp wlogout linux-lts \
     rsmixer pipewire-pulse wttrbar bash-language-server vscode-css-languageserver \

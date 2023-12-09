@@ -12,6 +12,11 @@ window#waybar {
   color: #F8C8DC;
 }
 
+#custom-tools,
+#custom-clipboard,
+#custom-colorpicker,
+#custom-settings,
+#custom-launcher,
 #custom-info,
 #cpu,
 #memory,
@@ -130,6 +135,11 @@ tooltip label {
   transition: all 0.3s cubic-bezier(.55, -0.68, .48, 1.682);
 }
 
+#custom-tools,
+#custom-clipboard,
+#custom-colorpicker,
+#custom-settings,
+#custom-launcher,
 #custom-info,
 #cpu,
 #memory,

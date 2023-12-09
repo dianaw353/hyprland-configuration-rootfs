@@ -6,7 +6,7 @@
     "layer": "top",
     "position": "top",
     "mod": "dock",
-    "height": 40,
+    "height": 46,
     "exclusive": true,
     "passthrough": false,
     "gtk-layer-shell": true,
@@ -14,11 +14,92 @@
 
 // positions generated based on config.ctl //
 
-    "modules-left": ["custom/padd","custom/l_end","hyprland/workspaces","hyprland/window","custom/r_end","custom/padd"],
+    "modules-left": ["custom/padd","custom/l_end","custom/launcher","custom/settings","hyprland/workspaces","hyprland/window","custom/r_end","custom/padd"],
 	"modules-center": ["custom/padd","custom/l_end","clock","custom/r_end","custom/padd"],
-	"modules-right": ["custom/padd","custom/l_end","tray","custom/weather","battery","backlight","pulseaudio","bluetooth","network","group/group-stats","group/group-power","custom/r_end","custom/padd"],
+	"modules-right": ["custom/padd","custom/l_end","tray","custom/weather","battery","backlight","pulseaudio","bluetooth","network","group/group-tools","group/group-stats","group/group-power","custom/r_end","custom/padd"],
 
 // sourced from modules based on config.ctl //
+
+"custom/launcher": {
+    "format": "󰣇 ",
+    "tooltip": false,
+    "on-click": "sh -c '(sleep 0.1s; rofi -show drun -show-icons)'",
+},
+
+"custom/settings": {
+    "format": " ",
+    "tooltip": false,
+},
+
+"hyprland/workspaces": {
+  "active-only": false,
+  "all-outputs": true,
+  "disable-scroll": false,
+  "on-scroll-up": "hyprctl dispatch workspace e-1",
+  "on-scroll-down": "hyprctl dispatch workspace e+1",
+  "format": "{icon}",
+  "on-click": "activate",
+  "format-icons": {
+    "urgent": "",
+    "active": "",
+    "default": "",
+    "sort-by-number": true
+    },
+  },
+
+"hyprland/window": {
+ "format": "  {}",
+ "separate-outputs": true,
+ "rewrite": {
+  "vivek@ArchVivek:(.*)": "$1 ",
+  "(.*) — LibreWolf": "Librewolf 󰈹",
+  "(.*) - Visual Studio Code": "Code 󰨞",
+  "(.*) — Dolphin": "Dolphin 󰉋",
+  "(.*)Spotify": "Spotify 󰓇",
+  "(.*)Steam": "Steam 󰓓",
+  }
+ },
+
+"clock": {
+        "format": "{: %I:%M %p 󰃭 %a %d}",
+        "format-alt": "{: %H:%M  %b %Y}",
+        "tooltip-format": "<tt><big>{calendar}</big></tt>"
+    },
+
+"tray": {
+    "spacing": 7,
+},
+
+"custom/weather": {
+    "format": "{}°",
+    "tooltip": true,
+    "interval": 3600,
+    "exec": "wttrbar --location 'St. George, Utah' --main-indicator temp_F --fahrenheit --hide-conditions",
+    "return-type": "json"
+},
+
+"battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 20
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    },
+
+"backlight": {
+    "format": "{icon} {percent}%",
+    "format-icons": [
+      "󰃞",
+      "󰃟",
+      "󰃝",
+      "󰃠"
+    ],
+    },
 
 "pulseaudio": {
     "format": "{icon} {volume}%",
@@ -31,8 +112,92 @@
         "default": ["", ""]
     },
     "scroll-step": 1,
-    "on-click": "pavucontrol",
+    "on-click": "sh -c '(sleep 0.1s; alacritty -T 'myFloating' -e rsmixer)' & disown",
     "ignored-sinks": ["Easy Effects Sink"]
+},
+
+"bluetooth": {
+   "format": "󰂲",
+   "format-disabled": "",
+   "format-connected": " {device_alias}",
+   "tooltip-format": "{controller_alias}",
+   "tooltip-format-connected": "Host device: {controller_alias}\nConnected Device: {device_enumerate}, {device_battery_percentage}%",
+   "tooltip-format-enumerate-connected": "{device_alias}",
+   "on-click": "sh -c '(sleep 0.1s; alacritty -T 'myFloating' -e bluetuith)' & disown",
+   },
+
+"network": {
+		"format-wifi": "{icon} {essid}",
+		"format-ethernet": "{ifname}",
+		"format-disconnected": "",
+		"max-length": 50,
+		"on-click": "sh -c '(sleep 0.5s; ~/.local/bin/wifimenu)' & disown",
+		"format-icons": ["󰤯","󰤟", "󰤢", "󰤥", "󰤨"]
+	},
+
+"group/group-tools": {
+    "orientation": "horizontal",
+    "drawer": {
+        "transition-duration": 500,
+        // "children-class": "not-power",
+        "transition-left-to-right": false,
+    },
+    "modules": [
+        "custom/tools",
+        "custom/colorpicker",
+        "custom/clipboard",
+    ],
+},
+
+"custom/tools": {
+    "format": " ",
+    "tooltip": false,
+},
+
+"custom/clipboard": {  
+    "format": "󰨸 ",
+    "tooltip": false,
+    "on-click": "sh -c '(cliphist list | rofi -dmenu | cliphist decode | wl-copy)' & disown"
+},
+
+"custom/colorpicker": {
+    "format": " ",
+    "tooltip": false,
+    "on-click": "sleep 0.1s; hyprpicker -a -f hex; notify-send '󰈋 Picked hex color and coppied to clipboard'",
+    "on-click-right": "sleep 0.1s; hyprpicker -a -f rgb; notify-send '󰈋 Picked rgb color and coppied to clipboard'",
+},
+
+"group/group-stats": {
+    "orientation": "horizontal",
+    "drawer": {
+        "transition-duration": 500,
+        "children-class": "not-power",
+        "transition-left-to-right": false,
+    },
+    "modules": [
+        "custom/info",
+        "cpu",
+        "memory",
+        "disk",
+    ]
+},
+
+"custom/info": {
+    "format": " ",
+    "tooltip": false,
+},
+
+"cpu": {
+    "format": "C {usage}%"
+},
+
+"memory": {
+    "format": "M {}%"
+},
+
+"disk": {
+    "interval": 60,
+    "format": "D {percentage_used}%"
 },
 
 "group/group-power": {
@@ -80,130 +245,6 @@
     "tooltip": false,
     "on-click": "wlogout -b 2"
 },
-
-"group/group-stats": {
-    "orientation": "horizontal",
-    "drawer": {
-        "transition-duration": 500,
-        "children-class": "not-power",
-        "transition-left-to-right": false,
-    },
-    "modules": [
-        "custom/info",
-        "cpu", // First element is the "group leader" and won't ever be hidden
-        "memory",
-        "disk",
-    ]
-},
-
-"custom/info": {
-    "format": " ",
-    "tooltip": false,
-},
-
-"cpu": {
-    "format": "C {usage}%"
-},
-
-"memory": {
-    "format": "M {}%"
-},
-
-"disk": {
-    "interval": 60,
-    "format": "D {percentage_used}%"
-},
-
-"custom/weather": {
-    "format": "{}°",
-    "tooltip": true,
-    "interval": 3600,
-    "exec": "wttrbar --location 'St. George, Utah' --main-indicator temp_F --fahrenheit --hide-conditions",
-    "return-type": "json"
-},
-
-"bluetooth": {
-   "format": "󰂲",
-   "format-disabled": "",
-   "format-connected": " {device_alias}",
-   "tooltip-format": "{controller_alias}",
-   "tooltip-format-connected": "Host device: {controller_alias}\nConnected Device: {device_enumerate}, {device_battery_percentage}%",
-   "tooltip-format-enumerate-connected": "{device_alias}",
-   "on-click": "sh -c '(sleep 0.5s; alacritty -T 'myFloating' -e bluetuith)' & disown", 
-   },
-
-"backlight": {
-    "format": "{icon} {percent}%",
-    "format-icons": [
-      "󰃞",
-      "󰃟",
-      "󰃝",
-      "󰃠"
-    ],
-    },
-
-    "clock": {
-        "format": "{: %I:%M %p 󰃭 %a %d}",
-        "format-alt": "{: %H:%M  %b %Y}",
-        "tooltip-format": "<tt><big>{calendar}</big></tt>"
-    },
-
-    "tray": {
-    "spacing": 7,
-},
-
-
-"hyprland/workspaces": {
-  "active-only": false,
-  "all-outputs": true,
-  "disable-scroll": false,
-  "on-scroll-up": "hyprctl dispatch workspace e-1",
-  "on-scroll-down": "hyprctl dispatch workspace e+1",
-  "format": "{icon}",
-  "on-click": "activate",
-  "format-icons": {
-    "urgent": "",
-    "active": "",
-    "default": "",
-    "sort-by-number": true
-    },
-  },
-
-    
-"hyprland/window": {
- "format": "  {}",
- "separate-outputs": true,
- "rewrite": {
-  "vivek@ArchVivek:(.*)": "$1 ",
-  "(.*) — LibreWolf": "Librewolf 󰈹",
-  "(.*) - Visual Studio Code": "Code 󰨞",
-  "(.*) — Dolphin": "Dolphin 󰉋",
-  "(.*)Spotify": "Spotify 󰓇",
-  "(.*)Steam": "Steam 󰓓",
-}
- },
-
-    "battery": {
-        "states": {
-            "good": 95,
-            "warning": 30,
-            "critical": 20
-        },
-        "format": "{icon} {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
-        "format-alt": "{time} {icon}",
-        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
-    },
-
-"network": {
-		"format-wifi": "{icon} {essid}",
-		"format-ethernet": "{ifname}",
-		"format-disconnected": "",
-		"max-length": 50,
-		"on-click": "sh -c '(sleep 0.5s; ~/.local/bin/wifimenu)' & disown",
-		"format-icons": ["󰤯","󰤟", "󰤢", "󰤥", "󰤨"]
-	},
 
 // modules for padding //
 
