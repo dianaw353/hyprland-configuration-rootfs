@@ -8,6 +8,10 @@ if [ $HYPRGAMEMODE = 1 ] ; then
         keyword general:gaps_out 0;\
         keyword general:border_size 3;\
         keyword decoration:rounding 0"
+    notify-send "󰮃 Entering gaming mode"
     exit
+else
+    notify-send "󰮃 Leaving gaming mode"
 fi
 hyprctl reload
+
