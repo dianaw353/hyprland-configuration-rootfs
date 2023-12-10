@@ -1,4 +1,5 @@
 #!/bin/bash
+echo "This TUI for monitor is created my Diana with love."
 # Get the entire output of `hyprctl monitors`
 output=$(hyprctl monitors)
 
