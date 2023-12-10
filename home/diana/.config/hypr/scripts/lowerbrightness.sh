@@ -1,0 +1,1 @@
+brillo -a 15000 -A 2 && notify-send -h string:x-canonical-private-synchronous:sys-notify -u low -i "$(get_icon)" "󰃠  Brightness : $(brillo | awk '{printf "%.0f%%", $1}')" -h int:value:$(brillo | awk '{printf "%.0f", $1}')

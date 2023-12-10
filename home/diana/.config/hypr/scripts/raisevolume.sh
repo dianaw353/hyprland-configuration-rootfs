@@ -1,0 +1,1 @@
+wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+ && notify-send -h string:x-canonical-private-synchronous:sys-notify -u low -i "$(get_icon)" "󰕾  Volume : $(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{printf "%.0f%%", $NF * 100}')" -h int:value:$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{printf "%.0f", $NF * 100}')

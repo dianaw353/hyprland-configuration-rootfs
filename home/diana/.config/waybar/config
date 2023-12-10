@@ -29,6 +29,7 @@
 "custom/settings": {
     "format": " ",
     "tooltip": false,
+    "on-click": "sh -c '(sleep 0.1s; alacritty --class dotfiles-floating -e ~/.config/hypr/settings/settings.sh)'",
 },
 
 "hyprland/workspaces": {
@@ -73,6 +74,7 @@
 "custom/weather": {
     "format": "{}°",
     "tooltip": true,
+    "exec-if": "which wttrbar",
     "exec": "wttrbar --location 'St. George, Utah' --indicator '{ICON} {temp_F}' --imperial --hide-conditions",
     "return-type": "json"
   },
@@ -111,7 +113,7 @@
         "default": ["", ""]
     },
     "scroll-step": 1,
-    "on-click": "sh -c '(sleep 0.1s; alacritty -T 'myFloating' -e rsmixer)' & disown",
+    "on-click": "sh -c '(sleep 0.1s; alacritty --class dotfiles-floating -e rsmixer)' & disown",
     "ignored-sinks": ["Easy Effects Sink"]
 },
 
@@ -122,7 +124,7 @@
    "tooltip-format": "{controller_alias}",
    "tooltip-format-connected": "Host device: {controller_alias}\nConnected Device: {device_enumerate}, {device_battery_percentage}%",
    "tooltip-format-enumerate-connected": "{device_alias}",
-   "on-click": "sh -c '(sleep 0.1s; alacritty -T 'myFloating' -e bluetuith)' & disown",
+   "on-click": "sh -c '(sleep 0.1s; alacritty --class dotfiles-floating -e bluetuith)' & disown",
    },
 
 "network": {

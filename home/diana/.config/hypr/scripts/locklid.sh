@@ -1,0 +1,1 @@
+playerctl --all-players pause && hyprctl dispatch dpms off eDP-1 && if [ -f ~/.current_wallpaper ] && [ -f $(cat ~/.current_wallpaper) ]; then swaylock -f -i $(cat ~/.current_wallpaper); else swaylock -f -c 000000; fi
