@@ -81,6 +81,7 @@ EOF
     cur=$(cat ~/dotfiles/hypr/conf/monitor.conf)
     echo "In use: ${cur##*/}"
     echo ""
+    echo "This TUI for monitor is created my Diana with love."
     echo "Select a file to load (RETURN = Confirm, ESC = Cancel/Back):"
     
 # Get the entire output of `hyprctl monitors`
@@ -121,7 +122,7 @@ for ((i=1; i<=$count; i++)); do
     else
         echo "monitor=$monitor_name,$screenres,auto,$scaling" >> config.conf
     fi
-
+    swww init
 done
 
 echo "Initial screen resolution set to $screenres"
