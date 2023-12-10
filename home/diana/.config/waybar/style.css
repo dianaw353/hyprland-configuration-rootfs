@@ -12,31 +12,43 @@ window#waybar {
   color: #F8C8DC;
 }
 
+#taskbar,
+#custom-launcher,
+#custom-settings,
+#workspaces,
+#window,
+#clock,
+#tray,
+#custom-weather,
+#battery,
+#backlight,
+#pulseaudio,
+#bluetooth,
+#network,
 #custom-tools,
 #custom-clipboard,
 #custom-colorpicker,
-#custom-settings,
-#custom-launcher,
 #custom-info,
 #cpu,
 #memory,
 #disk,
-#pulseaudio,
 #custom-lock,
 #custom-poweroff,
 #custom-reboot,
 #custom-suspend,
-#tray,
-#battery,
-#clock,
-#network,
-#workspaces,
-#window,
-#taskbar,
-#custom-weather,
-#backlight,
-#bluetooth,
-#custom-power,
+#custom-power {
+  color: @main-color;
+  background: #191724;
+  opacity: 1;
+  margin: 4px 0px 0px 0px;
+  padding-left: 4px;
+  padding-right: 4px;
+  border: solid;
+  border-color: #F8C8DC;
+  border-top-width: 3px;
+  border-bottom-width: 3px;
+}
+
 #custom-l_end,
 #custom-r_end,
 #custom-sl_end,
@@ -133,37 +145,6 @@ tooltip label {
   padding-right: 3px;
   animation: gradient_f 20s ease-in infinite;
   transition: all 0.3s cubic-bezier(.55, -0.68, .48, 1.682);
-}
-
-#custom-tools,
-#custom-clipboard,
-#custom-colorpicker,
-#custom-settings,
-#custom-launcher,
-#custom-info,
-#cpu,
-#memory,
-#disk,
-#temperature,
-#pulseaudio,
-#workspace,
-#taskbar,
-#clock,
-#workspaces,
-#tray,
-#network,
-#backlight,
-#battery,
-#custom-weather,
-#bluetooth,
-#custom-lock,
-#custom-reboot,
-#custom-poweroff,
-#custom-power,
-#custom-suspend,
-#window {
-  border-top-width: 3px;
-  border-bottom-width: 3px;
 }
 
 #clock {

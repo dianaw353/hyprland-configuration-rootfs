@@ -73,10 +73,9 @@
 "custom/weather": {
     "format": "{}°",
     "tooltip": true,
-    "interval": 3600,
-    "exec": "wttrbar --location 'St. George, Utah' --main-indicator temp_F --fahrenheit --hide-conditions",
+    "exec": "wttrbar --location 'St. George, Utah' --indicator '{ICON} {temp_F}' --imperial --hide-conditions",
     "return-type": "json"
-},
+  },
 
 "battery": {
         "states": {
@@ -161,7 +160,7 @@
 },
 
 "custom/colorpicker": {
-    "format": " ",
+    "format": "󰈋 ",
     "tooltip": false,
     "on-click": "sleep 0.1s; hyprpicker -a -f hex; notify-send '󰈋 Picked hex color and coppied to clipboard'",
     "on-click-right": "sleep 0.1s; hyprpicker -a -f rgb; notify-send '󰈋 Picked rgb color and coppied to clipboard'",

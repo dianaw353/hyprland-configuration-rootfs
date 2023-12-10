@@ -194,7 +194,7 @@ paru -S hyprland-git swww xdg-desktop-portal-hyprland \
     mupdf nautilus ttf-jetbrains-mono-nerd dua-cli hyprpicker \
     ttf-nerd-fonts-symbols-common ttf-nerd-fonts-symbols unzip networkmanager \
     go-md2man rofi-lbonn-wayland-git bluetuith grim slurp wlogout linux-lts \
-    rsmixer pipewire-pulse wttrbar bash-language-server vscode-css-languageserver \
+    rsmixer pipewire-pulse bash-language-server vscode-css-languageserver \
     vscode-html-languageserver rust-analyzer lldb taplo-cli typescript-language-server
 
 ```
@@ -224,15 +224,23 @@ sudo systemctl enable getty@tty1.service
 sudo systemctl enable bluetooth.service
 chsh -s /bin/zsh
 cd
+cd 
+git clone https://github.com/dianaw353/wttrbar.git -b develop
+cd wttrbar
+cargo build --release
+sudo install target/release/wttrbar /usr/local/bin/
+cd
 git clone https://github.com/CameronNemo/brillo.git -b trunk --depth=1 --no-tags
 cd brillo
 make
 sudo make install.setgid
+cd
 git clone https://github.com/vinceliuice/Orchis-theme.git --depth=1 --no-tags
 cd Orchis-theme
 ./install.sh -c dark -t pink -l
 # remove gtk window buttons
-gsettings set org.gnome.desktop.wm.preferences button-layout ''   
+gsettings set org.gnome.desktop.wm.preferences button-layout ''  
+cd 
 git clone https://github.com/rafaelmardojai/firefox-gnome-theme.git --depth=1
 cd firefox-gnome-theme
 ./scripts/install.sh -f ~/.librewolf
