@@ -419,7 +419,7 @@ Swaylock config: https://gitlab.com/stephan-raabe/dotfiles/-/blob/main/swaylock/
 <br>
 [] Polish rofi
 <br>
-[] Polish waybar
+[] Polish waybar (In progress)
 <br>
 [] More more to come
 <br>
