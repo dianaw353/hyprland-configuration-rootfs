@@ -112,6 +112,8 @@ Instructions to use booster,zoxide,exa,repgrip,peru coming soon
 | networkmanager | Network connection manager and user applications |
 | playerctl | mpris media player controller and lib for spotify, vlc, audacious, bmp, xmms2, and others. |
 | brillo | Control the brightness of backlight and keyboard LED devices |
+| SUPER + SHIFT + X | Copy hyprpicker hex code |
+| SUPER + ALT + X | Copy hyprpicker rgb code |
 </details>
 
 <details>
