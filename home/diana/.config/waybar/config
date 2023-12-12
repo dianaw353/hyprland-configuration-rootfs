@@ -16,7 +16,7 @@
 
     "modules-left": ["custom/padd","custom/l_end","custom/launcher","custom/settings","hyprland/workspaces","hyprland/window","custom/r_end","custom/padd"],
 	"modules-center": ["custom/padd","custom/l_end","clock","custom/r_end","custom/padd"],
-	"modules-right": ["custom/padd","custom/l_end","tray","custom/weather","battery","backlight","pulseaudio","bluetooth","network","group/group-tools","group/group-stats","group/group-power","custom/r_end","custom/padd"],
+	"modules-right": ["custom/padd","custom/l_end","tray","custom/weather","battery","custom/backlight","pulseaudio","bluetooth","network","group/group-tools","group/group-stats","group/group-power","custom/r_end","custom/padd"],
 
 // sourced from modules based on config.ctl //
 
@@ -47,7 +47,7 @@
     "sort-by-number": true
     },
     "persistent-workspaces": {
-             "*": 5
+             "*": 3
         }   
   },
 
@@ -95,14 +95,18 @@
         "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
     },
 
-"backlight": {
-    "format": "{icon} {percent}%",
+"custom/backlight": {
+    "format": "{icon} {}",
+    "on-scroll-up": "brillo -u 15000 -U 2",
+    "on-scroll-down": "brillo -a 15000 -A 2",
     "format-icons": [
       "󰃞",
       "󰃟",
       "󰃝",
-      "󰃠"
+      "󰃠"  
     ],
+    "return-type": "json",
+    "exec": "~/.config/waybar/scripts/brightness.sh",
     },
 
 "pulseaudio": {
@@ -297,4 +301,3 @@
     }
 
 }
-

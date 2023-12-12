@@ -21,7 +21,7 @@ window#waybar {
 #tray,
 #custom-weather,
 #battery,
-#backlight,
+#custom-backlight,
 #pulseaudio,
 #bluetooth,
 #network,
@@ -183,7 +183,7 @@ tooltip label {
   color: #C3B1E1;
 }
 
-#backlight {
+#custom-backlight {
   color: #FFFAA0;
 }
 
