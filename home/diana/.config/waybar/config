@@ -96,17 +96,12 @@
     },
 
 "custom/backlight": {
-    "format": "{icon} {}",
-    "on-scroll-up": "brillo -u 15000 -U 2",
-    "on-scroll-down": "brillo -a 15000 -A 2",
-    "format-icons": [
-      "󰃞",
-      "󰃟",
-      "󰃝",
-      "󰃠"  
-    ],
+    "format": "{}",
+    "on-scroll-up": "~/.config/waybar/scripts/brightness.sh increase",
+    "on-scroll-down": "~/.config/waybar/scripts/brightness.sh decrease",
     "return-type": "json",
     "exec": "~/.config/waybar/scripts/brightness.sh",
+    "signal": 1
     },
 
 "pulseaudio": {
@@ -137,7 +132,7 @@
 "network": { 
     //"interface": "wlp0s20f3", // (Optional) To force the use of this interface  
     "format-wifi": "  {essid}", 
-    "format": "⚠Disabled", 
+    "format": "⚠ Disabled", 
     "format-wifi": " ", 
     "format-ethernet": "{ifname}: {ipaddr}/{cidr}", 
     "format-linked": "{ifname} (No IP)", "format-disconnected": "⚠Disabled", "format-alt": "{ifname}: {ipaddr}/{cidr}", "family": "ipv4", 
