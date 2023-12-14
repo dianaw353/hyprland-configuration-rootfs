@@ -44,15 +44,10 @@ else
     _confirmKeyboard
     
     cp .install/templates/keyboard.conf ~/hyprland-configuration-rootfs-versions/$version/hypr/conf/keyboard.conf
-    cp .install/templates/keyboard.py ~/hyprland-configuration-rootfs-versions/$version/qtile/conf/keyboard.py
 
     SEARCH="KEYBOARD_LAYOUT"
     REPLACE="$keyboard_layout"
     sed -i "s/$SEARCH/$REPLACE/g" ~/hyprland-configuration-rootfs-versions/$version/hypr/conf/keyboard.conf
-
-    SEARCH="\"KEYBOARD_LAYOUT\""
-    REPLACE="\"$keyboard_layout\""
-    sed -i "s/$SEARCH/$REPLACE/g" ~/hyprland-configuration-rootfs-versions/$version/qtile/conf/keyboard.py
 
     echo ""
     echo "Keyboard setup updated successfully."

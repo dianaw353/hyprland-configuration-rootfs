@@ -58,20 +58,6 @@ _showRestoreOptions() {
             selectedlist+="~/hyprland-configuration-rootfs/hypr/conf/window.conf,"
         fi
     fi
-    if [[ $profile == *"Qtile"* ]]; then
-        if [ -f ~/hyprland-configuration-rootfs/qtile/conf/keyboard.py ]; then
-            restorelist+="~/hyprland-configuration-rootfs/qtile/conf/keyboard.py "
-            selectedlist+="~/hyprland-configuration-rootfs/qtile/conf/keyboard.py,"
-        fi
-        if [ -f ~/hyprland-configuration-rootfs/qtile/autostart_wayland.sh ]; then
-            restorelist+="~/hyprland-configuration-rootfs/qtile/autostart_wayland.sh "
-            selectedlist+="~/hyprland-configuration-rootfs/qtile/autostart_wayland.sh,"
-        fi
-        if [ -f ~/hyprland-configuration-rootfs/qtile/autostart_x11.sh ]; then
-            restorelist+="~/hyprland-configuration-rootfs/qtile/autostart_x11.sh "
-            selectedlist+="~/hyprland-configuration-rootfs/qtile/autostart_x11.sh,"
-        fi
-    fi
     restoreselect=$(gum choose --no-limit --height 20 --cursor-prefix "( ) " --selected-prefix "(x) " --unselected-prefix "( ) " --selected="$selectedlist" $restorelist)
     if [ ! -z "$restoreselect" ] ;then
         echo "Selected to restore:" 
@@ -165,26 +151,6 @@ _startRestore() {
             if [ -f ~/hyprland-configuration-rootfs/hypr/conf/window.conf ]; then
                 cp ~/hyprland-configuration-rootfs/hypr/conf/window.conf ~/hyprland-configuration-rootfs-versions/$version/hypr/conf/
                 echo "Hyprland window.conf restored!"
-            fi
-        fi
-    fi
-    if [[ $profile == *"Qtile"* ]]; then
-        if [[ $restoreselect == *"~/hyprland-configuration-rootfs/qtile/conf/keyboard.py"* ]] || [[ $restoreselect == *"All"* ]] ; then
-            if [ -f ~/hyprland-configuration-rootfs/qtile/conf/keyboard.py ]; then
-                cp ~/hyprland-configuration-rootfs/qtile/conf/keyboard.py ~/hyprland-configuration-rootfs-versions/$version/qtile/conf/
-                echo "Qtile keyboard.py restored!"
-            fi
-        fi
-        if [[ $restoreselect == *"~/hyprland-configuration-rootfs/qtile/autostart_wayland.sh"* ]] || [[ $restoreselect == *"All"* ]] ; then
-            if [ -f ~/hyprland-configuration-rootfs/qtile/autostart_wayland.sh ]; then
-                cp ~/hyprland-configuration-rootfs/qtile/autostart_wayland.sh ~/hyprland-configuration-rootfs-versions/$version/qtile/
-                echo "Qtile autostart_wayland.sh restored!"
-            fi
-        fi
-        if [[ $restoreselect == *"~/hyprland-configuration-rootfs/qtile/autostart_x11.sh"* ]] || [[ $restoreselect == *"All"* ]] ; then
-            if [ -f ~/hyprland-configuration-rootfs/qtile/autostart_x11.sh ]; then
-                cp ~/hyprland-configuration-rootfs/qtile/autostart_x11.sh ~/hyprland-configuration-rootfs-versions/$version/qtile/
-                echo "Qtile autostart_x11.sh restored!"
             fi
         fi
     fi
