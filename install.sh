@@ -33,7 +33,6 @@ source .install/required.sh
 source .install/confirm-start.sh
 source .install/backup.sh
 source .install/preparation.sh
-source .install/profile.sh
 source .install/paru.sh
 source .install/hyprland.sh
 source .install/hyprland-packages.sh
