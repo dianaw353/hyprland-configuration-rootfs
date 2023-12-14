@@ -12,7 +12,8 @@ EOF
 echo -e "${NONE}"
     echo "The script has detected that you run the installation in a KVM virtual machine."
     if gum confirm "Do you want to install the KVM environment variables?" ;then
-        echo "source = ~/dotfiles/hypr/conf/environments/kvm.conf" >  ~/hyprland-configuration-rootfs-versions/$version/hypr/conf/environment.conf
+        echo "source = ~/hyprland-configuration-rootfs
+/hypr/conf/environments/kvm.conf" >  ~/hyprland-configuration-rootfs-versions/$version/hypr/conf/environment.conf
         echo "Environment set to KVM."
     fi
     if gum confirm "Do you want to install the QEMU guest agent?" ;then

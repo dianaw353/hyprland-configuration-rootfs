@@ -22,7 +22,8 @@ else
     zsh_confirm="Do you want to install the dotfiles .zshrc file now?"
 fi
 if gum confirm "$bash_confirm" ;then
-    _installSymLink ..zshrc ~/..zshrc ~/dotfiles/..zshrc ~/..zshrc
+    _installSymLink .zshrc ~/.zshrc ~/hyprland-configuration-rootfs
+/.zshrc ~/.zshrc
 elif [ $? -eq 130 ]; then
         exit 130
 else
