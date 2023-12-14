@@ -1,4 +1,4 @@
-dde#!/bin/bash
+#!/bin/bash
 source .install/version.sh
 source .install/colors.sh
 clear
