@@ -68,7 +68,7 @@ window#waybar {
 tooltip {
   background: @tool-bg;
   color: @tool-color;
-  border-radius: 22px;
+  border-radius: 30px;
   border-width: 3px;
   border-style: solid;
   border-color: #F8C8DC;
