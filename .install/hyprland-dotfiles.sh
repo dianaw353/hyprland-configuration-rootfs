@@ -1,16 +1,16 @@
 if [ ! $mode == "dev" ]; then
-    directories=(alacritty .local .wallpaper)
+    directories=(.config .local .wallpaper)
     files=(.current_wallpaper .hushlogin .zprofile .zsh_aliases .zshrc)
 
     for dir in "${directories[@]}"; do
-        if [ -d "~/hyprland-configuration-rootfs/.config-versions/$version/$dir" ]; then
-            _installSymLink $dir ~/.config/$dir ~/hyprland-configuration-rootfs/.config/$dir ~/.config
+        if [ -d "$HOME/hyprland-configuration-rootfs/.config" ]; then
+            _installSymLink $dir ~/$dir $HOME/hyprland-configuration-rootfs/config/$dir ~/
         fi
     done
 
     for file in "${files[@]}"; do
-        if [ -f "~/hyprland-configuration-rootfs/.config-versions/$version/$file" ]; then
-            _installSymLink $file ~/$file ~/hyprland-configuration-rootfs/.config/$file ~/
+        if [ -f "$HOME/hyprland-configuration-rootfs/config/$version/$file" ]; then
+            _installSymLink $file ~/$file $HOME/hyprland-configuration-rootfs/$file ~/
         fi
     done
 else
