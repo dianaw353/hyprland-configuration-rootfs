@@ -4,15 +4,12 @@ if [ ! $mode == "dev" ]; then
 
     for dir in "${directories[@]}"; do
         if [ -d "~/hyprland-configuration-rootfs/.config-versions/$version/$dir" ]; then
-            mkdir -p ~/.config/$dir
-            rm -rf ~/.config/$dir
             _installSymLink $dir ~/.config/$dir ~/hyprland-configuration-rootfs/.config/$dir ~/.config
         fi
     done
 
     for file in "${files[@]}"; do
         if [ -f "~/hyprland-configuration-rootfs/.config-versions/$version/$file" ]; then
-            rm -f ~/$file
             _installSymLink $file ~/$file ~/hyprland-configuration-rootfs/.config/$file ~/
         fi
     done
