@@ -4,8 +4,8 @@ if [ ! $mode == "dev" ]; then
 
     for dir in "${directories[@]}"; do
         if [ -d "$HOME/hyprland-configuration-rootfs/$version/$dir" ]; then
-            echo "Copying directory: $dir"
-            cp -r $HOME/hyprland-configuration-rootfs/$version/$dir ~/
+            echo "Creating symbolic link for directory: $dir"
+            _installSymLink $dir ~/$dir $HOME/hyprland-configuration-rootfs/$version/$dir ~/ && echo "Successfully created symbolic link for $dir" || echo "Failed to create symbolic link for $dir"
         else
             echo "Directory does not exist: $dir"
         fi
@@ -13,8 +13,8 @@ if [ ! $mode == "dev" ]; then
 
     for file in "${files[@]}"; do
         if [ -f "$HOME/hyprland-configuration-rootfs/$version/$file" ]; then
-            echo "Copying file: $file"
-            cp $HOME/hyprland-configuration-rootfs/$version/$file ~/
+            echo "Creating symbolic link for file: $file"
+            _installSymLink $file ~/$file $HOME/hyprland-configuration-rootfs/$version/$file ~/ && echo "Successfully created symbolic link for $file" || echo "Failed to create symbolic link for $file"
         else
             echo "File does not exist: $file"
         fi
@@ -22,6 +22,6 @@ if [ ! $mode == "dev" ]; then
 else
     echo "Skipped: DEV MODE!"
 fi
-echo "Files and directories copied."
+echo "Symbolic links created."
 echo ""
 
