@@ -1,4 +1,4 @@
-#!/bin/bash
+ #54#!/bin/bash
 source .install/version.sh
 source .install/colors.sh
 clear
