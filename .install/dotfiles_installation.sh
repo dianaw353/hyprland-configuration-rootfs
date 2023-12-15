@@ -3,14 +3,14 @@ _copyConfigFiles() {
     figlet "Dotfiles"
     echo -e "${NONE}"
     if gum confirm "DO YOU WANT TO COPY THE PREPARED dotfiles INTO .config? (YOU CAN ALSO DO THIS MANUALLY)" ;then
-        rsync -a -I .config ~/
-        rsync -a -I .hushlogin ~/
-        rsync -a -I .zprofile ~/
-        rsync -a -I .zsh_aliases ~/
-        rsync -a -I .zshrc
-        rsync -a -I .wallpaper ~/
-        rsync -a -I .local ~/
-        rsync -a -I .current_wallpaper ~/
+        rsync -a -I ~/hyprland-configuration-rootfs/.config ~/
+        rsync -a -I ~/hyprland-configuration-rootfs/.hushlogin ~/
+        rsync -a -I ~/hyprland-configuration-rootfs/.zprofile ~/
+        rsync -a -I ~/hyprland-configuration-rootfs/.zsh_aliases ~/
+        rsync -a -I ~/hyprland-configuration-rootfs/.zshrc ~/
+        rsync -a -I ~/hyprland-configuration-rootfs/.wallpaper ~/
+        rsync -a -I ~/hyprland-configuration-rootfs/.local ~/
+        rsync -a -I ~/hyprland-configuration-rootfs/.current_wallpaper ~/
         echo ""
         echo ":: Configuration files successfully copied to ~/.config/"
         echo ""
