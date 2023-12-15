@@ -22,16 +22,3 @@ _confirmInstallation() {
         exit;
     fi
 }
-
-# hyprland_installation.sh
-_installhyprlandpackages() {
-    while IFS= read -r pkg
-    do
-        if pacman -Qs $pkg > /dev/null ; then
-            echo "The package $pkg is already installed"
-        else
-            echo "Installing $pkg"
-            paru -S --noconfirm $pkg
-        fi
-    done < packages.txt
-}
