@@ -10,6 +10,8 @@ source .install/monitor.sh
 source .install/autostartHyprland.sh
 source .install/execute_premissions.sh
 source .install/git_packages.sh
+source .install/setup_dotfiles.sh
+
 
 # Confirm Start
 _confirmInstallation
@@ -23,8 +25,11 @@ _installGitPackages
 # Copy dotfiles/scripts
 _copyConfigFiles
 
-# Change dotfiles scripts 
+# Setup dotfiles
+_setupDotfiles
+_zshShell
 _execute_premissions
+_removegtkWindowButtons
 
 # Run the KVM environment setup
 _setupKVMEnvironment
