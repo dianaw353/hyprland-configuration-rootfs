@@ -23,7 +23,15 @@ _confirmInstallation() {
     fi
 }
 
-# Function to install packages
-_installHyprlandPackages() {
-    sudo pacman -S hyprland waybar rofi wofi kitty alacritty dunst dolphin xdg-desktop-portal-hyprland qt5-wayland qt6-wayland hyprpaper chromium ttf-font-awesome
+# hyprland_installation.sh
+_installhyprlandpackages() {
+    while IFS= read -r pkg
+    do
+        if pacman -Qs $pkg > /dev/null ; then
+            echo "The package $pkg is already installed"
+        else
+            echo "Installing $pkg"
+            paru -S --noconfirm $pkg
+        fi
+    done < packages.txt
 }
