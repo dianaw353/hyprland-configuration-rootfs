@@ -1,19 +1,3 @@
-# library.sh
-
-# Some colors
-GREEN='\033[0;32m'
-NONE='\033[0m'
-
-# Function to display completion message
-_displayCompletionMessage() {
-    echo -e "${GREEN}"
-    figlet "Done"
-    echo -e "${NONE}"
-
-    echo "Open ~/.config/hypr/hyprland.conf to check your new initial Hyprland configuration."
-    echo ""
-}
-
 _copyConfigFiles() {
     if gum confirm "DO YOU WANT TO COPY THE PREPARED dotfiles INTO .config? (YOU CAN ALSO DO THIS MANUALLY)" ;then
         rsync -a -I .config ~/

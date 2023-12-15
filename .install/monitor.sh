@@ -1,34 +1,14 @@
-# ------------------------------------------------------
-# Monitor
-# ------------------------------------------------------
-
-if [[ $profile == *"Hyprland"* ]]; then
-echo -e "${GREEN}"
-cat <<"EOF"
- __  __             _ _                 
-|  \/  | ___  _ __ (_) |_ ___  _ __ ___ 
-| |\/| |/ _ \| '_ \| | __/ _ \| '__/ __|
-| |  | | (_) | | | | | || (_) | |  \__ \
-|_|  |_|\___/|_| |_|_|\__\___/|_|  |___/
-                                        
-EOF
-echo -e "${NONE}"
-    if [ "$monitorrestored" == "1" ]; then
-        echo "Monitor settings could already be restored".
-        echo ""
-    else
-        echo "Hyprland will use the following monitor setup from ~/hyprland-configuration-rootfs/hypr/conf/monitors/default.conf"
-        echo "monitor=,preferred,auto,1"
-        echo ""
-        echo "You can create your own monitor configuration by adding a new variation file ~/hyprland-configuration-rootfs/hypr/conf/monitors/mymonitor.conf"
-        echo "Add there your monitor configuration."
-        echo ""
-        echo "After starting Hyprland, you can select your custom monitor variation with SUPER+CMD+S (or by clicking on the settings icon in WayBar)."
-        echo "Select Monitors and then your custom monitor variation: ~/hyprland-configuration-rootfs/hypr/conf/monitors/mymonitor.conf"
-        echo ""
-        echo "Or overwrite the path on ~/hyprland-configuration-rootfs/hypr/conf/monitor.conf and replace it with your custom variation."
-        echo ""
-        echo "More information on how to setup your monitor in the Hyprland Wiki: https://wiki.hyprland.org/Configuring/Monitors/"
-        echo ""
-    fi
-fi
+# Function to set initial screen resolution
+_setupMonitor() {
+    echo -e "${GREEN}"
+    figlet "Monitor"
+    echo -e "${NONE}"
+    echo "Please select your initial screen resolution. Can be changed later in ~/-config/hypr/hyprland.conf"
+    echo ""
+    screenres=$(gum choose --height 15 "1024x768" "1280x720" "1280x800" "1440x900" "1280x1024" "1680x1050" "1280x1440" "1600x1200" "1920x1080" "1920x1200" "2560x1440")
+    SEARCH="monitor=,preferred,auto,auto"
+    REPLACE="monitor=,$screenres,auto,1"
+    sed -i -e "s/$SEARCH/$REPLACE/g" ~/.config/hypr/hyprland.conf
+    echo "Initial screen resolution set to $screenres"
+    echo ""
+}
