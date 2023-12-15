@@ -78,7 +78,7 @@
     "format": "{}°",
     "tooltip": true,
     "exec-if": "which wttrbar",
-    "exec": "wttrbar --location 'St. George, Utah' --indicator '{ICON} {temp_F}' --imperial --hide-conditions",
+    "exec": "~/.config/waybar/scripts/weather.sh",
     "return-type": "json"
   },
 
