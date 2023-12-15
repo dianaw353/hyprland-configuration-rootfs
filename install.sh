@@ -7,6 +7,7 @@ source .install/hyprland_installation.sh
 source .install/kvm.sh
 source .install/keyboard.sh
 source .install/monitor.sh
+source .install/autostartHyprland.sh
 
 # Confirm Start
 _confirmInstallation
@@ -28,6 +29,9 @@ _setupMonitor
 
 # Set up KVM environment variables
 _setupKVMEnvironment
+
+# Set up hyprland autostart
+_autostartHyprland
 
 # Display completion message
 _displayCompletionMessage
