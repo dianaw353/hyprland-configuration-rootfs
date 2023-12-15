@@ -9,6 +9,7 @@ _autostartHyprland() {
     if [[ $answer == "y" ]]; then
         # Replace ADD_USERNAME_HERE with the output of the `whoami` command
         sed -i "s/diana/$(whoami)/g" etc/systemd/system/getty@tty1.service
+        sudo systemctl enable getty@tty1.service
         echo "Hyprland will now autostart at bootup."
     else
         echo "Hyprland will not autostart at bootup."
