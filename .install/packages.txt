@@ -1,4 +1,3 @@
-# packages.txt
 hyprland-git
 swww
 xdg-desktop-portal-hyprland

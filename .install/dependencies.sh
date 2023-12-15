@@ -10,5 +10,5 @@ _installHyprlandPackages() {
             echo "Installing $pkg"
             paru -S --noconfirm $pkg
         fi
-    done < packages.txt
+    done < .install/packages.txt
 }

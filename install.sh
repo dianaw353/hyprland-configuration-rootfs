@@ -21,7 +21,7 @@ _copyConfigFiles
 _setupKVMEnvironment
 
 # Run the keyboard setup
-_setupKeyboard
+_setupkeyboardlayout
 
 # Run the monitor setup
 _setupMonitor
