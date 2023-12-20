@@ -18,42 +18,43 @@ get_monitor_info() {
     monitors=$(echo "$output" | awk '/Monitor/ {name=$2} /ID/ {print name, $3}')
 
     # Output the number of monitors and their names
-    echo "Currently there are $count monitors connected, their names are: $(echo "$monitors" | awk '{print $1}' | paste -sd ' ')"
-
-    # Prompt the user to select their initial screen resolution
-    echo "Please select your initial screen resolution. It can be changed later in ~/.config/hypr/conf/monitors/default.conf"
+    echo "Currently, there are $count monitors connected:"
+    echo "$monitors" | awk '{print "" $1}'
     echo ""
+}
+
+# Function to select a monitor from the list
+select_monitor() {
+    monitor_list=$(echo "$monitors" | awk '{print $1}' | paste -sd ' ')
+    selected_monitor=$(gum choose --height 15 $monitor_list)
+    echo "$selected_monitor"
 }
 
 # Function to configure monitors
 configure_monitors() {
-    # Set the same screen resolution for all monitors
-    for ((i=1; i<=$count; i++)); do
-        # Get the name of the current monitor
-        monitor_name=$(echo "$monitors" | awk -v i=$i '{if (NR==i) print $1}')
+    selected_monitor=$1
 
-        # Display the name of the current monitor
-        echo "Configuring monitor: $monitor_name"
+    # Display the name of the selected monitor
+    echo "Configuring monitor: $selected_monitor"
 
-        # Set the screen resolution for the current monitor
-        screenres=$(gum choose --height 15 $(wlr-randr | grep -oP '\d{3,4}x\d{3,4}' | sort -u -n | tac))
-        echo "$screenres"
+    # Set the screen resolution for the selected monitor
+    screenres=$(gum choose --height 15 $(wlr-randr | grep -oP '\d{3,4}x\d{3,4}' | sort -u -n | tac))
+    echo "$screenres"
 
-        # Prompt the user to choose a scale for the display
-        scaling=""
-        while ! [[ "$scaling" =~ ^[0-9]+(\.[0-9]+)?$ ]] || (( $(awk -v x=$scaling -v y=3 'BEGIN {print (x > y)}') )); do
-            read -e -p "Choose a number to set the scale of the display (1-3, default 1): " scaling
-            scaling=${scaling:-1}  # Set default to 1 if the input is empty or invalid
-        done
-        echo "Setting scale to: $scaling"
-
-        # Replace or add the line in the default.conf file
-        if grep -q "monitor=$monitor_name" ~/.config/hypr/conf/monitors/default.conf; then
-            sed -i "s/monitor=$monitor_name,.*/monitor=$monitor_name,$screenres,auto,$scaling/g" ~/.config/hypr/conf/monitors/default.conf
-        else
-            echo "monitor=$monitor_name,$screenres,auto,$scaling" >> ~/.config/hypr/conf/monitors/default.conf
-        fi
+    # Prompt the user to choose a scale for the display
+    scaling=""
+    while ! [[ "$scaling" =~ ^[0-9]+(\.[0-9]+)?$ ]] || (( $(awk -v x=$scaling -v y=3 'BEGIN {print (x > y)}') )); do
+        read -e -p "Choose a number to set the scale of the display (1-3, default 1): " scaling
+        scaling=${scaling:-1}  # Set default to 1 if the input is empty or invalid
     done
+    echo "Setting scale to: $scaling"
+
+    # Replace or add the line in the default.conf file
+    if grep -q "monitor=$selected_monitor" ~/.config/hypr/conf/monitors/default.conf; then
+        sed -i "s/monitor=$selected_monitor,.*/monitor=$selected_monitor,$screenres,auto,$scaling/g" ~/.config/hypr/conf/monitors/default.conf
+    else
+        echo "monitor=$selected_monitor,$screenres,auto,$scaling" >> ~/.config/hypr/conf/monitors/default.conf
+    fi
 }
 
 # Function to confirm or restore the monitor configuration
@@ -70,7 +71,8 @@ confirm_or_restore_config() {
         gum confirm "Do you want to try configuring the monitor again?"
 
         if [ $? -eq 0 ]; then
-            configure_monitors
+            selected_monitor=$(select_monitor)
+            configure_monitors "$selected_monitor"
             confirm_or_restore_config
         fi
     fi
@@ -79,5 +81,6 @@ confirm_or_restore_config() {
 # Example usage:
 backup_monitor_config
 get_monitor_info
-configure_monitors
+selected_monitor=$(select_monitor)
+configure_monitors "$selected_monitor"
 confirm_or_restore_config
