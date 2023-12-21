@@ -6,7 +6,7 @@
     "layer": "top",
     "position": "top",
     "mod": "dock",
-    "height": 46,
+    "height": 44,
     "exclusive": true,
     "passthrough": false,
     "gtk-layer-shell": true,
@@ -84,7 +84,6 @@
 
 "battery": {
         "states": {
-            "good": 95,
             "warning": 30,
             "critical": 20
         },
@@ -132,7 +131,7 @@
 "network": { 
     //"interface": "wlp0s20f3", // (Optional) To force the use of this interface  
     "format-wifi": "  {essid}", 
-    "format": "⚠ Disabled", 
+    "format": "⚠  Disabled", 
     "format-wifi": " ", 
     "format-ethernet": "{ifname}: {ipaddr}/{cidr}", 
     "format-linked": "{ifname} (No IP)", "format-disconnected": "⚠Disabled", "format-alt": "{ifname}: {ipaddr}/{cidr}", "family": "ipv4", 

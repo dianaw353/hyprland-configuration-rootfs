@@ -82,8 +82,8 @@ tooltip label {
   border-radius: 32px;
   padding: 0px 6px;
   margin: 0px 4px;
-  margin-top: 6px;
-  margin-bottom: 6px;
+  margin-top: 4px;
+  margin-bottom: 4px;
   padding-left: 3px;
   padding-right: 3px;
   color: #2f354a;
@@ -118,7 +118,7 @@ tooltip label {
   box-shadow: none;
   text-shadow: none;
   padding: 0px;
-  margin-top: 6px;
+  margin-top: 4px;
   margin-bottom: 6px;
   padding-left: 3px;
   padding-right: 3px;
