@@ -1,5 +1,5 @@
 #!/bin/bash
-
+figlet "monitor"
 # Function to backup the current monitor configuration
 backup_monitor_config() {
     echo "Backing up the current monitor configuration..."
@@ -35,25 +35,32 @@ configure_monitors() {
     selected_monitor=$1
 
     # Display the name of the selected monitor
-    echo "Configuring monitor: $selected_monitor"
+    echo "Selected monitor: $selected_monitor"
 
     # Set the screen resolution for the selected monitor
+    echo "Select your desired screen resolution you want to use:"
     screenres=$(gum choose --height 15 $(wlr-randr | grep -oP '\d{3,4}x\d{3,4}' | sort -u -n | tac))
-    echo "$screenres"
+    echo "Setting screen resolution to be: $screenres"
+
+    # Set the refresh rate for the selected monitor
+    echo "Select your desiered refresh rate:"
+    refreshrate=$(gum choose --height 15 $(wlr-randr | grep -oP '\d{1,3}\.\d{6}' | awk '{printf("%.0f\n", $1)}' | sort -u -n | tac))
+    echo "You choose the refresh rate to be: $refreshrate"
 
     # Prompt the user to choose a scale for the display
-    scaling=""
+     scaling=""
     while ! [[ "$scaling" =~ ^[0-9]+(\.[0-9]+)?$ ]] || (( $(awk -v x=$scaling -v y=3 'BEGIN {print (x > y)}') )); do
-        read -e -p "Choose a number to set the scale of the display (1-3, default 1): " scaling
+        echo "Select your desired scale your screen to use:"
+        scaling=$(gum input --placeholder "Select your desired scale your screen to use (1-3, default 1): ")
         scaling=${scaling:-1}  # Set default to 1 if the input is empty or invalid
     done
     echo "Setting scale to: $scaling"
 
     # Replace or add the line in the default.conf file
     if grep -q "monitor=$selected_monitor" ~/.config/hypr/conf/monitors/default.conf; then
-        sed -i "s/monitor=$selected_monitor,.*/monitor=$selected_monitor,$screenres,auto,$scaling/g" ~/.config/hypr/conf/monitors/default.conf
+        sed -i "s/monitor=$selected_monitor,.*/monitor=$selected_monitor,$screenres@$refreshrate,auto,$scaling/g" ~/.config/hypr/conf/monitors/default.conf
     else
-        echo "monitor=$selected_monitor,$screenres,auto,$scaling" >> ~/.config/hypr/conf/monitors/default.conf
+        echo "monitor=$selected_monitor,$screenres@$refreshrate,auto,$scaling" >> ~/.config/hypr/conf/monitors/default.conf
     fi
 }
 
