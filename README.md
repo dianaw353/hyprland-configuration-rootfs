@@ -81,7 +81,7 @@ Instructions to use booster,zoxide,exa,repgrip,peru coming soon
 | hyprland-git      | Tiling Manager |
 | Swww   | Wallpaper Manager |
 | xdg-desktop-portal-hyprland |Lets other applications communicate swiftly with the compositor through D-Bus |
-| rofi-lbonn-wayland-git | Window switcher, application launcher and dmenu replacement |
+| rofi | Window switcher, application launcher and dmenu replacement |
 | waybar | Highly customizable Wayland bar for Sway and Wlroots based compositors |
 | wlogout | Logout menu for wayland |
 | swaylock-effects-git | fancier screen locker |
@@ -195,7 +195,7 @@ paru -S hyprland-git swww xdg-desktop-portal-hyprland \
     adobe-source-han-sans-jp-fonts adobe-source-han-serif-kr-fonts \
     mupdf nautilus ttf-jetbrains-mono-nerd dua-cli hyprpicker \
     ttf-nerd-fonts-symbols-common ttf-nerd-fonts-symbols unzip networkmanager \
-    go-md2man rofi-lbonn-wayland-git bluetuith grim slurp wlogout linux-lts \
+    go-md2man rofi bluetuith grim slurp wlogout linux-lts \
     rsmixer pipewire-pulse bash-language-server vscode-css-languageserver \
     vscode-html-languageserver rust-analyzer lldb taplo-cli typescript-language-server
 

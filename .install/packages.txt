@@ -45,7 +45,7 @@ ttf-nerd-fonts-symbols
 unzip
 networkmanager
 go-md2man
-rofi-lbonn-wayland-git
+rofi
 bluetuith
 grim
 slurp
