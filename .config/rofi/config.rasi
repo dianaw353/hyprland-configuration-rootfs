@@ -112,6 +112,13 @@ button {
     cursor:                       pointer;
     border:                       3px;
     border-color:                 @main-fg;
+    background-color:             transparent;
+    text-color:                   @main-fg;
+}
+
+button selected {
+    background-color:            @select-bg;
+    text-color:                  @select-fg;
 }
 
 /* ---- Listview ---- */
