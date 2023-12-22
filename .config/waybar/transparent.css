@@ -1,16 +1,40 @@
-@define-color bar-bg rgba(183, 44, 36, 0.8);
+@define-color main-color #F8C8DC;
 
-@define-color main-color #f5c2e7;
-@define-color main-bg #11111b;
+@define-color text-color white;
+
+@define-color wb-act-bg @main-color;
+@define-color wb-act-color #313244;
+
+@define-color waybar rgba(21, 18, 27, 0);
+
+@define-color wb-hvr-bg #191724;
+@define-color wb-hvr-color #ebbcba;
+
+@define-color wb-color @main-color;
 
 @define-color tool-bg #1e1e2e;
 @define-color tool-color #f5c2e7;
-@define-color tool-border #11111b;
+@define-color tool-border #F8C8DC;
 
-@define-color wb-color #f5c2e7;
+@define-color bar-bg rgba(183, 44, 36, 0.8);
 
-@define-color wb-act-bg #f5c2e7;
-@define-color wb-act-color #313244;
+@define-color clock #C3B1E1;
 
-@define-color wb-hvr-bg #f5c2e7;
-@define-color wb-hvr-color #313244;
+@define-color workspaces-bg #191724;
+@define-color workspaces-button-active #ebbcba;
+@define-color workspaces-button-focused #ffffff;
+@define-color workspaces-button-urgent #ffffff;
+
+@define-color pulseaudio #FAC898;
+
+@define-color tray-network #C3B1E1;
+
+@define-color custom-backlight #FFFAA0;
+
+@define-color battery #C1E1C1;
+
+@define-color custom-weather #A7C7E7;
+
+@define-color bluetooth #F8C8DC;
+
+@define-color custom-suspend-poweroff-lock-quit-reboot-power #FAA0A0;

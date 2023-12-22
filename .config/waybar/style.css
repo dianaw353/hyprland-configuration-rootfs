@@ -2,14 +2,14 @@
   font-family: "JetBrainsMono Nerd Font";
   font-weight: bold;
   font-size: 14px;
-  color: white;
+  color: @text-color;
 }
 
 @import "transparent.css";
 
 window#waybar {
-  background: rgba(21, 18, 27, 0);
-  color: #F8C8DC;
+  background: @waybar;
+  color: @main-color;
 }
 
 #taskbar,
@@ -39,13 +39,13 @@ window#waybar {
 #custom-suspend,
 #custom-power {
   color: @main-color;
-  background: #191724;
+  background: @workspaces-bg;
   opacity: 1;
   margin: 4px 0px 0px 0px;
   padding-left: 4px;
   padding-right: 4px;
   border: solid;
-  border-color: #F8C8DC;
+  border-color: @main-color;
   border-top-width: 3px;
   border-bottom-width: 3px;
 }
@@ -57,13 +57,13 @@ window#waybar {
 #custom-rl_end,
 #custom-rr_end {
   color: @main-color;
-  background: #191724;
+  background: @workspaces-bg;
   opacity: 1;
   margin: 4px 0px 0px 0px;
   padding-left: 4px;
   padding-right: 4px;
   border: solid;
-  border-color: #F8C8DC;
+  border-color: @main-color;
 }
 
 tooltip {
@@ -72,7 +72,7 @@ tooltip {
   border-radius: 30px;
   border-width: 3px;
   border-style: solid;
-  border-color: #F8C8DC;
+  border-color: @tool-border;
 }
 
 tooltip label {
@@ -149,55 +149,55 @@ tooltip label {
 }
 
 #clock {
-  color: #C3B1E1;
+  color: @clock;
 }
 
 #workspaces {
-  background: #191724;
+  background: @workspaces-bg;
 }
 
 #workspaces button.active {
-  color: #ebbcba;
+  color: @workspaces-button-active;
 }
 
 #workspaces button.focused {
-  color: #ffffff;
-  background: #191724;
+  color: @workspaces-button-focused;
+  background: @workspaces-bg;
 }
 
 #workspaces button.urgent {
-  color: #ffffff;
-  background: #191724;
+  color: @workspaces-button-urgent;
+  background: @workspaces-bg;
 }
 
 #workspaces button:hover {
-  background: #191724;
-  color: #ebbcba;
+  background: @workspaces-bg;
+  color: @workspaces-button-hover;
 }
 
 #pulseaudio {
-  color: #FAC898;
+  color: @pulseaudio;
 }
 
 #tray,
 #network {
-  color: #C3B1E1;
+  color: @tray-network;
 }
 
 #custom-backlight {
-  color: #FFFAA0;
+  color: @custom-backlight;
 }
 
 #battery {
-  color: #C1E1C1;
+  color: @battery;
 }
 
 #custom-weather {
-  color: #A7C7E7;
+  color: @custom-weather;
 }
 
 #bluetooth {
-  color: #F8C8DC;
+  color: @bluetooth;
 }
 
 #custom-suspend,
@@ -206,7 +206,7 @@ tooltip label {
 #custom-quit,
 #custom-reboot,
 #custom-power {
-  color: #FAA0A0;
+  color: @custom-suspend-poweroff-lock-quit-reboot-power;
 }
 
 #custom-r_end {
