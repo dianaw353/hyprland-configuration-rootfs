@@ -208,7 +208,7 @@ Make sure you're logged in as the user who will use Hyprland.
 ```bash
 git clone https://github.com/dianaw353/hyprland-configuration-rootfs.git --depth=1
 cd hyprland-configuration-rootfs
-sed 's/diana/ADD_USERNAME_HERE/g' /etc/systemd/system/getty@tty1.service # This auto log you into linux so we can launch hyprland. Dont worry system will be locked when hyprland launches. MUST your username here!!!!
+sed 's/diana/ADD_USERNAME_HERE/g' etc/greetd/config.toml # This auto log you into linux so we can launch hyprland. Dont worry system will be locked when hyprland launches. MUST your username here!!!!
 sudo mv etc/fonts /etc/fonts
 sudo mv etc/systemd/system /etc/systemd/system
 mv home/botan home/$(whoami)
@@ -218,11 +218,11 @@ sudo chmod +x ~/.local/bin/*
 mkdir ~/Pictures/screenshots
 cp -r /home/$(whoami)/.wallpaper ~/
 cp -r /home/$(whoami)/.* ~/
-sudo cp etc/systemd/system/getty@tty1.service /etc/systemd/system/
 echo 'LIBSEAT_BACKEND=logind' | sudo tee -a /etc/environment
 chmod +x ~/.config/hypr/scripts/*
 chmod +x ~/.config/waybar/scripts/*
-sudo systemctl enable getty@tty1.service
+sudo cp -r etc/greetd /etc
+sudo systemctl enable greetd
 sudo systemctl enable bluetooth.service
 chsh -s /bin/zsh
 cd
