@@ -1,0 +1,2 @@
+vulkan-icd-loader
+vulkan-intel

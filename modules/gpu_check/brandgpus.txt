@@ -1,0 +1,3 @@
+amd
+intel
+nvidia

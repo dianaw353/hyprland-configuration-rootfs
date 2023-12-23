@@ -1,51 +1,30 @@
 #!/bin/bash
+# _   _                  _                 _   ____  _             _
+# | | | |_   _ _ __  _ __| | __ _ _ __   __| | / ___|| |_ __ _ _ __| |_ ___ _ __
+# | |_| | | | | '_ \| '__| |/ _` | '_ \ / _` | \___ \| __/ _` | '__| __/ _ \ '__|
+# |  _  | |_| | |_) | |  | | (_| | | | | (_| |  ___) | || (_| | |  | ||  __/ |
+# |_| |_|\__, | .__/|_|  |_|\__,_|_| |_|\__,_| |____/ \__\__,_|_|   \__\___|_|
+#        |___/|_|
+#
+# The Hyprland Starter Script
+# Based of of Stephan Raabe Hyprland settings  
+# by Diana Ward (2023) 
+# --------------------------------------------------------------------------------
 
-# Source library functions
-source .install/library.sh
-source .install/dependencies.sh
-source .install/hyprland_installation.sh
-source .install/kvm.sh
-source .install/keyboard.sh
-source .install/monitor.sh
-source .install/autostartHyprland.sh
-source .install/execute_premissions.sh
-source .install/git_packages.sh
-source .install/setup_dotfiles.sh
+clear
+installFolder=$(dirname "$(pwd)")
 
+# Source files
+source .library/version.sh
+source .library/library.sh
 
-# Confirm Start
-_confirmInstallation
+# Define global variables
+modules_path="modules"
+current=""
+back=""
+clickArr=""
+confDir="conf"
 
-# Install packages
-_installHyprlandPackages
-
-# git packages installation
-_installGitPackages
-
-# Copy dotfiles/scripts
-_copyConfigFiles
-
-# Setup dotfiles
-_setupDotfiles
-_zshShell
-_execute_premissions
-_removegtkWindowButtons
-
-# Run the KVM environment setup
-_setupKVMEnvironment
-
-# Run the keyboard setup
-_setupkeyboardlayout
-
-# Run the monitor setup
-_setupMonitor
-
-# Set up KVM environment variables
-_setupKVMEnvironment
-
-# Set up hyprland autostart
-_autostartHyprland
-
-# Display completion message
-_displayCompletionMessage
+# Start Application
+_getModules $(pwd)/$modules_path
 
