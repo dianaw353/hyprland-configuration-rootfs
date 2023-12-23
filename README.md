@@ -10,6 +10,7 @@
 </div>
 
 ## Images
+> Working on refacting the install script. Please wait to use it.
 Images are now slightly out of date...
 ![Alt text](/assets/2023-12-03_10:56:11.png "overview")
 ![Alt text](/assets/2023-12-03_10:57:55.png "plane")
