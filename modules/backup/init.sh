@@ -30,6 +30,7 @@ _createBackup() {
         echo "Config files backed up successfully to $backup_subfolder"
     else
         echo "Backup aborted."
+        exit 1
     fi
 }
 

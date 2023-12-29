@@ -1,38 +1,34 @@
 #!/bin/sh
-figlet "Network"
+
 # Function to connect to the network
 connect_to_network() {
-    # Start the spinner
-    gum spin --spinner dot --title "Scanning for networks..." -- sleep 5 &
-
     # Get the list of WiFi networks
-    ssid=$(nmcli --fields "SSID" device wifi list | tail -n +2 | grep -v -- '--')
-
-    # If there are any networks, stop the spinner and print the networks
-    if [ -n "$ssid" ]; then
-        echo "Select Wifi Network:"
-        ssid=$(echo "$ssid" | gum filter --placeholder "Please select your WIFI newtwork...")
-    fi
+    echo "scanning for networks... please wait"
+    ssid=$(nmcli --fields "SSID" device wifi list | grep -v -- '--' | gum filter --placeholder "Please select your WIFI newtwork...")
 
     # Trim leading and trailing spaces from the SSID
     ssid=$(echo "$ssid" | xargs)
 
-    # Echo asking for the network password
-    echo "Please enter your password for $ssid:"
+    while true; do
+        # Prompt for the network password
+        echo "Please enter your password for $ssid:"
+        password=$(gum input --password --placeholder "Please type in password for $ssid")
 
-    # Prompt for the network password
-    password=$(gum input --password --placeholder "Password:")
-
-    # Start the spinner
-    gum spin --spinner dot --title "Connecting to WiFi..." -- sleep 2 &
-
-    # Try to connect to the network
-    if nmcli device wifi connect "$ssid" password "$password" &> /dev/null; then
-        echo "Successfully connected to $ssid!"
-    else
-        echo "Failed to connect to $ssid. Please check your password and try again."
-        exit 1
-    fi
+        # Try to connect to the network
+        if nmcli device wifi connect "$ssid" password "$password"; then
+            echo "Successfully connected to $ssid!"
+            break
+        else
+            echo "Failed to connect to $ssid. Please check your password and try again."
+            echo "Do you want to try again? (yes/no)"
+            read answer
+            if [ "$answer" != "${answer#[Nn]}" ] ;then
+                break
+            fi
+        fi
+    done
 }
 
 connect_to_network
+
+
