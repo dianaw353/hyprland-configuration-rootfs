@@ -3,8 +3,6 @@ echo "Installing packages"
 
 _installPackages ~/hyprland-configuration-rootfs/modules/hyprland_installation/packages.txt
 
-_installGitPackages
-
 _installGitPackages() {
   git clone https://github.com/dianaw353/wttrbar.git -b develop
     cd wttrbar
@@ -20,3 +18,5 @@ _installGitPackages() {
     rm -rf wttrbar
     rm -rf brillo
 }
+
+_installGitPackages
