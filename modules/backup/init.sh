@@ -34,26 +34,31 @@ _createBackup() {
     fi
 }
 
-# Function to restore a previous backup
-_restoreBackup() {
-    # Check if dotfiles_backup directory is not empty
-    if [ "$(ls -A $dest_dir)" ]; then
-        # Display available backup subfolders using Gum filter
-        echo "Please select your backup:"
-        selected_backup=$(ls -1 "$dest_dir" | gum filter --placeholder "Please select your desired backup...")
+# Function to ask user if they want to restore a backup
+_askRestoreBackup() {
+    # Prompt user for confirmation to restore a backup using Gum
+    if gum confirm "Do you want to restore a backup?"; then
+        # Check if dotfiles_backup directory is not empty
+        if [ "$(ls -A $dest_dir)" ]; then
+            # Display available backup subfolders using Gum choose
+            echo "Please select your backup:"
+            selected_backup=$(gum choose $(ls -1 "$dest_dir"))
 
-        # Check if the selected backup exists
-        if [ -d "$dest_dir/$selected_backup" ]; then
-            # Add your restore logic here
-            # For example, you can copy the contents of the selected backup back to the source directory.
-            cp -r "$dest_dir/$selected_backup" "$HOME/.config"
-            
-            echo "Backup '$selected_backup' restored successfully to $HOME/.config"
+            # Check if the selected backup exists
+            if [ -d "$dest_dir/$selected_backup" ]; then
+                # Add your restore logic here
+                # For example, you can copy the contents of the selected backup back to the source directory.
+                cp -r "$dest_dir/$selected_backup" "$HOME/.config"
+
+                echo "Backup '$selected_backup' restored successfully to $HOME/.config"
+            else
+                echo "Invalid backup selection. Restoration aborted."
+            fi
         else
-            echo "Invalid backup selection. Restoration aborted."
+            echo "No previous backups found in $dest_dir."
         fi
     else
-        echo "No previous backups found in $dest_dir."
+        echo "Restore aborted."
     fi
 }
 
@@ -61,4 +66,4 @@ _restoreBackup() {
 _createBackup
 
 # Call the restore function
-_restoreBackup
+_askRestoreBackup
