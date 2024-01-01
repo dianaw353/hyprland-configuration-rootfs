@@ -50,7 +50,7 @@ file            echo "Configuration restored successfully from $selected_backup_
             if [ $? -eq 0 ]; then
                 return
             else
-                exit
+                exit 0
             fi
         else
             echo "Backup file $selected_backup_file not found. Skipping restore."
@@ -162,6 +162,7 @@ select_monitor() {
 configure_monitors() {
     selected_monitor=$1
 
+    echo "What monitor do you want to configure?"
     echo "Selected monitor: $selected_monitor"
 
     # Select screen resolution
@@ -199,37 +200,82 @@ configure_advanced_settings() {
         gum confirm "Do you want to enable 10-bit support?"
 
         if [ $? -eq 0 ]; then
-            echo "Enabling 10-bit support..."
-            # Add your code here to enable 10-bit support
+        echo "Enabling 10-bit support..."
+        # Add your code here to enable 10-bit support
+
+        # Find the selected monitor in the configuration
+monitor_line=$(grep "^monitor=$selected_monitor," ~/.config/hypr/conf/monitors/default.conf)
+
+if [ -n "$monitor_line" ]; then
+    # Add ,bitdepth,10 to the end of the line
+    sed -i "s/$monitor_line/$monitor_line,bitdepth,10/" ~/.config/hypr/conf/monitors/default.conf
+    echo "10-bit support added to the configuration for $selected_monitor."
+else
+    echo "Selected monitor $selected_monitor not found in the configuration. 10-bit support not added."
+fi
+    else
+        echo "10-bit support will not be enabled."
+    fi
+
+# Check if there is more than one monitor to mirror
+if [ $(echo "$monitors" | wc -l) -gt 1 ]; then
+    gum confirm "Do you want to set up a mirrored display?"
+
+    if [ $? -eq 0 ]; then
+        # Now, prompt to select the monitor to mirror
+        available_monitors=$(echo "$monitors" | grep -v "$selected_monitor" | awk '{print $1}' | paste -sd ' ')
+
+        if [ -n "$available_monitors" ]; then
+            echo "Choose the monitor to mirror:"
+            mirror_monitor=$(gum choose --height 15 $available_monitors)
+            echo "Selected monitor to mirror: $mirror_monitor"
+
+            # Add mirror configuration to default.conf
+            sed -i "/^monitor=$selected_monitor/s/$/,mirror,$mirror_monitor/" ~/.config/hypr/conf/monitors/default.conf
+
+            echo "Mirror display configured for $selected_monitor: ,mirror,$mirror_monitor"
         else
-            echo "10-bit support will not be enabled."
+            echo "No available monitors to mirror."
         fi
+    else
+        echo "Mirror display will not be set up."
+    fi
+else
+    echo "Only one monitor available. Skipping mirroring configuration."
+fi
 
-        monitors=$(echo "$monitors" | awk '{print $1}' | paste -sd ' ')
+if [ $? -eq 0 ]; then
+    echo "Do you want to control VRR (Adaptive Sync) of your monitors?"
+    vrr_option=$(gum choose --height 15 "0" "1" "2")
 
-        # Check if there is more than one monitor to mirror
-        if [ $(echo "$monitors" | wc -l) -gt 1 ]; then
-            gum confirm "Do you want to set up a mirrored display?"
+    echo "Debug: Chosen option is $vrr_option"
 
-            if [ $? -eq 0 ]; then
-                # Prompt to select the main monitor for mirroring
-                echo "Choose the main monitor for mirroring:"
-                main_monitor=$(gum choose --height 15 $monitors)
-                echo "Selected main monitor for mirroring: $main_monitor"
+    case $vrr_option in
+        0)
+            echo "VRR (Adaptive Sync) will be turned off."
+            ;;
+        1)
+            echo "VRR (Adaptive Sync) will be turned on."
+            ;;
+        2)
+            echo "VRR (Adaptive Sync) will be set to fullscreen only."
+            ;;
+        *)
+            echo "Invalid option ($vrr_option). Skipping VRR configuration."
+            ;;
+    esac
 
-                # Now, prompt to select the monitor to mirror
-                available_monitors=$(echo "$monitors" | grep -v "$main_monitor" | awk '{print $1}' | paste -sd ' ')
-                echo "Choose the monitor to mirror:"
-                mirror_monitor=$(gum choose --height 15 $available_monitors)
-                echo "Selected monitor to mirror: $mirror_monitor"
+    # Create a temporary file with the updated misc block
+    tmpfile=$(mktemp)
+    
+    # Use awk to replace the vrr= line if it's already present, or append it if not
+    awk -v vrr="$vrr_option" '/misc {/ {print; getline; if (!/vrr=/) print "        vrr=" vrr; else print "        vrr=" vrr; next} 1' ~/.config/hypr/conf/misc.conf > "$tmpfile"
 
-                # Add your code here to set up mirror display using $main_monitor and $mirror_monitor variables
-            else
-                echo "Mirror display will not be set up."
-            fi
-        else
-            echo "Only one monitor available. Skipping mirroring configuration."
-        fi
+    # Replace the original file with the temporary file
+    mv "$tmpfile" ~/.config/hypr/conf/misc.conf
+else
+    echo "Skipping VRR configuration."
+fi
 
         gum confirm "Do you want to rotate a monitor?"
 
@@ -241,27 +287,6 @@ configure_advanced_settings() {
         else
             echo "No rotation will be applied."
         fi
-
-        gum confirm "Do you want to control VRR (Adaptive Sync) of your monitors? 0 - off, 1 - on, 2 - fullscreen only"
-        vrr_option=$(gum choose --height 15 "VRR off -> 0" "VRR on -> 1" "VRR fullscreen only -> 2")
-
-        case $vrr_option in
-            0)
-                echo "VRR (Adaptive Sync) will be turned off."
-                # Add your code here to handle VRR off
-                ;;
-            1)
-                echo "VRR (Adaptive Sync) will be turned on."
-                # Add your code here to handle VRR on
-                ;;
-            2)
-                echo "VRR (Adaptive Sync) will be set to fullscreen only."
-                # Add your code here to handle VRR fullscreen only
-                ;;
-            *)
-                echo "Invalid option. Skipping VRR configuration."
-                ;;
-        esac
 
     else
         echo "Skipping advanced settings configuration."
