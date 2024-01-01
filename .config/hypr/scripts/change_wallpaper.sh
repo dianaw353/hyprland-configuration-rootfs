@@ -43,7 +43,7 @@ get_random_wallpaper() {
 # Define the function for setting wallpapers in Hyprland
 set_wallpaper_hyprland() {
   BG=$(get_random_wallpaper)
-  
+
   # Check if a wallpaper was found
   if [ $? -eq 1 ]; then
     exit 1
@@ -63,4 +63,3 @@ set_wallpaper_hyprland() {
 
 # Run the appropriate function
 set_wallpaper_hyprland
-

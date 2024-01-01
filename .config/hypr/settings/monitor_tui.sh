@@ -42,7 +42,7 @@ restore_backup_config() {
         # Check if the selected file exists
         if [ -f "$selected_backup_file" ]; then
             cp "$selected_backup_file" ~/.config/hypr/conf/monitors/default.conf
-            echo "Configuration restored successfully from $selected_backup_file."
+file            echo "Configuration restored successfully from $selected_backup_file."
 
             # Prompt user to continue configuration or exit
             gum confirm "Do you want to continue the configuration or exit the script?"
@@ -57,6 +57,86 @@ restore_backup_config() {
         fi
     else
         echo "Skipping restore."
+    fi
+}
+
+# Function to enable a disabled monitor
+enable_monitor() {
+    get_monitor_info
+
+    # Filter out disabled monitors
+    disabled_monitors=$(grep ",disable" ~/.config/hypr/conf/monitors/default.conf | cut -d',' -f1 | sed 's/^monitor=//')
+
+    if [ -z "$disabled_monitors" ]; then
+        echo "No disabled monitors found."
+        return
+    fi
+
+    # Prompt to select a disabled monitor to enable
+    echo "Choose the disabled monitor to enable:"
+    monitor_to_enable=$(gum choose --height 15 $disabled_monitors)
+    echo "Selected disabled monitor to enable: $monitor_to_enable"
+
+    # Use grep to find the corresponding lines in backup files
+    backup_folder=~/.config/hypr/conf/monitors/backup/
+    matching_lines=$(grep "^monitor=$monitor_to_enable," $backup_folder* | cut -d':' -f2)
+
+    if [ -z "$matching_lines" ]; then
+        echo "No matching lines found in backup files for monitor $monitor_to_enable."
+        return
+    fi
+
+    # Prompt to choose a matching line
+    echo "Choose a line to restore from:"
+    chosen_line=$(echo "$matching_lines" | gum choose --height 15)
+
+    # Replace the line in default.conf with the chosen line
+    sed -i "/^monitor=$monitor_to_enable/s/.*/$chosen_line/" ~/.config/hypr/conf/monitors/default.conf
+
+    echo "Monitor $monitor_to_enable has been enabled using the chosen backup line."
+    # Prompt user to configure the monitor or exit the script
+    gum confirm "Do you want to configure the monitor?"
+
+    if [ $? -eq 0 ]; then
+        # Add your code here for configuring the monitor
+        echo "Configuring the monitor..."
+    else
+        echo "Exiting the script."
+        exit 0
+    fi
+}
+
+# Function to disable a monitor
+disable_monitor() {
+    get_monitor_info
+    count=$(echo "$monitors" | awk '{print $1}' | wc -l)
+
+    if [ "$count" -gt 1 ]; then
+        gum confirm "Do you want to disable a monitor?"
+
+        if [ $? -eq 0 ]; then
+            available_monitors=$(echo "$monitors" | awk '{print $1}' | paste -sd ' ')
+
+            if [ -z "$available_monitors" ]; then
+                echo "No available monitors to disable."
+                return
+            fi
+
+            # Prompt to select a monitor to disable
+            echo "Choose the monitor to disable:"
+            monitor_to_disable=$(gum choose --height 15 $available_monitors)
+            echo "Selected monitor to disable: $monitor_to_disable"
+
+            # Use sed to replace the line with monitor=<monitor_name>,disable in the configuration file
+            sed -i "/^monitor=$monitor_to_disable/s/.*/monitor=$monitor_to_disable,disable/" ~/.config/hypr/conf/monitors/default.conf
+
+            echo "Monitor $monitor_to_disable has been disabled."
+            exit 0
+        else
+            echo "Skipping monitor disable option."
+        fi
+    else
+        echo "Only one monitor connected. Skipping monitor disable option."
     fi
 }
 
@@ -220,6 +300,8 @@ confirm_or_restore_config() {
 # Example usage:
 backup_monitor_config
 restore_backup_config
+enable_monitor
+disable_monitor
 get_monitor_info
 selected_monitor=$(select_monitor)
 configure_monitors "$selected_monitor"

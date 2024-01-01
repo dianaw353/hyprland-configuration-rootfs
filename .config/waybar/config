@@ -100,7 +100,7 @@
     "on-scroll-down": "~/.config/waybar/scripts/brightness.sh decrease",
     "return-type": "json",
     "exec": "~/.config/waybar/scripts/brightness.sh",
-    "signal": 1
+    "signal": 10
     },
 
 "pulseaudio": {
@@ -114,7 +114,7 @@
         "default": ["", ""]
     },
     "scroll-step": 1,
-    "on-click": "sh -c '(sleep 0.1s; alacritty --class dotfiles-floating -e rsmixer)' & disown",
+    "on-click": "sh -c '(sleep 0.1s; pavucontrol)' & disown",
     "ignored-sinks": ["Easy Effects Sink"]
 },
 
@@ -136,7 +136,8 @@
     "format-ethernet": "{ifname}: {ipaddr}/{cidr}", 
     "format-linked": "{ifname} (No IP)", "format-disconnected": "⚠Disabled", "format-alt": "{ifname}: {ipaddr}/{cidr}", "family": "ipv4", 
     "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}", 
-    "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}", //"min-length": 2, //"max-length": 2, "on-click": "nm-connection-editor",
+    "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}", //"min-length": 2, //"max-length": 2, 
+    "on-click": "sh -c '(sleep 0.1s; alacritty --class dotfile-floating -e bash ~/.config/waybar/scripts/network.sh)' & disown",
     },
 
 "group/group-tools": {

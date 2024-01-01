@@ -5,6 +5,8 @@ adjust_brightness() {
     local operation=$1
     declare -A operations=( ["increase"]="-A" ["decrease"]="-U" )
     brillo -u 15000 ${operations[$operation]} 2
+    # Send a signal to Waybar to update the brightness
+    pkill -RTMIN+10 waybar
 }
 
 # Adjust the brightness based on the argument
@@ -26,4 +28,3 @@ index=$(( brightness / 25 ))
 
 # Print the icon and the brightness percentage
 printf '{"text":"%s %s%%"}\n' "${icons[$index]}" "$brightness"
-
