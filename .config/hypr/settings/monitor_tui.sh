@@ -20,31 +20,28 @@ backup_monitor_config() {
     echo "Backup saved to $backup_file"
 }
 
-# Function to restore the backup configuration
 restore_backup_config() {
-    # Prompt user to restore configuration
     gum confirm "Do you want to restore a backup configuration?"
 
     if [ $? -eq 0 ]; then
-        # Specify the backup folder
         backup_folder=~/.config/hypr/conf/monitors/backup/
-
-        # List available backup files
         available_files=("$backup_folder"*)
+        
         if [ ${#available_files[@]} -eq 0 ]; then
             echo "No backup files found in $backup_folder. Skipping restore."
             return
         fi
 
-        # Prompt user to choose a file to restore
-        selected_backup_file=$(gum choose --height 15 "${available_files[@]}")
+        # Sort files by modification time in reverse order to get the latest file first
+        sorted_files=($(ls -t "$backup_folder"))
 
-        # Check if the selected file exists
+        selected_backup_file=$(gum choose --height 15 "${sorted_files[@]}")
+        selected_backup_file="$backup_folder$selected_backup_file"
+
         if [ -f "$selected_backup_file" ]; then
             cp "$selected_backup_file" ~/.config/hypr/conf/monitors/default.conf
-file            echo "Configuration restored successfully from $selected_backup_file."
+            echo "Configuration restored successfully from $selected_backup_file."
 
-            # Prompt user to continue configuration or exit
             gum confirm "Do you want to continue the configuration or exit the script?"
 
             if [ $? -eq 0 ]; then
@@ -306,16 +303,22 @@ else
     echo "Skipping VRR configuration."
 fi
 
-        gum confirm "Do you want to rotate a monitor?"
+    gum confirm "Do you want to rotate a monitor?"
 
-        if [ $? -eq 0 ]; then
-            echo "Choose the rotation option:"
-            rotation_option=$(gum choose --height 15 "normal (no transforms) -> 0" "90 degrees -> 1" "180 degrees -> 2" "270 degrees -> 3" "flipped -> 4" "flipped + 90 degrees -> 5" "flipped + 180 degrees -> 6" "flipped + 270 degrees -> 7")
-            echo "Selected rotation option: $rotation_option"
-            # Add your code here to apply the selected rotation option
-        else
-            echo "No rotation will be applied."
-        fi
+if [ $? -eq 0 ]; then
+    echo "Choose the rotation option:"
+    rotation_option=$(gum choose --height 15 "normal (no transforms) -> 0" "90 degrees -> 1" "180 degrees -> 2" "270 degrees -> 3" "flipped -> 4" "flipped + 90 degrees -> 5" "flipped + 180 degrees -> 6" "flipped + 270 degrees -> 7")
+    rotation_option="${rotation_option: -1}"  # Keep only the last character
+    echo "Selected rotation option: $rotation_option"
+    
+    # Extract the last digit from the existing line
+    current_rotation=$(sed -n "/^monitor=$selected_monitor/s/.*,\([0-9]\)$/\1/p" ~/.config/hypr/conf/monitors/default.conf)
+
+    # Add your code here to apply the selected rotation option
+    sed -i "/^monitor=$selected_monitor/s/$current_rotation$/,transform,$rotation_option/" ~/.config/hypr/conf/monitors/default.conf
+else
+    echo "No rotation will be applied."
+fi
 
     else
         echo "Skipping advanced settings configuration."
