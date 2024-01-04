@@ -209,8 +209,6 @@ Make sure you're logged in as the user who will use Hyprland.
 ```bash
 git clone https://github.com/dianaw353/hyprland-configuration-rootfs.git --depth=1
 cd hyprland-configuration-rootfs
-sed 's/diana/ADD_USERNAME_HERE/g' etc/greetd/config.toml # This auto log you into linux so we can launch hyprland. Dont worry system will be locked when hyprland launches. MUST your username here!!!!
-sudo mv etc/fonts /etc/fonts
 sudo mv etc/systemd/system /etc/systemd/system
 mv home/botan home/$(whoami)
 cp -r home/$(whoami)/.config ~/
@@ -219,7 +217,6 @@ sudo chmod +x ~/.local/bin/*
 mkdir ~/Pictures/screenshots
 cp -r /home/$(whoami)/.wallpaper ~/
 cp -r /home/$(whoami)/.* ~/
-echo 'LIBSEAT_BACKEND=logind' | sudo tee -a /etc/environment
 chmod +x ~/.config/hypr/scripts/*
 chmod +x ~/.config/waybar/scripts/*
 sudo cp -r etc/greetd /etc
@@ -396,9 +393,7 @@ https://wiki.hyprland.org/Nvidia/
 # Resources
 Thanks to everyone below and many other I forgot to add...
 
-Main configurations and scripts: https://www.reddit.com/r/hyprland/comments/127m3ef/starting_hyprland_directy_from_systemd_a_guide_to/
-
-Swaylock config: https://gitlab.com/stephan-raabe/dotfiles/-/blob/main/swaylock/config
+https://gitlab.com/stephan-raabe/dotfiles
 
 ## To do
 
@@ -408,7 +403,7 @@ Swaylock config: https://gitlab.com/stephan-raabe/dotfiles/-/blob/main/swaylock/
 <br>
     [] Rofi select games menu
 <br>
-[] Installation script
+[] Installation script (In Progress)
 <br>
 [] Add better compatibility between laptops/desktops
 <br>
@@ -416,11 +411,9 @@ Swaylock config: https://gitlab.com/stephan-raabe/dotfiles/-/blob/main/swaylock/
 <br>
 [] Better Documentation (in progress)
 <br>
-[] Lite version of ditfiles (in progress)
-<br>
 [] Add theme/effetcs channger
 <br>
-[] Polish rofi
+[] Polish rofi (In progress)
 <br>
 [] Polish waybar (In progress)
 <br>
