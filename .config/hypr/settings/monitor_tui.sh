@@ -175,13 +175,42 @@ configure_monitors() {
     refreshrate=$(wlr-randr | awk -v selected_monitor="$selected_monitor" '/^'"$selected_monitor"'/,/^$/ {print $0}' | grep -oP '\d{1,3}\.\d{6}' | awk '{printf("%.0f\n", $1)}' | sort -u -n | tac | gum choose --height 15)
     echo "You chose the refresh rate to be: $refreshrate"
 
-    # Select scale
-    scaling=""
-    while ! [[ "$scaling" =~ ^[0-9]+(\.[0-9]+)?$ ]] || (( $(awk -v x=$scaling -v y=3 'BEGIN {print (x > y)}') )); do
-        echo "Select your desired scale for your screen (1-3, default 1):"
-        scaling=$(gum input --placeholder "Enter the scale (1-3, default 1): ")
-        scaling=${scaling:-1}  # Set default to 1 if the input is empty or invalid
-    done
+# Select scale
+scaling=""
+while ! [[ "$scaling" =~ ^[0-9]+(\.[0-9]+)?$ ]] || (( $(awk -v x=$scaling -v y=3 'BEGIN {print (x > y)}') )); do
+    echo "Select your desired scale for your screen (1-3, default 1):"
+    scaling=$(gum input --placeholder "Enter the desired fractional scale for your display (decimales recommended): ")
+    scaling=${scaling:-1}  # Set default to 1 if the input is empty or invalid
+done
+
+# Ask the user if they want to disable fractional scaling on X11 applications
+disable_fractional_scaling=false
+if (( $(awk -v x=$scaling -v y=1 'BEGIN {print (x > y)}') )); then
+        echo " Disabling fractional scaling on only X11(xwayland) applications is HIGHLY RECOMMEMNED.  This is because with fractional scaling the applications that do not support wayland yet become fuzzy and blurry. As a workaround we found that disabling factional scaling for only X11(xwayland) applicaions to not be fuzzy/burry."
+    gum confirm "Disable fractional scaling on X11(xwayland) applications for the selected scale?" && disable_fractional_scaling=true
+fi
+
+# Modify the configuration file based on user's choice
+config_file=~/.config/hypr/conf/custom.conf
+
+# Set force_zero_scaling based on user's choice
+force_zero_scaling=""
+if [ "$disable_fractional_scaling" = true ]; then
+    force_zero_scaling=true
+else
+    force_zero_scaling=false
+fi
+
+# Check if the lines already exist and replace them
+if grep -q "xwayland {" "$config_file"; then
+    sed -i "/xwayland {/,/}/ s/force_zero_scaling = .*/force_zero_scaling = $force_zero_scaling/" "$config_file"
+else
+    # If the block doesn't exist, add it to the end of the file
+    echo -e "\nxwayland {" >> "$config_file"
+    echo -e "\tforce_zero_scaling = $force_zero_scaling" >> "$config_file"
+    echo "}" >> "$config_file"
+fi
+
     echo "Setting scale to: $scaling"
 
          # Replace or add the line in the default.conf file
