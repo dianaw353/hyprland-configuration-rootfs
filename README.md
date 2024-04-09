@@ -397,25 +397,14 @@ https://gitlab.com/stephan-raabe/dotfiles
 
 ## To do
 
-[x] Add gaming mode (disable fancy effects and animations)
-<br>
-    [] Polish gaming mode (in progress)
-<br>
-    [] Rofi select games menu
-<br>
-[] Installation script (In Progress)
-<br>
-[] Add better compatibility between laptops/desktops
-<br>
-[] Add CLI settings 
-<br>
-[] Better Documentation (in progress)
-<br>
-[] Add theme/effetcs channger
-<br>
-[] Polish rofi (In progress)
-<br>
-[] Polish waybar (In progress)
-<br>
-[] More more to come
-<br>
+- [x] Add gaming mode (disable fancy effects and animations)
+- [ ] Polish gaming mode (in progress)
+- [ ] Rofi select games menu
+- [ ] Installation script (In Progress)
+- [ ] Add better compatibility between laptops/desktops
+- [ ] Add CLI settings 
+- [ ] Better Documentation (in progress)
+- [ ] Add theme/effetcs channger
+- [ ] Polish rofi (In progress)
+- [ ] Polish waybar (In progress)
+- [ ] More more to come
