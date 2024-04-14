@@ -1,6 +1,9 @@
 <div align="center">
 <h1>Hyprland configurations rootfs structure</h1>
 </div>
+
+> This project is now archived in favor of the following projects: https://github.com/dianaw353/hyprland-starter and https://github.com/dianaw353/starter-dotfile. At the time of writting this they are still in heavy deveopment.
+
 <div align="center">
     
 ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/dianaw353/hyprland-configuration-rootfs/mistress?style=for-the-badge&labelColor=%23252733&color=%238d748c)
